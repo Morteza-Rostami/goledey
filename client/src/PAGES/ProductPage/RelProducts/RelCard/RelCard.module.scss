@@ -1,0 +1,68 @@
+@import '../../../../CONSTANTS/Variables.scss';
+
+.rel_card {
+  @include verticFrame($gap: .5rem);
+  padding: .8rem;
+  background: $off-white;
+  border-radius: .4rem;
+  width: 100%;
+  img {
+    max-width: 100%;
+    object-fit: cover;
+    aspect-ratio: 2 / 2;
+    border-radius: .4rem;
+    //max-width: 128px;
+  }
+
+  .info {
+
+    .name {
+      @include typo-200;
+      color: $text-body;
+    }
+
+    .price {
+      @include centerFrame();
+      @include typo-200-50;
+      gap: .5rem;
+      padding: .4rem 2rem;
+      background-color: $primary-250;  
+      border-radius: .4rem;
+      color: $off-white;
+
+      svg {
+        width: $icon-60;
+      }
+    }
+  }
+}
+
+/* ********************** tablet ********************** */
+
+@media only screen and (min-width: $mobile-b) {
+  .rel_card {
+    
+    img {
+      
+    }
+  
+    .info {
+      
+      .name {
+        @include typo-12-700;
+      }
+  
+      .price {
+        @include typo-16-700;
+  
+        svg {
+          width: $ico-16;
+          height: $ico-16;
+          path {
+
+          }
+        }
+      }
+    }
+  }
+}

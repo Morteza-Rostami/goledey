@@ -1,0 +1,70 @@
+@import '../../../../CONSTANTS/Variables.scss';
+
+.tab {
+  @include verticFrame($gap: .8rem);
+  align-items: center;
+  border-left: .1rem solid $line;
+  padding: 0 ;
+
+  justify-content: space-between;
+
+  flex: .4;
+  //height: 100%;
+
+  
+
+  &:last-child {
+    border: none;
+  }
+
+  .status {
+    @include typo-11-400;
+    color: $text-body; 
+  }
+
+  .count {
+    @include centerFrame();
+
+    @include typo-10-400;
+    font-weight: 500;
+    // line-height: 1;
+    //margin: 0;
+    background-color: $input-bg;
+    color: $text-body;
+    padding: .2rem .4rem !important;
+    border-radius: .2rem;
+  }
+}
+
+
+
+
+/* ********************** tablet ********************** */
+
+@media only screen and (min-width: $mobile-b) {
+
+  
+
+  .tab {
+ 
+  
+    svg {
+      @include svg-24;
+    
+    }
+  
+    &:last-child {
+    }
+  
+    .status {
+      @include typo-12-700;
+      font-weight: 600;
+    }
+  
+    .count {
+      font-size: 14px;      
+      padding: .2rem 1.2rem !important;
+    }
+  }
+
+}

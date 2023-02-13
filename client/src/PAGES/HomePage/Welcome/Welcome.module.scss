@@ -1,0 +1,108 @@
+
+@import '../../../CONSTANTS/Variables.scss';
+
+
+/* ********************** mobile ********************** */
+
+.welcome {
+  @include centerFrame();
+  background-color: $bg;
+  text-align: center;
+
+  .colo__green {
+    color: $primary-250;
+    display: inline;
+  }
+
+  .inner {
+    @include verticFrame($gap: 0);
+    align-items: center;
+    width: 100%;
+    padding: $pad-105 $pad-lr-m;
+
+    .heading {
+      @include typo-24-400;
+      font-family: $font-sec;
+      max-width: 250px;
+
+      
+    }
+
+    .slogan {
+      @include verticFrame($gap: 0);
+      @include typo-12-400;
+      max-width: 300px;
+      text-align: center;
+      margin-top: $pad-tb-90;
+      .top {
+        max-width: 190px;
+        display: block;
+        text-align: center;
+        align-self: center;
+      }
+
+      p {
+        max-width: 190px;
+        display: block;
+        text-align: center;
+        align-self: center;
+      }
+    }
+
+    .btn {
+      @include typo-12-700;
+      align-self: center;
+      margin-top: $pad-105;
+
+      background-color: $secondary-300;
+      color: $off-white;
+      box-shadow: none !important;
+    }
+  }
+
+}
+
+/* ********************** tablet ********************** */
+
+@media only screen and (min-width: $mobile-b) {
+
+  .welcome {
+   
+    .inner {
+      gap: $row-gap-150;
+      padding: $pad-tb-115 $pad-lr;
+
+      .heading {
+        @include typo-56-400;
+        max-width: 500px;
+
+        span {
+        }
+
+        
+      }
+      .slogan {
+        @include verticFrame($gap: $row-gap-100);
+        @include typo-20-400;
+        max-width: 700px;
+
+        .top {
+          max-width: 400px;
+         
+        }
+  
+        p {
+          max-width: 400px;
+         
+        }
+      }
+
+      .btn {
+        @include typo-19-400;
+        font-size: 19px !important;
+        margin: 0;
+      }
+    }
+  }
+
+}

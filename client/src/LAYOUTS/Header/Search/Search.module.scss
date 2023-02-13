@@ -1,0 +1,103 @@
+@import '../../../CONSTANTS/Variables.scss';
+
+/* ********************** MOBILE ********************** */
+
+/* 
+max-width: 280px -> anything less than 280px
+min-width: 280px -> more than 280px
+
+*/
+
+.search {
+  padding: 0;
+  position: relative;
+  display: flex;
+  
+  min-width: 0;
+  width: 100%;
+
+  //background: $off-white;
+  background-color: $bg;
+  //border: 1px solid $line;
+  border: none;
+  border-radius: .5rem;
+  padding-left: 3rem;
+
+  .input {
+    @include typo-12-400;
+    width: 100%;
+    min-height: 44px;
+    border: none;
+    outline: none;
+    padding: 0;
+    // background-color: $off-white;
+    border-top-left-radius: .5rem;
+    border-bottom-left-radius: .5rem;
+    background-color: $bg;
+    &::placeholder {
+      color: $text-placehoder;
+    }
+  }
+
+  .btn_box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .search_icon {
+
+    .ico {
+      font-size: $ico-24;
+      color: $text-placehoder;
+
+    }
+  }
+  
+  .close_icon {
+    position: absolute;
+    left: 0;
+    //right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .ico {
+      font-size: $ico-24;
+      color: $text-placehoder;
+    }
+  }
+}
+
+/* ********************** TABLET ********************** */
+
+// 800 to up
+@media only screen and (min-width: $mobile-b) {
+  .search {
+    display: flex;
+    width: fit-content;
+    
+    
+    /* border: 1px solid grey;
+    border-radius: 4.8rem; */
+    /* padding-right: 1.5rem; */
+    min-width: 52.6rem;
+  }
+  
+
+  
+  .input {
+    
+    width: 100%;
+    height: 4.8rem !important;
+    font-family: $font-pri;
+    /* padding-left: 4rem; */
+    /* flex: .7; */
+  }
+  
+  
+}
+

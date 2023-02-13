@@ -1,0 +1,44 @@
+@import '../../../CONSTANTS/Variables.scss';
+
+.order__date {
+  background-color: $off-white;
+  padding: 1rem $pad-lr-m;
+
+  .wrap {
+    @include verticFrame();
+    p {margin: 0}
+    .uptext {
+      text-align: right;
+      @include typo-10-400;
+      color: $text-placehoder;
+    }
+
+    .date {
+      @include alignFrame($gap: .6rem);
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      span {
+        color: $text-body;
+        @include typo-12-400;
+      }
+    }
+
+    .hour {
+      @include typo-11-400;
+      color: $text-placehoder;
+      text-align: right;
+    }
+  }
+}
+
+/* ********************** tablet ********************** */
+
+@media only screen and (min-width: $mobile-b) {
+  .order__date {
+    border-radius: .8rem;
+  }
+}

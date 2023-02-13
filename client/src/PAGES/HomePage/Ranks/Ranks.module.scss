@@ -1,0 +1,40 @@
+
+@import '../../../CONSTANTS/Variables.scss';
+
+
+/* ********************** mobile ********************** */
+
+.ranks {
+  //background-color: $off-white;
+  .inner {
+    margin-top: $pad-tb-110;
+    .swiper {
+      padding: 1rem;
+    }
+    //padding: 1rem 0;
+
+    a {
+      text-decoration: none;
+    }
+  }
+  
+
+
+  
+}
+
+/* ********************** tablet ********************** */
+
+@media only screen and (min-width: $mobile-b) {
+
+  .ranks {
+    // margin-bottom: 5rem;
+
+    .inner {
+      padding: 0 $pad-lr;
+      margin-top: $pad-tb-120;
+
+    }
+  }
+
+}

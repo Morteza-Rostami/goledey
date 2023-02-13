@@ -1,0 +1,10 @@
+@import '../../../../CONSTANTS/Variables.scss';
+
+.pag__skelet {
+  @include horizFrame();
+  padding: $pad-tb-115 $pad-lr-m;
+  padding-bottom: $pad-tb-110;
+  .mid {
+    @include horizFrame();
+  }
+}

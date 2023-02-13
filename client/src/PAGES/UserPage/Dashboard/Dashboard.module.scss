@@ -1,0 +1,87 @@
+@import '../../../CONSTANTS/Variables.scss';
+
+
+.dashboard {
+  display: flex;
+  justify-content: center;
+  //min-height: 100vh;
+  align-items: flex-start;
+  svg {
+    width: $ico-20;
+    height: $ico-20;
+    path {
+      width: $ico-20;
+      height: $ico-20;
+    }
+  }
+
+
+  .inner {
+    @include centerFrame();
+    width: 100%;
+    background-color: $bg;
+    padding: 0;
+    
+    .grid {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-areas: 
+        'brief'
+        'navbar'
+      ;
+      
+      .brief {
+        grid-area: brief;
+      }
+  
+      .navbar {
+        grid-area: navbar;
+      }
+
+    }
+
+
+  }
+}
+
+/* ********************** tablet ********************** */
+
+@media only screen and (min-width: $mobile-b) {
+  .dashboard {
+  
+    svg {
+      width: $ico-24;
+      height: $ico-24;
+      path {
+        width: $ico-24;
+        height: $ico-24;
+      }
+    }
+  
+  
+    .inner {
+      
+      padding: $pad-tb-110 $pad-lr;
+      
+      .grid {
+        grid-template-columns: .4fr 1fr;
+        grid-column-gap: 2rem;
+        grid-template-areas: 
+          'navbar brief'
+        ;
+        
+        .brief {
+          grid-area: brief;
+        }
+    
+        .navbar {
+          grid-area: navbar;
+        }
+  
+      }
+  
+  
+    }
+  }
+}

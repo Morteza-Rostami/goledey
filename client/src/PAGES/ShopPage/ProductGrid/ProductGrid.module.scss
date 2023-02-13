@@ -1,0 +1,123 @@
+@import '../../../CONSTANTS/Variables.scss';
+
+
+
+.product_grid {
+  // display: flex;
+  background-color: $bg;
+
+  .inner {
+    @include verticFrame();
+    padding: $pad-tb-100 $pad-lr-m;
+    padding-bottom: 0;
+
+    .grid {
+      display: grid;
+      grid-gap: 1rem;
+      //width: 100%;
+    
+      grid-template-columns: 1fr;
+      //grid-template-rows: 100px;
+      grid-auto-flow: auto;
+      /* grid-auto-rows: 200px; */
+      grid-auto-flow: dense;
+      // grid-auto-rows: 1fr;
+
+    }
+
+    
+
+  }
+}
+
+// not found results
+.emp__grid {
+  @include centerFrame();
+  padding: $pad-tb-100;
+}
+
+/* 600px */
+@media only screen and (min-width: $mobile-b-90) {
+  .product_grid {
+    .inner {
+
+      .grid {
+      
+        grid-template-columns: repeat(2, minmax(230px, 1fr));
+      
+      }
+  
+      
+  
+    }
+  }
+}
+
+
+
+@media only screen and (min-width: $mobile-b) {
+  .product_grid {
+    .inner {
+      @include verticFrame();
+      padding: $pad-tb-110 $pad-lr;
+      padding-bottom: 0;
+
+      .grid {
+        grid-gap: 2rem;
+        //width: 100%;
+      
+        //grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        grid-template-columns: repeat(3, minmax(50px, 1fr));
+        /* grid-auto-rows: 200px; */
+      
+      }
+  
+      
+  
+    }
+  }
+
+  // not found results
+  .emp__grid {
+    @include centerFrame();
+    padding: $pad-tb-110;
+  }
+}
+
+/* ********************** tablet ********************** */
+
+@media only screen and (min-width: $tablet-b-120) {
+  .product_grid {
+    .inner {
+      
+
+      .grid {
+      
+        grid-template-columns: repeat(4, minmax(50px, 1fr));
+      
+      }
+  
+      
+  
+    }
+  }
+}
+
+/* ********************** tablet ********************** */
+
+@media only screen and (min-width: $desk-b-140) {
+  .product_grid {
+    .inner {
+      
+
+      .grid {
+      
+        grid-template-columns: repeat(5, minmax(50px, 1fr));
+      
+      }
+  
+      
+  
+    }
+  }
+}

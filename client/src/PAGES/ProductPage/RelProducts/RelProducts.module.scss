@@ -1,0 +1,56 @@
+@import '../../../CONSTANTS/Variables.scss';
+
+.relateds {
+  display: flex;
+
+  .in {
+    padding: $pad-tb-m 0;
+  }
+
+  .inner {
+    width: 100%;
+
+    .head {
+      @include alignFrame();
+      padding: 0 $pad-lr-m;
+      
+      h2 {
+        color: $text-body;
+        font-size: 1.3rem;
+        font-weight: 700;
+        line-height: 1.6rem;
+        letter-spacing: 0em;
+        text-align: right;
+        border-bottom: .1rem solid $primary-250;
+        padding-bottom: .2rem;
+
+        align-self: flex-start;
+      }
+    }
+
+    
+  }
+
+  
+}
+
+/* ********************** tablet ********************** */
+
+@media only screen and (min-width: $mobile-b) {
+  .relateds {
+    .inner {
+      padding: $pad-lr;
+      .head {
+        padding: 1.4rem 0;
+        padding-top: 0;
+        h2 {
+          @include typo-16-700;
+        }
+      }
+  
+      
+    }
+  
+    
+  }
+}

@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;600;700&family=Noto+Sans+Arabic:wght@400;500;600&display=swap');
+@font-face {
+  font-family: 'MjDinar';
+  src: local('MjDinar'), url(./THEME/MjDinar.otf) format('opentype');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+/* NotoSansArabic-Medium.ttf */
+@font-face {
+  font-family: 'NotoSansArabicMedium';
+  src: local('NotoSansArabicMedium'), url(./THEME/NotoSansArabicMedium.ttf) format('truetype');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+
+/* danstevis.otf */
+@font-face {
+  font-family: 'danstevis';
+  src: local('danstevis'), url(./THEME/danstevis.otf) format('opentype');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+
+
+#root {
+  /* height: 100%; */
+  min-height: 100%;
+  width: 100%;
+  /* display: inline-block; */
+  text-align: center;
+
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+
+  font-family: NotoSansArabicMedium, 'Noto Sans Arabic', 'El Messiri', 'sans-serif' !important;
+
+  --font-main: NotoSansArabicMedium;
+
+  /* colors */
+  --bg-color: #FFFFFF;
+  --dark: #223263;
+  --light: #EBF0FF;
+  --grey: #9098B1;
+  --purple: #5C61F4;
+  --green: #53D1B6;
+  --yellow: #FFC833;
+  --red: #FB7181;
+  --blue: #40BfFF;
+
+  /* new colors */
+
+--text-placeholder: #969995;
+--primary-250: #45853A;
+--off-white: #F4F6F2;
+--error-150: #D92B3E;
+--bg: #E7EaE4;
+
+/* $title-active: #202220;
+
+// body text
+$text-body: #464745;
+
+// label text
+$text-label: #7c7e7a;
+
+$text-placehoder: #969995;
+
+$line: #B7BAB5;
+
+$input-bg: #CCCFCA;
+
+
+$off-white: #F4F6F2;
+
+// success
+$success-100: #71EE5A;
+$success-150: #3CB826;
+$success-200: #195E0C;
+
+// error
+$error-100: #ED7A87;
+$error-150: #D92B3E;
+$error-200: #7C0F1B;
+
+// primary
+$primary-100: #E7EAE4;
+$primary-200: #87BF7B;
+$primary-250: #45853A;
+$primary-300: #426F3A;
+$primary-400: #172D12;
+
+// secondary
+$secondary-100: #F2EDEF;
+$secondary-200: #E5A1AB;
+$secondary-300: #DC616E;
+$secondary-400: #541A26;
+
+// warning
+$warning-100: #F1B074;
+$warning-200: #E78022;
+$warning-300: #A65913; */
+
+  /* font-sizes */
+  --font-100: 1.2rem;
+
+  /* font-weight */
+  --font-w-300: 600;
+
+  /* Break-points */
+
+  /* TABLET */
+  --table-b: 800px;
+
+  /* MOBILE */
+  --mobile-b: 800px;
+
+}
+
+html {
+  font-size: 62.5% !important;
+  /* overflow: auto; */
+  height: 100% !important;
+  min-height: 100vh;
+  background-color: var(--bg);
+}
+
+body {
+  /* 10px */
+  font-size: 1.4rem !important;
+  /* min-height: 100%; */
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height:100%;
+
+}
+
+.MuiMenu-list {
+  padding: 0 !important;
+}
+
+#root {
+ /*  position: fixed;
+overflow: auto;
+height: 100vh; */
+min-height: 100%;
+
+}
+
+.App {
+  min-height: 100%;
+
+}
+
+/* html, body, #root, .App {
+  height: 100% !important;
+} */
+
+/* @media only screen and (max-width: 800) {
+
+  .swipe_wrap {
+    background-color: red !important;
+  }
+  .swiper-box {
+    background-color: red !important;
+
+    height: 130px !important;
+  }
+
+} */
+
+/* .swiper-slide {
+  height: 130px !important;
+} */
+
+/* .swiper-slide {
+  height: auto !important;
+} */
+
+h1, h2, h3, h4, h5, h6, p {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* loading screen */
+/* 
+.screen-loader {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #223263;
+  display: inline-block;
+  z-index: 10000;
+}
+
+.loader {
+  position: absolute;
+  top: calc(50% - 4em);
+  left: calc(50% - 4em);
+  width: 6em;
+  height: 6em;
+  border: 1.1em solid rgba(0, 0, 0, 0.2);
+  border-left: 1.1em solid #000000;
+  border-radius: 50%;
+  animation: load8 1.1s infinite linear;
+  transition: opacity 0.3s;
+}
+
+
+.loader--hide {
+  opacity: 0;
+}
+
+@keyframes load8 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} */
+
+ul {
+  padding: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+}

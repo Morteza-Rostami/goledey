@@ -1,0 +1,145 @@
+@import '../../CONSTANTS/Variables.scss';
+
+.info__card {
+  display: grid;
+  grid-template-columns: .2fr 1fr;
+
+  background-color: $off-white;
+  border-radius: .4rem;
+  padding: 0;
+  width: 100%;
+
+  .item, .error {
+    flex-wrap: wrap;
+  }
+
+  .design {
+    position: relative;
+    @include verticFrame($gap: 1rem);
+    justify-content: space-between;
+
+    .box {
+
+      .dot {
+        //content: '';
+        display: inline-block;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background-color: $line;
+      }
+    }
+
+    .line {
+      position: absolute;
+      // top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      width: 1px;
+      height: 85%;
+      display: inline-block;
+      background-color: $line;
+      border-radius: 5px;
+      margin-left: auto; 
+      margin-right: auto;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  .info {
+    @include verticFrame($gap: 1rem);
+
+    .error {
+      @include alignFrame();
+
+      span {
+        color: $text-body;
+        @include typo-11-400;
+      }
+
+      a {
+        color: $secondary-300;
+        @include typo-10-700;
+      }
+    }
+
+    .item {
+      @include alignFrame($gap: 1rem);
+
+      &:first-child span {
+        font-weight: 700;
+      }
+
+      span {
+        text-align: right;
+        @include typo-11-400;
+        color: $text-body;
+      }
+
+      svg {
+        width: 20px;
+        height: 20px;
+        path {
+          fill: $text-placehoder;
+
+        }
+      }
+    }
+
+  }
+} // info__card
+
+/* ********************** tablet ********************** */
+
+@media only screen and (min-width: $mobile-b) {
+  .info__card {
+    padding: 2rem $pad-lr-m;
+
+    .error {
+      @include alignFrame();
+
+      span {
+        color: $text-body;
+        @include typo-11-400;
+      }
+
+      a {
+        color: $secondary-300;
+        @include typo-10-700;
+      }
+    }
+
+    .design {
+
+  
+      .box {
+  
+        .dot {
+          
+        }
+      }
+  
+      .line {
+        
+      }
+    }
+  
+    .info {
+      gap: 2rem;
+      .item {
+  
+        span {
+          @include typo-12-400;
+        }
+  
+        svg {
+          path {
+          }
+        }
+      }
+  
+    }
+  } // info__card
+}

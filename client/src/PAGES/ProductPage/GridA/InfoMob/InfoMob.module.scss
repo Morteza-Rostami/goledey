@@ -1,0 +1,60 @@
+@import '../../../../CONSTANTS/Variables.scss';
+
+.info_mob {
+
+  @include verticFrame($gap: $mob-row-gap);
+  font-family: $font-pri;
+  padding: $mob-pad-tb $pad-lr-m;
+  background: $off-white;
+  //margin-bottom: 1.3rem;
+
+  .in_stock {
+    @include alignFrame();
+    padding: 0;
+    svg {
+      width: $icon-60;
+      height: $icon-60;
+    }
+
+    span {
+      font-size: 10px;
+      font-weight: 700;
+      line-height: 16px;
+      letter-spacing: 0em;
+      text-align: right;
+
+      color: $text-body
+    }
+
+
+  }
+
+  .car {
+    @include alignFrame();
+    padding: 0;
+
+    svg {
+      width: $icon-60;
+      height: $icon-60;
+    }
+
+    span {
+      font-size: 10px;
+      font-weight: 400;
+      line-height: 16px;
+      letter-spacing: 0em;
+      text-align: right;
+
+      color: $text-label;
+    }
+  }
+
+}
+
+/* ********************** tablet ********************** */
+
+@media only screen and (min-width: $mobile-b) {
+  .info_mob {
+    display: none;
+  }
+}

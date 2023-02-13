@@ -1,0 +1,273 @@
+@import '../../CONSTANTS/Variables.scss';
+
+.checkout {
+
+  .inner {
+    @include verticFrame($gap: 1rem);
+    //padding: 0 $pad-lr-m;
+    //padding-bottom: 70px;
+    margin-bottom: 56px;
+
+    .grid {
+      display: grid;
+      grid-row-gap: 1rem;
+
+      .main {
+        @include verticFrame();
+        //background-color: $color-2-100;
+        width: 100%;
+        min-width: 0;
+
+        .head {
+          display: none;
+          padding: 1.2rem $pad-lr-m;
+          background-color: $off-white;
+          h2 {
+            color: $text-body;
+            @include typo-14-700;
+
+          }
+        }
+        
+        .address {
+          @include verticFrame();
+          background: $off-white;
+          padding: 1.2rem $pad-lr-m;
+
+          .wrap {
+            @include verticFrame($gap: .6rem);
+            .uptext {
+              text-align: right;
+              @include typo-10-400;
+              color: $text-placehoder;
+            }
+  
+            .fullad {
+              @include alignFrame();
+              p {
+                color: $text-body;
+                @include typo-12-400;
+              }
+              svg {
+                width: 20px;
+                height: 20px;
+              }
+            }
+  
+            .subtext {
+              @include typo-11-400;
+              color: $text-placehoder;
+              text-align: right;
+            }
+
+          } // wrap
+        } // address
+
+        .action {
+          @include alignFrame();
+          justify-content: flex-end;
+          .btn {
+            span {
+              color: $primary-250;
+            }
+
+            .ico {
+              color: $primary-250;
+              font-size: 16px !important;
+            }
+          }
+        }
+
+        .prices {
+          @include verticFrame();
+          background-color: $off-white;
+          padding: 1rem $pad-lr-m;
+
+          svg {
+            width: 18px;
+            height: 18px;
+
+          }
+          .tag {
+            @include horizFrame();
+            color: $text-placehoder;
+            .text {
+              @include alignFrame();
+              svg {}
+              span {
+                @include typo-10-400;
+
+              }
+            }
+            .total {
+              @include alignFrame();
+              span {
+                @include typo-12-400;
+              }
+
+              svg {
+                width: 16px;
+                height: 16px;
+                path {
+                  fill: $text-placehoder;
+                }
+              }
+            }
+
+            .active {
+
+              span {
+                font-size: 16px;
+                font-weight: 700;
+                color: $title-active;
+
+              }
+
+              svg {
+                path {
+                  fill: $title-active;
+  
+                }
+
+              }
+            }
+
+          } /* tag */
+        }
+
+      } /* main */
+
+      .checkbar {
+        grid-area: checkbar;
+        display: none;
+      }
+    }
+  }
+}
+
+/* ********************** tablet ********************** */
+
+@media only screen and (min-width: $mobile-b) {
+  .checkout {
+
+    .inner {
+      margin-bottom: 0px;
+      padding: 0 $pad-lr;
+      padding-top: $pad-tb-110;
+
+      .grid {
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas: 
+          'checkbar main'
+        ;
+        grid-row-gap: 2rem;
+        grid-column-gap: 2rem;
+  
+        .main {
+  
+          .head {
+            @include alignFrame();
+            padding: 1.2rem $pad-lr-m;
+            border-radius: .8rem;
+            h2 {
+              @include typo-14-700;
+  
+            }
+          }
+          
+          .address {
+            padding: 1.2rem $pad-lr-m;
+            border-radius: .8rem;
+  
+            .wrap {
+              .uptext {
+                @include typo-10-400;
+              }
+    
+              .fullad {
+                p {
+                  @include typo-12-400;
+                }
+                svg {
+                  width: 20px;
+                  height: 20px;
+                }
+              }
+    
+              .subtext {
+                @include typo-11-400;
+              }
+  
+            } // wrap
+          } // address
+  
+          .action {
+            .btn {
+              span {
+                color: $primary-250;
+              }
+  
+              .ico {
+                font-size: 16px !important;
+              }
+            }
+          }
+  
+          .prices {
+            display: none;
+            padding: 1rem $pad-lr-m;
+  
+            svg {
+              width: 18px;
+              height: 18px;
+  
+            }
+            .tag {
+              .text {
+                svg {}
+                span {
+                  @include typo-10-400;
+  
+                }
+              }
+              .total {
+                span {
+                  @include typo-12-400;
+                }
+  
+                svg {
+                  width: 16px;
+                  height: 16px;
+                  path {
+                  }
+                }
+              }
+  
+              .active {
+  
+                span {
+                 
+  
+                }
+  
+                svg {
+                  path {
+    
+                  }
+  
+                }
+              }
+  
+            } /* tag */
+          }
+  
+        } /* main */
+  
+        .checkbar {
+          @include verticFrame();
+
+        }
+      }
+    }
+  }
+} 

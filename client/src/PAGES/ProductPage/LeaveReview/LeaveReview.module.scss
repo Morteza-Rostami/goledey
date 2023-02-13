@@ -1,0 +1,62 @@
+@import '../../../CONSTANTS/Variables.scss';
+
+.leaver {
+  @include centerFrame();
+  .inner {
+    @include verticFrame($gap: $row-gap-m);
+    padding: $pad-tb-m $pad-lr-m;
+    text-align: center;
+    // border-bottom: .1rem solid $line;
+    width: 100%;
+    .head {
+      @include typo-220;
+      color: $text-body;
+    }
+
+    .subtext {
+      @include typo-190-50;
+      color: $text-placehoder;
+    }
+
+    .starbtn {
+      @include centerFrame();
+      margin-bottom: 1rem;
+      max-width: 90%;
+      align-self: center;
+      svg {
+        color: $warning-200;
+        font-size: $ico-24;
+      }
+      background-color: $off-white;
+
+      padding: .8rem 3.2rem;
+      border-radius: .4rem;
+    }
+  }
+}
+
+/* ********************** tablet ********************** */
+
+@media only screen and (min-width: $mobile-b) {
+  .leaver {
+    .inner {
+      
+      .head {
+        @include typo-16-700;  
+      }
+  
+      .subtext {
+        @include typo-12-400;
+      }
+  
+      .starbtn {
+        border: .2rem solid $primary-250;
+        border-radius: 1rem;
+        svg {
+          font-size: $ico-30;
+        }
+  
+      }
+    }
+  }
+}

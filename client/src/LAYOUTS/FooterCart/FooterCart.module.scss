@@ -1,0 +1,59 @@
+@import '../../CONSTANTS/Variables.scss';
+
+.footer__cart {
+  @include centerFrame();
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: $off-white;
+
+  .inner {
+    @include horizFrame();
+    padding: .8rem $pad-lr-m;
+    width: 100%;
+
+
+    .price {
+      @include verticFrame();
+
+      .total {
+        @include alignFrame();
+        p {
+          color: $title-active;
+          @include typo-14-700;
+        }
+
+        svg {
+          width: 16px;
+          height: 16px;
+          path {
+            fill: $title-active;
+
+          }
+        }
+      }
+
+      .subtext {
+        @include alignFrame();
+        @include typo-10-400;
+        color: $text-label;
+
+        svg { 
+          width: 16px;
+          height: 16px;
+          path {
+
+          }
+        }
+
+        span {
+
+        }
+      }
+
+    }
+
+
+  }
+}

@@ -1,0 +1,34 @@
+@import '../../CONSTANTS/Variables.scss';
+
+.header__cart {
+  @include centerFrame();
+  background-color: $bg;
+  .inner {
+    @include horizFrame();
+    width: 100%;
+    padding: .8rem $pad-lr-m;
+    background-color: $off-white;
+
+    .title {
+      @include alignFrame();
+
+      h4 {
+        @include typo-14-700;
+        color: $text-body;
+      }
+
+      .badge {
+
+      }
+    }
+
+    .close {
+
+      font-size: $ico-20;
+      .btn {
+        background-color: $bg;
+        color: $primary-250;
+      }
+    }
+  }
+}

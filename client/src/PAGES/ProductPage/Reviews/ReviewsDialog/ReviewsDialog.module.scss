@@ -1,0 +1,59 @@
+@import '../../../../CONSTANTS/Variables.scss';
+
+.rdialog {
+    padding: 1rem $box-prl-mobile;
+
+  .btn {
+    @include horizFrame();
+    color: $primary-250;
+    @include typo-200;
+
+    .ico {
+      color: $primary-250;
+      font-size: $icon-75;
+    }
+  }
+
+}
+
+/* modal is outside of .root */
+.reviews_modal {
+
+  .header {
+    background-color: $bg;
+  }
+
+  .content {
+    background-color: $bg;
+  }
+
+  .actions {
+    background-color: $bg;
+  }
+
+  .reviews__list {
+    @include verticFrame();
+    list-style: none
+  }
+
+  .load_more {
+    @include centerFrame();
+    width: 100%;
+  }
+}
+
+
+/* ********************** tablet ********************** */
+
+@media only screen and (min-width: $mobile-b) {
+  .rdialog {
+
+  .btn {
+    @include typo-12-700;
+
+    .ico {
+      font-size: $ico-18;
+    }
+  }
+}
+}

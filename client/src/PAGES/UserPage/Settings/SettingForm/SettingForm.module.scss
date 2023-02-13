@@ -1,0 +1,33 @@
+@import '../../../../CONSTANTS/Variables.scss';
+
+.settings {
+
+
+  .form {
+    @include verticFrame($gap: 1rem);
+    
+    border-radius: .5rem;
+    // padding: 4rem;
+
+    .label {
+      text-align: right;
+      margin-bottom: .8rem;
+    }
+
+
+    .btn {
+      background-color: $primary-250;
+      color: $off-white;
+      @include typo-16-700;
+      border:none;
+    }
+
+    .errors {
+      color: $error-150;
+      @include typo-10-400;
+      text-align: right;
+      margin-top: .5rem;
+    }
+    
+  }
+}

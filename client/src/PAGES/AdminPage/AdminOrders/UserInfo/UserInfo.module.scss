@@ -1,0 +1,19 @@
+@import '../../../../CONSTANTS/Variables.scss';
+
+.content {
+  table, th, td {
+    border: 1px solid white;
+    border-collapse: collapse;
+    padding: 1rem;
+  }
+  th, td {
+    background-color: #96D4D4;
+  }
+  
+  .table {
+    //@include verticFrame();
+    width: 100%;
+    background-color: $color-6-100;
+  }
+
+}

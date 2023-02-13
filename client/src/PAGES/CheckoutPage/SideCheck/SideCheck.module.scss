@@ -1,0 +1,58 @@
+@import '../../../CONSTANTS/Variables.scss';
+
+.side__check {
+  @include verticFrame();
+  width: 100%;
+
+  .bank__card {
+    @include verticFrame();
+    background-color: $off-white;
+    border-radius: 1rem;
+    padding: 2rem $pad-lr-m;
+
+    .wrap {
+      @include verticFrame();
+
+      .info__item {
+        @include horizFrame();
+        svg {
+          @include svg-18;
+        }
+        .text {
+          @include alignFrame();
+          svg {}
+          span {
+            @include typo-12-400;
+            color: $text-placehoder;
+          }
+        }
+
+        .price {
+          @include alignFrame();
+          color: $text-placehoder;
+          span {
+            @include typo-16-700;
+          }
+          svg {
+            @include svg-18;
+            path {
+              fill: $text-placehoder;
+            }
+          }
+        }
+
+        .active {
+          span {
+            color: $title-active;
+          }
+          svg {
+            path {
+              fill: $title-active;
+            }
+          }
+        }
+
+      }
+    }
+  }
+}

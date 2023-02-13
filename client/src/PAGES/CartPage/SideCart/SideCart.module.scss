@@ -1,0 +1,57 @@
+@import '../../../CONSTANTS/Variables.scss';
+
+.side__cart {
+  @include verticFrame();
+
+  width: 100%;
+  
+
+  .buy {
+    @include verticFrame($gap: 1.2rem);
+    background-color: $off-white;
+    border-radius: .4rem;
+    padding: 2rem 3rem;
+    .price {
+      @include horizFrame();
+
+      .total {
+        @include alignFrame();
+        @include typo-19-700;
+
+        p {
+          color: $title-active;
+        }
+
+        svg {
+
+          path {
+          fill: $title-active;
+
+          }
+        }
+      }
+
+      .subtext {
+        @include alignFrame();
+
+        span {
+
+        }
+
+        svg {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+
+    .checkout {
+
+      .btn {
+        width: 100%;
+      }
+    }
+
+  }
+
+}

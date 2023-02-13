@@ -1,0 +1,159 @@
+@import '../../../../CONSTANTS/Variables.scss';
+
+.card {
+  @include verticFrame($gap: 1rem);
+  background-color: $off-white;
+  padding: 1rem 1.2rem;
+  border-radius: .8rem;
+
+  .head {
+    @include horizFrame($gap: 0);
+    
+    .info {
+      @include alignFrame();
+      svg {}
+      
+      .title {
+        color: $text-label;
+        @include typo-10-400;
+      }
+  
+      .stat {
+        color: $text-body;
+        @include typo-10-700;
+      }
+    }
+
+    .pay__btn {
+      color: $primary-250;
+      border-color: $secondary-300;
+    }
+  }
+
+  .code {
+    @include alignFrame($gap: .3rem);
+    .text {
+      color: $text-label;
+      @include typo-10-400;
+    }
+    .number {
+      @include typo-10-400;
+      color: $text-body;
+    }
+  }
+
+  .date__price {
+    @include horizFrame();
+    .date {
+      color: $text-label;
+      @include typo-10-400;
+    }
+    .price {
+      @include alignFrame();
+
+      span {
+        @include typo-12-700;
+        color: $title-active;
+      }
+
+      svg {
+        @include svg-16;
+        path {
+          fill: $title-active;
+        }
+      }
+    }
+  }
+
+  .pics {}
+
+  .admin__msg {
+    @include alignFrame();
+
+    font-family: danstevis !important;
+    .title {
+      color: $text-label;
+      @include typo-14-400;
+    }
+
+    .msg {
+      @include typo-14-400;
+      color: $primary-250;
+    }
+    
+  }
+
+}
+
+/* ********************** tablet ********************** */
+
+@media only screen and (min-width: $mobile-b) {
+  .card {
+    
+    padding: 2rem;
+    .head {
+      
+      .info {
+        svg {}
+        
+        .title {
+          @include typo-14-400;
+        }
+        
+        .stat {
+          @include typo-14-700;
+        }
+      }
+  
+      .pay__btn {
+        @include typo-12-400;
+        font-size: 12px !important;
+      }
+    }
+  
+    .code {
+      .text {
+        @include typo-14-400;
+
+      }
+      .number {
+        @include typo-14-700;
+
+      }
+    }
+  
+    .date__price {
+      .date {
+        font-size: 14px;
+      }
+      .price {
+  
+        span {
+          font-size: 16px;
+        }
+  
+        svg {
+          @include svg-20;
+          path {
+          }
+        }
+      }
+    }
+  
+    .pics {}
+  
+    .admin__msg {
+  
+      .title {
+        font-size: 19px;
+      }
+  
+      .msg {
+        font-size: 19px;
+
+      }
+      
+    }
+  
+  }
+}

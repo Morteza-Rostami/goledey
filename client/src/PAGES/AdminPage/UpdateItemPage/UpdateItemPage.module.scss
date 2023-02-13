@@ -1,0 +1,16 @@
+@import '../../../CONSTANTS/Variables.scss';
+
+.item_edit {
+  @include centerFrame();
+
+  .inner {
+    width: 60%;
+    form {
+      background: $secondary-100;
+      padding: 1rem;
+      border-radius: .5rem;
+
+   
+    }
+  }
+}

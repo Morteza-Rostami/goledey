@@ -1,0 +1,531 @@
+
+$primary: #282c34;
+$secondary: #61dafb;
+
+/* colors */
+$light-100: #FFFFFF;
+$light-110: #EBF0FF;
+$dark-100: #223263;
+$color-1-100: #9098B1;
+$color-2-100: #5C61F4;
+$color-3-100: #53D1B6;
+$color-4-100: #FFC833;
+$color-5-100: #FB7181;
+$color-6-100: #40BfFF;
+
+/* new colors */
+
+/* for links and titles */
+$title-active: #202220;
+
+// body text
+$text-body: #464745;
+
+// label text
+$text-label: #7c7e7a;
+
+$text-placehoder: #969995;
+
+$line: #B7BAB5;
+
+$input-bg: #CCCFCA;
+
+$bg: #E7EaE4;
+
+$off-white: #F4F6F2;
+
+// success
+$success-100: #71EE5A;
+$success-150: #3CB826;
+$success-200: #195E0C;
+
+// error
+$error-100: #ED7A87;
+$error-150: #D92B3E;
+$error-200: #7C0F1B;
+
+// primary
+$primary-100: #E7EAE4;
+$primary-200: #87BF7B;
+$primary-250: #45853A;
+$primary-300: #426F3A;
+$primary-400: #172D12;
+
+// secondary
+$secondary-100: #F2EDEF;
+$secondary-200: #E5A1AB;
+$secondary-300: #DC616E;
+$secondary-400: #541A26;
+
+// warning
+$warning-100: #F1B074;
+$warning-200: #E78022;
+$warning-300: #A65913;
+
+
+
+
+
+/* font-sizes */
+
+$font-head-200: 2.4rem;
+
+
+
+
+$font-100: 1.2rem;
+
+
+/* font-weight */
+
+$font-w-400: 400;
+$font-w-600: 600;
+$font-w-300: 600;
+
+$line-h-30: 3rem;
+
+
+
+
+/* TABLET */
+$tablet-b: 1000px;
+
+/* desktop */
+$desktop-b: 1200px;
+
+/* max/min width */
+$max-width-1: 1200px; 
+$max-width-2: 2000px;
+
+/* container paddings */
+$box-prl-desktop: 6rem;
+$box-prl-tablet:  2rem;
+$box-prl-mobile:  2rem;
+
+// $box-ptb-desktop: 2rem; 
+// $box-prl-tablet:  1.5rem;
+// $box-prl-mobile: 1rem;
+
+
+/* mixins */
+
+@mixin horizFrame($gap: 1rem, $padding: 0) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: $gap;
+  padding: $padding;
+}
+
+@mixin verticFrame($gap: 1rem, $p: 0) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+  padding: $p;
+}
+
+@mixin centerFrame() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin alignFrame($gap: .5rem) {
+  display: flex;
+  align-items: center;
+  gap: $gap;
+}
+
+//===================================================
+
+/* typography */
+@mixin typo-head-90($font-s: 2rem, $font-w: 500, $line-h: 2rem) {
+  font-size: $font-s;
+  font-weight: $font-w;
+  line-height: $line-h;
+}
+
+@mixin typo-head-100($font-s: 2.4rem, $font-w: 400, $line-h: 3rem) {
+  font-size: $font-s;
+  font-weight: $font-w;
+  line-height: $line-h;
+}
+
+
+@mixin typo-body-100($font-s: 1rem, $font-w: 400, $line-h: 1.5rem) {
+  font-size: $font-s;
+  font-weight: $font-w;
+  line-height: $line-h;
+}
+
+@mixin typo-body-120($font-s: 1.2rem, $font-w: 400, $line-h: 1.4rem) {
+  font-size: $font-s;
+  font-weight: $font-w;
+  line-height: $line-h;
+}
+
+@mixin typo-btn-200($font-s: 1.2rem, $font-w: 700, $line-h: 1.5rem) {
+  font-size: $font-s;
+  font-weight: $font-w;
+  line-height: $line-h;
+}
+
+/* font sizes */
+
+@mixin typo-190-50($font-s: .8rem, $font-w: 500, $line-h: 1.4rem, $l-spacing: 0em) {
+  font-size: $font-s;
+  font-weight: $font-w;
+  line-height: $line-h;
+  letter-spacing: $l-spacing;
+}
+
+@mixin typo-200($font-s: 1rem, $font-w: 400, $line-h: 1.6rem, $l-spacing: 0em) {
+  font-size: $font-s;
+  font-weight: $font-w;
+  line-height: $line-h;
+  letter-spacing: $l-spacing;
+}
+
+@mixin typo-200-50($font-s: 1rem, $font-w: 700, $line-h: 1.6rem, $l-spacing: 0em) {
+  font-size: $font-s;
+  font-weight: $font-w;
+  line-height: $line-h;
+  letter-spacing: $l-spacing;
+}
+
+@mixin typo-220($font-s: 1.2rem, $font-w: 600, $line-h: 1.6rem, $l-spacing: 0em) {
+  font-size: $font-s;
+  font-weight: $font-w;
+  line-height: $line-h;
+  letter-spacing: $l-spacing;
+}
+
+@mixin typo-230-50($font-s: 1.4rem, $font-w: 500, $line-h: 2rem, $l-spacing: 0em) {
+  font-size: $font-s;
+  font-weight: $font-w;
+  line-height: $line-h;
+  letter-spacing: $l-spacing;
+}
+@mixin typo-230-60($font-s: 1.4rem, $font-w: 600, $line-h: 2rem, $l-spacing: 0em) {
+  font-size: $font-s;
+  font-weight: $font-w;
+  line-height: $line-h;
+  letter-spacing: $l-spacing;
+}
+
+@mixin typo-240-70($font-s: 1.6rem, $font-w: 700, $line-h: 2.4rem, $l-spacing: 0em) {
+  font-size: $font-s;
+  font-weight: $font-w;
+  line-height: $line-h;
+  letter-spacing: $l-spacing;
+}
+
+@mixin typo-260-60($font-s: 2rem, $font-w: 600, $line-h: 3.8rem, $l-spacing: 0em) {
+  font-size: $font-s;
+  font-weight: $font-w;
+  line-height: $line-h;
+  letter-spacing: $l-spacing;
+}
+
+@mixin typo-270-70($font-s: 2.4rem, $font-w: 700, $line-h: 4rem, $l-spacing: 0em) {
+  font-size: $font-s;
+  font-weight: $font-w;
+  line-height: $line-h;
+  letter-spacing: $l-spacing;
+}
+
+@mixin typo-280-70($font-s: 3.2rem, $font-w: 700, $line-h: 5rem, $l-spacing: 0em) {
+  font-size: $font-s;
+  font-weight: $font-w;
+  line-height: $line-h;
+  letter-spacing: $l-spacing;
+}
+
+
+
+
+
+/* font family */
+$font-pri: NotoSansArabicMedium;
+$font-sec: 'MjDinar';
+
+/* icon sizes */
+
+$icon-60: 12px;
+$icon-70: 16px;
+$icon-75: 18px;
+$icon-90: 22px;
+$icon-100: 24px;
+$icon-120: 40px;
+
+
+// =============================================================
+
+// desktop
+
+@mixin logo-size-d($w: 100px, $h: auto) {
+  width: $w !important;
+  height: $h !important;
+}
+@mixin logo-size-m($w: 92px, $h: auto) {
+  width: $w;
+  height: $h;
+}
+
+@mixin typo-56-400($font-s: 5.6rem, $font-w: 400, $line-h: 8rem, $l-spacing: 0em) {
+  font-size: $font-s;
+  font-weight: $font-w;
+  line-height: $line-h;
+  letter-spacing: $l-spacing;
+}
+
+@mixin typo-24-400($font-s: 2.4rem, $font-w: 400, $line-h: 4rem, $l-spacing: 0em) {
+  font-size: $font-s;
+  font-weight: $font-w;
+  line-height: $line-h;
+  letter-spacing: $l-spacing;
+}
+
+@mixin typo-20-400($font-s: 2rem, $font-w: 400, $line-h: 3.2rem, $l-spacing: 0em) {
+  font-size: $font-s;
+  font-weight: $font-w;
+  line-height: $line-h;
+  letter-spacing: $l-spacing;
+}
+
+@mixin typo-19-700($font-s: 1.9rem, $font-w: 700, $line-h: 4rem, $l-spacing: 0em) {
+  font-size: $font-s;
+  font-weight: $font-w;
+  line-height: $line-h;
+  letter-spacing: $l-spacing;
+}
+
+@mixin typo-19-400($font-s: 1.9rem, $font-w: 400, $line-h: 4rem, $l-spacing: 0em) {
+  font-size: $font-s;
+  font-weight: $font-w;
+  line-height: $line-h;
+  letter-spacing: $l-spacing;
+}
+
+@mixin typo-16-700($font-s: 1.6rem, $font-w: 700, $line-h: 3.4rem, $l-spacing: 0em) {
+  font-size: $font-s;
+  font-weight: $font-w;
+  line-height: $line-h;
+  letter-spacing: $l-spacing;
+}
+
+@mixin typo-15-700($font-s: 1.5rem, $font-w: 700, $line-h: 3.2rem, $l-spacing: 0em) {
+  font-size: $font-s;
+  font-weight: $font-w;
+  line-height: $line-h;
+  letter-spacing: $l-spacing;
+}
+
+@mixin typo-14-700($font-s: 1.4rem, $font-w: 700, $line-h: 3rem, $l-spacing: 0em) {
+  font-size: $font-s;
+  font-weight: $font-w;
+  line-height: $line-h;
+  letter-spacing: $l-spacing;
+}
+
+@mixin typo-14-400($font-s: 1.4rem, $font-w: 400, $line-h: 3rem, $l-spacing: 0em) {
+  font-size: $font-s;
+  font-weight: $font-w;
+  line-height: $line-h;
+  letter-spacing: $l-spacing;
+}
+
+
+@mixin typo-12-400($font-s: 1.2rem, $font-w: 400, $line-h: 2.6rem, $l-spacing: 0em) {
+  font-size: $font-s;
+  font-weight: $font-w;
+  line-height: $line-h;
+  letter-spacing: $l-spacing;
+}
+
+@mixin typo-12-700($font-s: 1.2rem, $font-w: 700, $line-h: 2.6rem, $l-spacing: 0em) {
+  font-size: $font-s;
+  font-weight: $font-w;
+  line-height: $line-h;
+  letter-spacing: $l-spacing;
+}
+
+@mixin typo-11-400($font-s: 1.1rem, $font-w: 400, $line-h: 2.3rem, $l-spacing: 0em) {
+  font-size: $font-s;
+  font-weight: $font-w;
+  line-height: $line-h;
+  letter-spacing: $l-spacing;
+}
+
+@mixin typo-11-700($font-s: 1.1rem, $font-w: 700, $line-h: 2.3rem, $l-spacing: 0em) {
+  font-size: $font-s;
+  font-weight: $font-w;
+  line-height: $line-h;
+  letter-spacing: $l-spacing;
+}
+
+@mixin typo-10($font-s: 1rem, $font-w: 400, $line-h: 2rem, $l-spacing: 0em) {
+  font-size: $font-s;
+  font-weight: $font-w;
+  line-height: $line-h;
+  letter-spacing: $l-spacing;
+}
+@mixin typo-10-400($font-s: 1rem, $font-w: 400, $line-h: 2rem, $l-spacing: 0em) {
+  font-size: $font-s;
+  font-weight: $font-w;
+  line-height: $line-h;
+  letter-spacing: $l-spacing;
+}
+@mixin typo-10-700($font-s: 1rem, $font-w: 700, $line-h: 2rem, $l-spacing: 0em) {
+  font-size: $font-s;
+  font-weight: $font-w;
+  line-height: $line-h;
+  letter-spacing: $l-spacing;
+}
+
+@mixin typo-9-400($font-s: .9rem, $font-w: 400, $line-h: 1.9rem, $l-spacing: 0em) {
+  font-size: $font-s;
+  font-weight: $font-w;
+  line-height: $line-h;
+  letter-spacing: $l-spacing;
+}
+
+@mixin typo-8-400($font-s: .8rem, $font-w: 400, $line-h: 1.9rem, $l-spacing: 0em) {
+  font-size: $font-s;
+  font-weight: $font-w;
+  line-height: $line-h;
+  letter-spacing: $l-spacing;
+}
+
+
+//# icons:
+
+$ico-12: 12px !important;
+$ico-14: 14px !important;
+$ico-15: 15px !important;
+$ico-16: 16px !important;
+$ico-18: 18px !important;
+$ico-20: 20px !important;
+$ico-24: 24px !important;
+$ico-30: 30px !important;
+$ico-40: 40px !important;
+$ico-56: 56px !important;
+
+$pad-lr: 20px;
+$pad-lr-m: 16px;
+
+//# mobile
+
+
+@mixin typo-8-400($font-s: .8rem, $font-w: 400, $line-h: 1.9rem, $l-spacing: 0em) {
+  font-size: $font-s;
+  font-weight: $font-w;
+  line-height: $line-h;
+  letter-spacing: $l-spacing;
+}
+
+@mixin typo-8_8-400($font-s: .88rem, $font-w: 400, $line-h: 1.9rem, $l-spacing: 0em) {
+  font-size: $font-s;
+  font-weight: $font-w;
+  line-height: $line-h;
+  letter-spacing: $l-spacing;
+}
+
+@mixin typo-9_6-400($font-s: .96rem, $font-w: 400, $line-h: 2rem, $l-spacing: 0em) {
+  font-size: $font-s;
+  font-weight: $font-w;
+  line-height: $line-h;
+  letter-spacing: $l-spacing;
+}
+
+@mixin typo-9_6-700($font-s: .96rem, $font-w: 700, $line-h: 2rem, $l-spacing: 0em) {
+  font-size: $font-s;
+  font-weight: $font-w;
+  line-height: $line-h;
+  letter-spacing: $l-spacing;
+}
+
+@mixin typo-10_4-400($font-s: 1.04rem, $font-w: 700, $line-h: 22rem, $l-spacing: 0em) {
+  font-size: $font-s;
+  font-weight: $font-w;
+  line-height: $line-h;
+  letter-spacing: $l-spacing;
+}
+
+// @mixin typo-11-700($font-s: .88rem, $font-w: 700, $line-h: 2.4rem, $l-spacing: 0em) {
+//   font-size: $font-s;
+//   font-weight: $font-w;
+//   line-height: $line-h;
+//   letter-spacing: $l-spacing;
+// }
+
+//# 12.8px 700 27
+@mixin typo-13-700($font-s: 1.3rem, $font-w: 700, $line-h: 2.7rem, $l-spacing: 0em) {
+  font-size: $font-s;
+  font-weight: $font-w;
+  line-height: $line-h;
+  letter-spacing: $l-spacing;
+}
+
+/* my svg icons */
+@mixin svg-16($w: 16px, $h: 16px) {
+  width: $w !important;
+  height: $h !important;
+}
+@mixin svg-18($w: 18px, $h: 18px) {
+  width: $w !important;
+  height: $h !important;
+}
+@mixin svg-20($w: 20px, $h: 20px) {
+  width: $w !important;
+  height: $h !important;
+}
+@mixin svg-24($w: 24px, $h: 24px) {
+  width: $w !important;
+  height: $h !important;
+}
+
+$mob-row-gap: 1rem;
+$mob-col-gap: 1rem;
+$mob-pad-tb: 1rem;
+
+$pad-tb-m: 1rem;
+
+$pad-100: 1rem; 
+$pad-105: 1.6rem;
+
+/* paddings top bottom */
+$pad-tb-90: .8rem;
+$pad-tb-100: 1rem; 
+$pad-tb-105: 1.6rem;
+$pad-tb-110: 2rem;
+$pad-tb-115: 3rem;
+$pad-tb-120: 4rem;
+$pad-tb-130: 6rem;
+
+/* padding left */
+$pad-lr-100: 1rem;
+$pad-lr-105: 1.2rem;
+
+
+
+
+$row-gap-m: 1rem;
+$col-gap-m: 1rem;
+
+$row-gap-100: 1rem;
+$row-gap-150: 2rem;
+
+/* Break-points */
+
+/* MOBILE */
+
+$mobile-b-80: 500px;
+$mobile-b-90: 600px;
+$mobile-b: 800px;
+$tablet-b-110: 900px;
+$tablet-b-120: 1000px;
+$desk-b-130: 1200px;
+$desk-b-140: 1300px;
+
+

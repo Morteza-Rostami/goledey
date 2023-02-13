@@ -1,0 +1,50 @@
+@import '../../../CONSTANTS/Variables.scss';
+
+.header {
+  @include horizFrame();
+  background-color: $off-white;
+  min-height: 40px;
+  .inner {
+    @include horizFrame();
+    width: 100%;
+    padding: 1.2rem;
+    .box1 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  
+      .link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .close {
+          background-color: $primary-100;
+
+          .ico {
+            
+          }
+        }
+      }
+    }
+    .box2 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .cart {
+        
+        .ico {
+          font-size: $icon-75;
+        }
+      }
+    }
+    
+    .ico {
+      font-size: $icon-70;
+      color: $primary-250;
+
+
+    }
+  }
+}

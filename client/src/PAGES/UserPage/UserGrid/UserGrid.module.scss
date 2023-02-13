@@ -1,0 +1,57 @@
+@import '../../../CONSTANTS/Variables.scss';
+
+.user__grid {
+
+  .inner {
+    padding: 0 $pad-lr-m;
+    .grid {
+
+      display: grid;
+      grid-template-columns: 1fr;
+
+      grid-template-areas: 
+        'main'
+      ;
+
+      .nav {
+        grid-area: nav;
+      }
+
+      .main {
+        grid-area: main;
+      }
+
+    }
+  }
+}
+
+/* ********************** tablet ********************** */
+
+@media only screen and (min-width: $mobile-b) {
+
+  .user__grid {
+
+    .inner {
+      padding: 0 $pad-lr;
+      .grid {
+  
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-column-gap: 2rem;
+  
+        grid-template-areas: 
+          'nav main'
+        ;
+  
+        .nav {
+
+        }
+  
+        .main {
+
+        }
+  
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+
+.filter {
+  /* border: 1px solid var(--grey); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* flex: 1; */
+}
+
+.open_btn {
+  font-size: var(--font-100);
+  font-weight: var(--font-w-300);
+}
+
+.open_btn svg {
+  width: 1.4rem;
+  height: 1.4rem;
+}

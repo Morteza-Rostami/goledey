@@ -1,0 +1,15 @@
+@import '../../CONSTANTS/Variables.scss';
+
+.product__page {
+  @include verticFrame($gap: $row-gap-m);
+  margin-bottom: 73px;
+}
+
+
+/* ********************** tablet ********************** */
+
+@media only screen and (min-width: $mobile-b) {
+  .product__page {
+    margin-bottom: 0px;
+  }
+}

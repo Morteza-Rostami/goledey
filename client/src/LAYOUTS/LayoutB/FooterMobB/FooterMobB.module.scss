@@ -1,0 +1,80 @@
+@import '../../../CONSTANTS/Variables.scss';
+
+
+/* ********************** MOBILE ********************** */
+
+.footer {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: $light-100  ;
+  width: 100%;
+  max-height: 62px;
+  .inner {
+    @include horizFrame();
+    width: 100%;
+    padding: 1rem;
+    .sec_1 {
+      @include verticFrame($gap: 0);
+
+      .price {
+        @include alignFrame();
+        span {
+          @include typo-240-70;
+          color: $title-active;
+        }
+        svg {
+
+          width: $icon-60;
+          path {
+            fill: $title-active;
+          }
+        }
+
+       
+      }
+
+      .subtext {
+        @include alignFrame();
+        span {
+          @include typo-190-50;
+          color: $text-label;
+        }
+
+        .ico {
+          color: $primary-250;
+          font-size: $icon-60;
+        }
+      }
+    }
+
+    .sec_2 {
+      @include horizFrame();
+
+      .add_btn {
+        box-shadow: 1px 1px 8px 4px rgba(16, 17, 16, 0.2);
+        border: none;
+        outline: none;
+        padding: 1rem 3.6rem;
+        background: $secondary-300;
+        color: $off-white;
+        @include typo-230-60;
+      }
+
+    }
+  }
+}
+
+
+
+/* ********************** tablet/desktop ********************** */
+
+@media only screen and (min-width: $mobile-b) {
+
+  .footer {
+    
+  }
+
+}

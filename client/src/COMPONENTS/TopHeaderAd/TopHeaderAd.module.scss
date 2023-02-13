@@ -1,0 +1,94 @@
+@import '../../CONSTANTS/Variables.scss';
+
+.ad {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  // height: 100px;
+  //border-radius: .4rem;
+
+  height: 40px;
+  width: 100%;
+
+  // width:100%;
+  // max-height: 44px;
+  // min-height: 40px;
+  // height:0;
+  // padding-top: 4.2%;
+
+  overflow: hidden;
+  position: relative;
+
+  // img {
+  //   max-width: 100%;
+  //   object-fit: contain;
+  //   position: relative;
+  //   overflow: hidden;
+  // }
+}
+
+
+/* .ad {
+  background-color: $primary-250;
+  color: $off-white;
+  .inner {
+    @include centerFrame();
+    padding: .4rem $pad-lr-m;
+    width: 100%;
+    
+    @include typo-10;
+    .box_2 {
+      @include horizFrame();
+      display: none;
+    }
+
+    .box_1 {
+      @include horizFrame($gap: .5rem);
+      display: none;
+      .ico {
+        font-size: $ico-14;
+      }
+    }
+  }
+} */
+
+/* ********************** tablet ********************** */
+
+@media only screen and (min-width: $mobile-b) {
+
+  .ad {
+    height: 60px;
+
+  }
+
+
+  /* .ad {
+    @include horizFrame();
+    .inner {
+      @include horizFrame();
+     
+      padding: .4rem $pad-lr;
+
+      .box_2 {
+        display: flex;
+        span {
+          @include typo-12-400;
+        }
+      }
+
+      .box_m {
+        p {
+          @include typo-12-400;
+        }
+      }
+  
+      .box_1 {
+        display: flex;
+        .ico {
+          color: $off-white;
+          font-size: $ico-20;
+        }
+      }
+    }
+  } */
+}

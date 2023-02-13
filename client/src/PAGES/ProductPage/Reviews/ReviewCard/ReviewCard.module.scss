@@ -1,0 +1,173 @@
+@import '../../../../CONSTANTS/Variables.scss';
+
+.review_card {
+  @include horizFrame();
+  background-color: $off-white;
+  // border-radius: .5rem;
+  // width: 100%;
+  padding: 1.4rem;
+  // min-height: 18rem;
+  // justify-content: space-between;
+  border-top: .1rem solid $primary-250;
+  border-bottom: .1rem solid $primary-250;
+
+  .sec1 {
+    display: flex;
+    align-items: flex-start;
+    height: 100%;
+
+    .ico {
+      font-size: $icon-100;
+      color: $primary-250;
+    }
+  }
+
+  .sec2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    width: 100%;
+    .usercontent {
+      width: 100%;
+
+      .head {
+        @include horizFrame();
+        width: 100%;
+        .user {
+          @include verticFrame($gap: .3rem);
+    
+          .name {
+            color: $text-label;
+
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.6rem;
+            letter-spacing: 0em;
+            text-align: right;
+
+          }
+    
+          .date {
+            margin: 0;
+            color: $text-placehoder;
+       
+            font-size: .8rem;
+            font-weight: 500;
+            line-height: 1.4rem;
+            letter-spacing: 0em;
+            text-align: left;
+
+          }
+        } /* user */
+        
+        .rating {
+          @include centerFrame();
+        }
+      }
+    
+      .content {
+        color: $text-body;
+
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.6rem;
+        letter-spacing: 0em;
+        text-align: right;
+
+      }
+    }
+  
+    .action {
+      @include horizFrame();
+      .more {
+        @include alignFrame();
+  
+        .btn {
+
+          .ico {
+            color: $primary-250;
+          }
+
+          span {
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.6rem;
+            letter-spacing: 0em;
+            text-align: right;
+            color: $primary-250;
+
+          }
+        }
+      }
+  
+    }
+  } 
+}
+
+/* ********************** tablet ********************** */
+
+@media only screen and (min-width: $mobile-b) {
+  .review_card {
+    border: .1rem solid $primary-250;
+    border-radius: 1rem;
+    flex: 1;
+  
+    .sec1 {
+      
+      
+      .ico {
+      }
+    }
+  
+    .sec2 {
+     
+      .usercontent {
+        .head {
+          .user {
+      
+            .name {
+              @include typo-11-400;
+  
+            }
+      
+            .date {
+              @include typo-11-400;
+            
+  
+            }
+          } /* user */
+          
+          .rating {
+            svg {
+              font-size: $ico-20;
+            }
+          }
+        }
+      
+        .content {
+          
+          @include typo-14-400;
+        }
+      }
+    
+      .action {
+        .more {
+    
+          .btn {
+            
+            .ico {
+              font-size: $ico-18;
+            }
+  
+            span {
+              @include typo-12-700;
+  
+            }
+          }
+        }
+    
+      }
+    } 
+  }
+}

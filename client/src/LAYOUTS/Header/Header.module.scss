@@ -1,0 +1,124 @@
+@import '../../CONSTANTS/Variables.scss';
+
+/* ********************** MOBILE ********************** */
+
+/* 
+max-width: 280px -> anything less than 280px
+min-width: 280px -> more than 280px
+
+*/
+
+.header {
+  @include horizFrame();
+  border-bottom: 1px solid #DDD;
+  background-color: $off-white;
+  //box-shadow: 0px 1px 5px -2px rgba(16, 17, 16, 0.1);
+  .inner {
+    @include horizFrame();
+    width: 100%;
+    width: 100%;
+    padding: $pad-tb-m $pad-lr-m;
+
+
+    .box_1 {
+      @include horizFrame();
+      .logo_a {
+        display: flex;
+
+        svg {
+          @include logo-size-m;
+
+          path {
+          @include logo-size-m;
+          
+          }
+        }
+        .logo {
+          @include logo-size-m;
+        }
+      }
+    }
+
+    .search {
+      flex: 1;
+    }
+  
+    .box_2 {
+      display: none ;
+  
+      .user_open {
+      }
+  
+      .menu_child {
+      }
+  
+      .cart {
+      }
+    }
+  }
+
+  
+}
+
+
+/* ********************** TABLET ********************** */
+
+@media only screen and (min-width: $mobile-b) {
+  .header {
+    @include horizFrame();
+    border-bottom: 1px solid #DDD;
+    background-color: $off-white;
+    //box-shadow: 0px 1px 5px -2px rgba(16, 17, 16, 0.1);
+    .inner {
+      @include horizFrame();
+      width: 100%;
+      width: 100%;
+      padding: 1.2rem $pad-lr;
+  
+      .ico {
+        font-size: $ico-24;
+        color: $primary-250;
+      }
+      .box_1 {
+        @include horizFrame();
+        .logo_a {
+          //display: flex;
+          
+          svg {
+            //@include logo-size-d;
+            width: 93px;
+            height: auto;
+            path {
+            //@include logo-size-d;
+            
+            }
+          }
+       
+        }
+      }
+  
+      .search {
+        /* default values */
+        flex: 0 1 auto;
+      }
+    
+      .box_2 {
+        @include alignFrame($gap: 2.4rem);
+        
+        .user_open {
+        }
+    
+        .menu_child {
+        }
+    
+        .cart {
+          border-right: .1rem solid $line;
+          padding-right: 1.2rem;
+        }
+      }
+    }
+  
+    
+  }
+}
+

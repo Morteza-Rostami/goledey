@@ -1,0 +1,78 @@
+@import '../../../CONSTANTS/Variables.scss';
+
+
+/* ********************** mobile ********************** */
+
+
+.tcard_one {
+  @include verticFrame($gap: 0);
+  position: relative;
+  min-width: 100px;
+  height: auto;
+
+  // top-left, top-right, bottom-l, bottom-r
+  border-radius: .5rem .5rem 1rem 1rem;
+  overflow: hidden;
+
+  .img__box {
+    height: 0;
+    overflow: hidden;
+    padding-top: 100%;
+    position: relative;
+
+    .skelet {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .overlay {
+    @include centerFrame();
+    gap: .5rem;
+    background-color: $primary-250;
+    padding: .5rem 0;
+    color: $off-white;
+
+    p {
+      @include typo-10;
+      line-height: 0;
+      color: $off-white;
+    }
+
+    svg {
+      width: $ico-12;
+      height: $ico-12;
+      path {
+        fill: $off-white;
+      }
+    }
+  }
+
+  img {
+    max-width: 100%;
+    object-fit: cover;
+    aspect-ratio: 2 / 2;
+  }
+}
+
+/* ********************** tablet ********************** */
+
+@media only screen and (min-width: $mobile-b) {
+
+  .tcard_one {
+
+    .overlay {
+      p {
+        @include typo-16-700;
+      }
+      svg {
+        width: $ico-16;
+        height: $ico-16;
+      }
+    }
+  }
+
+}

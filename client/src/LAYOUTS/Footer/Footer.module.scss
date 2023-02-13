@@ -1,0 +1,172 @@
+
+@import '../../CONSTANTS/Variables.scss';
+
+
+/* ********************** mobile ********************** */
+
+
+.footer {
+  @include horizFrame();
+  background-color: $bg;
+  text-align: center;
+  background-color: $off-white;
+  //margin-top: $pad-tb-110;
+
+  margin-top: auto;
+
+  .inner {
+    //@include verticFrame($gap: 1.7rem);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    // grid-template-rows: auto;
+    grid-gap: $row-gap-150;
+
+    direction: rtl;
+    grid-template-areas: 
+      'text text'
+      'icon logo';
+    ;
+
+    padding: 1rem $pad-lr-m;
+
+    .box_1 {
+      @include centerFrame();
+      
+      grid-area: text;
+      
+      p {
+        @include horizFrame();
+        svg {
+          @include svg-24;
+        }
+        .txt {
+          @include typo-11-400;
+          line-height: 0;
+          color: $text-body;
+  
+        }
+  
+        .num {
+          color: $primary-250;
+          @include typo-12-700;
+          line-height: 0;
+          height: 0;
+          padding-top: 3.1%;
+        }
+
+      }
+    }
+  
+    .box_2 {
+      @include centerFrame();
+      justify-content: space-between;
+
+      grid-area: icon;
+
+      .medias {
+        // color: $primary-250;
+        @include horizFrame();
+
+        svg {
+          @include svg-24;
+        }
+        .ico {
+          font-size: 17.4px;
+          color: $primary-250;
+        }
+
+        .whats {
+          font-size: 20px;
+        }
+
+        .insta {
+          font-size: 19px;
+        }
+        
+      }
+  
+      
+    }
+
+    .logobox {
+      @include horizFrame();
+      justify-content: flex-end;
+
+      grid-area: logo;
+
+      a {
+        @include centerFrame();
+        
+        svg {
+          @include logo-size-m;
+          
+        }
+      }
+    }
+
+  }
+}
+
+/* ********************** tablet ********************** */
+
+@media only screen and (min-width: $mobile-b) {
+  .footer {
+    //margin-top: $pad-tb-130;
+    .inner {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 3rem $pad-lr;
+      grid-template-columns: repeat(3, 1fr);
+
+      grid-template-areas: 
+      'logo icon text';
+    
+      .box_1 {
+        @include alignFrame();
+        justify-content: flex-end;
+        @include typo-14-400;
+        color: $text-body;
+        p {
+          @include alignFrame($gap: 1rem);
+
+          .num {
+            @include typo-14-700;
+            padding-top: 3%;
+            line-height: 0;
+          }
+        }
+      }
+
+      .box_2 {
+        gap: 3rem;
+        justify-content: center;
+
+        .medias {
+          gap: 5rem;
+          .ico {
+            font-size: 24px;
+          }
+  
+          .whats {
+            font-size: 26px;
+          }
+  
+          // .insta {
+          //   font-size: 19px;
+          // }
+          
+        }
+
+        
+      }
+
+      .logobox {
+        justify-content: start;
+        svg {
+          @include logo-size-d;
+        }
+      }
+    }
+  }
+}
+

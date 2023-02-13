@@ -1,0 +1,19 @@
+@import '../../../CONSTANTS/Variables.scss';
+
+.sub_menu {
+  background-color: $off-white;
+  .inner {
+    padding: 0 $pad-lr-m;
+    
+  }
+}
+
+/* ********************** tablet ********************** */
+
+@media only screen and (min-width: $mobile-b) {
+  .sub_menu {
+    .inner {
+      padding: 0 $pad-lr;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+@import '../../CONSTANTS/Variables.scss';
+
+
+/* ********************** MOBILE ********************** */
+
+@media only screen and (max-width: $mobile-b) {
+  .mobnav {
+    
+    
+  }
+
+}
+
+
+/* ********************** tablet/desktop ********************** */
+
+@media only screen and (min-width: $mobile-b) {
+
+  .mobnav {
+    display: none;
+  }
+
+}

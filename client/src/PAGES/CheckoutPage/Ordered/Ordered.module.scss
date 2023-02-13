@@ -1,0 +1,47 @@
+@import '../../../CONSTANTS/Variables.scss';
+
+
+.ordered {
+  @include verticFrame();
+  background-color: $off-white;
+  padding: 1rem $pad-lr-m;
+
+  img {
+    max-width: 100%;
+    object-fit: cover;
+    aspect-ratio: 2 / 2;
+    border-radius: .4rem;
+    max-width: 90px;
+  }
+
+  .head {
+    @include alignFrame();
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .text {
+      @include typo-14-700;
+      color: $text-body;
+    }
+
+    .count {
+      @include centerFrame();
+      @include typo-10-400;
+      padding: 0rem .8rem;
+      color: $off-white;
+      background-color: $text-placehoder;
+      border-radius: 1rem;
+    }
+  }
+}
+
+/* ********************** tablet ********************** */
+
+@media only screen and (min-width: $mobile-b) {
+  .ordered {
+    border-radius: .8rem;
+  }
+}

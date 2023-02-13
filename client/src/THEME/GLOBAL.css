@@ -1,0 +1,370 @@
+p, h1, h2, h3, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+.ranks .swiper {
+  padding: 1rem 1rem !important; 
+}
+
+
+/* ********************** tablet ********************** */
+
+@media only screen and (min-width: 800px) {
+  .ranks .swiper {
+    border-radius: 1rem !important;
+  }
+}
+
+.cattabs .MuiButtonBase-root {
+  font-family: NotoSansArabicMedium, 'Noto Sans Arabic';
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.MuiDataGrid-columnHeader, .MuiDataGrid-row, .MuiDataGrid-root {
+  font-family: NotoSansArabicMedium, 'Noto Sans Arabic';
+}
+
+.rs-table, .rs-form {
+  font-family: NotoSansArabicMedium, 'Noto Sans Arabic' !important;
+  
+}
+
+.cattabs .MuiTabs-root {
+  width: 100% !important;
+}
+
+.submenu .MuiAccordionDetails-root {
+  background: #F4F6F2;
+}
+
+/* pagination */
+
+.shop-pag .MuiPagination-root {
+  width: 100%;
+}
+
+.shop-pag .MuiPagination-ul {
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.shop-pag .MuiPagination-ul li button {
+  background-color: #F4F6F2;
+}
+
+.shop-pag .MuiPagination-ul li:first-child {
+  margin-left: auto;
+}
+
+.shop-pag .MuiPagination-ul li:last-child {
+  margin-right: auto;
+}
+
+/* slick carousel */
+
+.picmob .slick-dots {
+  position: absolute;
+  bottom: 0;
+}
+
+.picmob .slick-active .dot {
+  background-color: #87BF7B !important;
+}
+
+/* mobile header badge */
+
+.product-header .MuiBadge-badge {
+  width: 14px !important;
+  min-width: 14px;
+  height: 14px;
+  padding: 8px;
+  background-color: #D92B3E;
+  color: #F4F6F2;
+}
+
+/* mui button */
+.MuiButtonBase-root {
+  font-family: NotoSansArabicMedium, 'Noto Sans Arabic' !important;
+}
+
+/* mui bread crumb */
+.MuiBreadcrumbs-li, .MuiBreadcrumbs-separator {
+  font-family: NotoSansArabicMedium, 'Noto Sans Arabic' !important;
+}
+
+/* mui star */
+.MuiBox-root {
+  line-height: 0 !important;
+}
+
+/* swiper: related cards => productPage */
+/* .related .swiper-wrapper {
+  padding-right: 1rem;
+} */
+
+/* ********************** tablet ********************** */
+
+/* @media only screen and (min-width: 800px) {
+  .related .swiper-wrapper {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }  
+} */
+
+/* siper: product pictures */
+.pic-dec .swiper {
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+
+/* .pic-dec {
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+} */
+
+/* start rating =: productPage */
+/* .leave-rate .MuiRating-root {
+  gap: 3rem;
+} */
+
+
+/* catTabs */
+/* .cattabs .MuiTabs-scroller {
+  min-height: 0 !important;
+  padding: 0 !important;
+  height: fit-content !important;
+} */
+
+.cattabs .MuiTabs-flexContainer {
+  height: 100%;
+}
+
+/* subMenu tabs: accardion */
+.submenu .MuiAccordionDetails-root {
+  padding: 0 !important;
+}
+
+.submenu .MuiTabs-flexContainer {
+  justify-content: flex-start !important;
+}
+
+/* container */
+.center-contain {
+  display: flex;
+  justify-content: center !important;
+}
+.contain {
+  max-width: 1500px;
+  width: 100%;
+}
+
+.contain-2 {
+  max-width: 1120px;
+  width: 100%;
+}
+
+/* mui pagination buttons */
+.shop-pag .MuiButtonBase-root {
+  font-size: 11px !important;
+  
+}
+.shop-pag .MuiButtonBase-root svg {
+  font-size: 20px !important;
+}
+
+/* notistack snackbar */
+.SnackbarContent-root , .SnackbarItem-contentRoot{
+  font-size: 10px !important;
+  padding: .5rem !important;
+}
+
+
+/* ********************** tablet ********************** */
+
+@media only screen and (min-width: 800px) {
+  .SnackbarContent-root {
+    justify-content: space-between !important;
+    font-family: NotoSansArabicMedium, 'Noto Sans Arabic' !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    /* padding: .5rem 1rem !important; */
+  }
+  
+}
+
+.SnackbarItem-action {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+/* steper in register form */
+
+.register .MuiMobileStepper-dot {
+  background-color: var(--text-placeholder);
+}
+.register	.MuiMobileStepper-dotActive {
+  background-color: var(--primary-250);
+}
+
+
+/* register dialog */
+.register-modal .MuiDialogContent-root {
+  padding: 0 !important;
+  font-family: NotoSansArabicMedium, 'Noto Sans Arabic' !important;
+
+}
+
+.register-modal .MuiPaper-root {
+  margin: 0 !important;
+}
+
+/* users/orders page */
+.status-tabs .MuiTabs-flexContainer {
+  justify-content: space-between;
+}
+
+
+/* address form */
+.locform .MuiFormControl-root {
+  width: 100% !important;
+  margin: 0;
+}
+
+.locform .MuiSelect-select {
+  font-size: 12px;
+  font-weight: 400;
+  font-family: NotoSansArabicMedium, 'Noto Sans Arabic' !important;
+  text-align: right;
+  background-color: var(--off-white);
+  border-radius: .4rem;
+}
+
+.locform .MuiInputBase-input {
+  font-size: 12px;
+  font-weight: 400;
+  font-family: NotoSansArabicMedium, 'Noto Sans Arabic' !important;
+  text-align: right;
+}
+
+.locform .MuiFormLabel-root {
+  font-size: 12px;
+  font-weight: 400;
+  font-family: NotoSansArabicMedium, 'Noto Sans Arabic' !important;
+}
+
+/* settings form */
+.settings-form .MuiInputBase-input {
+  font-size: 12px;
+  font-weight: 400;
+  font-family: NotoSansArabicMedium, 'Noto Sans Arabic' !important;
+  text-align: right;
+  background-color: var(--off-white);
+  border-radius: .4rem;
+}
+
+.settings-form .MuiFormLabel-root {
+  font-size: 12px;
+  font-weight: 400;
+  font-family: NotoSansArabicMedium, 'Noto Sans Arabic' !important;
+}
+
+/* headerCart badge */
+.header-cart .MuiBadge-badge {
+  position: relative !important;
+  top: auto !important;
+  bottom: auto !important;
+  right: auto;
+  left: auto;
+  transform: none;
+  transform-origin: 0;
+  font-size: 10px;
+  color: var(--off-white);
+  background-color: var(--error-150);
+}
+
+/* date picker */
+.MuiPaper-root,
+.MuiTypography-root,
+.MuiPickersCalendarHeader-label
+
+{
+  font-family: NotoSansArabicMedium, 'Noto Sans Arabic' !important;
+
+}
+
+.checkout-date .MuiPickersToolbar-penIconButton ,
+.checkout-date .MuiPickersArrowSwitcher-root {
+  display: none;
+}
+
+/* .checkout-date .MuiPickersToolbar-root */
+
+.checkout-date .MuiPickersCalendarHeader-label {
+  font-size: 12px;
+  font-weight: 400;
+
+}
+
+.checkout-date .MuiDayPicker-weekDayLabel {
+  font-size: 10px;
+}
+
+.checkout-date .MuiPickersDay-root {
+  font-size: 12px;
+}
+
+.checkout-date .MuiButton-textPrimary {
+  color: var(--primary-250);
+  border: .1rem solid var(--primary-250);
+  border-radius: .4rem;
+  background-color: var(--primary-250) !important;
+}
+
+.checkout-date .MuiPaper-root  {
+  background-color: var(--bg) !important;
+}
+
+.checkout-date .MuiDialogActions-root {
+  display: none;
+}
+
+/* product page leave review dialog */
+/* .review-crud-dialog .MuiDialog-paper {
+  padding: 2rem 3rem;
+} */
+
+/* editor */
+.ql-editor {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* .skelet-wrap {
+  height: 100%;
+} */
+
+/* cart page badeg */
+.cart-header .MuiBadge-badge {
+  width: 14px !important;
+  min-width: 14px;
+  height: 14px;
+  padding: 12px;
+  background-color: #D92B3E;
+  color: #F4F6F2;
+  position: static;
+  transform: none !important;
+  font-size: 14px !important;
+  font-weight: 600;
+
+}
+
+/* rsuit model */
+.rs-modal-content {
+  font-family: var(--font-main);
+}

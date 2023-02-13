@@ -1,0 +1,43 @@
+@import '../../../../CONSTANTS/Variables.scss';
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  // grid-template-rows: minmax(1fr, 300px) 100px;
+  gap: $row-gap-m;
+  grid-template-areas: 
+    'main'
+    'imgs'
+  ;
+
+  .main__img {
+    grid-area: main;
+    overflow: hidden;
+    max-height: 300px;
+    border-radius: 0.8rem;
+  }
+  .images {
+    @include horizFrame();
+    //padding: ;
+
+    grid-area: imgs;
+    overflow: hidden;
+    max-height: 100px;
+
+  }
+
+  img {
+    max-width: 100%;
+    object-fit: contain;
+    aspect-ratio: 2 / 2;
+    border-radius: .8rem;
+    //max-height: 300px;
+  }
+
+  .pic_0, .pic_1, .pic_2 {
+    height: 100%;
+    border-radius: .8rem !important;
+    border-bottom-left-radius: .8rem !important;
+    overflow: hidden;
+  } 
+}

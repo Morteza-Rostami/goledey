@@ -1,0 +1,59 @@
+
+@import '../../../CONSTANTS/Variables.scss';
+
+
+/* ********************** mobile ********************** */
+
+.cat_chips {
+  @include centerFrame();
+  background-color: $bg;
+  .inner {
+    @include alignFrame($gap: 1rem);
+    background-color: $bg;
+    padding: $pad-tb-100 $pad-lr-m;
+    padding-bottom: 0;
+    // padding-bottom: 0;
+    /* scrollable */
+    overflow-x: auto;
+    white-space: nowrap;
+    // width: 1000px;
+    justify-content: flex-start !important;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    width: 100%;
+
+    .chip {
+      background-color: $secondary-300;
+      font-size: 1.2rem;
+      font-weight: 500;
+      line-height: 1.6rem;
+      color: $off-white;
+      font-family: $font-pri;
+      margin: 0;
+      padding: .6rem 1rem;
+      border-radius: .4rem;
+    }
+  }
+}
+
+/* ********************** tablet ********************** */
+
+@media only screen and (min-width: $mobile-b) {
+  .cat_chips {
+    .inner {
+      padding: $pad-tb-110 $pad-lr;
+      padding-bottom: 0;
+     
+     
+  
+     
+  
+      .chip {
+        
+      }
+    }
+  }
+  
+}

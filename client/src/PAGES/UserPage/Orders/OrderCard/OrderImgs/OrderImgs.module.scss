@@ -1,0 +1,14 @@
+@import '../../../../../CONSTANTS/Variables.scss';
+
+.order__imgs {
+
+    
+  img {
+    max-width: 100%;
+    width: 40px;
+    min-width: 80px;
+    object-fit: cover;
+    aspect-ratio: 2 / 2;
+    border-radius: .4rem;
+  }
+}

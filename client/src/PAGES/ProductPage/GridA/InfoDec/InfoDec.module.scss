@@ -1,0 +1,111 @@
+@import '../../../../CONSTANTS/Variables.scss';
+
+.info_dec {
+  position: relative;
+  @include centerFrame();
+  align-items: flex-start;
+  justify-content: flex-end;
+
+  .card {
+    position: sticky;
+    top: 0;
+    @include verticFrame($gap: 2.4rem);
+    background: $off-white;
+    padding: 2.4rem;
+    border-radius: 1rem;
+  }
+  .in_stock {
+    @include alignFrame($gap: .8rem);
+    span {
+      @include typo-15-700;
+      line-height: 0;
+      color: $text-body;
+    }
+
+    svg {
+      width: $icon-75;
+      height: $icon-75;
+      path {
+        width: $icon-75;
+        height: $icon-75;
+      }
+    }
+  }
+
+  .car {
+    @include alignFrame($gap: .8rem);
+    span {
+      @include typo-12-700;
+      color: $text-label;
+    }
+
+    svg {
+      width: $icon-75;
+      height: $icon-75;
+      path {
+        width: $icon-75;
+        height: $icon-75;
+      }
+    }
+  }
+
+  .sec_1 {
+    @include horizFrame($gap: 7rem);
+    .price {
+      @include alignFrame();
+      span {
+        @include typo-19-700;
+        color: $title-active;    
+        
+      }
+  
+      svg {
+        width: $icon-75;
+        height: $icon-75;
+
+        path {
+          width: $icon-75;
+          height: $icon-75;
+          fill: $title-active;
+        }
+      }
+
+    }
+
+    .subtext {
+      @include alignFrame($gap: .8rem);
+      // align-items: flex-end;
+      p {
+        @include typo-12-700;
+        display: flex;
+        width: 100%;
+        // line-height: 0;
+        color: $text-label;
+        margin: 0;
+        padding: 0;
+        white-space: nowrap;
+      }
+
+      .ico {
+        font-size: $icon-60;
+        color: $primary-250;
+      }
+    }
+  }
+
+  .sec_2 {
+    @include centerFrame();
+    .add_btn {
+      @include typo-12-700;
+      width: 100%;
+      background: $secondary-300;
+      color: $off-white;
+      border: none;
+      outline: none;
+      border-radius: .8rem;
+      // box-shadow: 1px 1px 8px 4px rgba(16, 17, 16, 0.2);
+      // padding: 1rem 8rem;
+    }
+  }
+
+}

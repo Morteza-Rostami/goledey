@@ -1,0 +1,21 @@
+
+@import '../../CONSTANTS/Variables.scss';
+
+
+/* ********************** mobile ********************** */
+
+.home {
+  @include verticFrame($gap: 0);
+  background-color: $bg;
+
+
+}
+
+/* ********************** tablet ********************** */
+
+@media only screen and (min-width: $mobile-b) {
+  .home {
+    //gap: 3rem;
+  
+  }
+}

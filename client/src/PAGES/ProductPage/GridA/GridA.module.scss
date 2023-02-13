@@ -1,0 +1,86 @@
+@import '../../../CONSTANTS/Variables.scss';
+
+.grida {
+
+  .line {
+    display: none;
+  }
+
+  .inner {
+    padding: 0;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "picm"
+    "shortD"
+    "infoM"
+    "longD"
+    
+    ;
+    
+    row-gap: $mob-row-gap;
+
+
+    background-color: $bg;
+    .picmob {
+      grid-area: picm;
+    }
+    .shortdesc {
+      grid-area: shortD;
+    }
+
+    .infomob {
+      grid-area: infoM;
+    }
+
+    .longdesc {
+      grid-area: longD;
+    }
+
+    .infodec {
+      grid-area: infoD;
+      display: none;
+    }
+
+    .picdec {
+      grid-area: picD;
+      display: none;
+    }
+  }
+}
+
+/* ********************** tablet ********************** */
+
+@media only screen and (min-width: $mobile-b) {
+
+  .grida {
+    .line {
+      display: block;
+      margin-top: 2rem;
+    }
+    .inner {
+      padding: $pad-lr;
+      .grid {
+        grid-template-columns: 1.4fr 1fr 1fr;
+        grid-template-rows: minmax(min-content, max-content);
+        grid-template-areas: 
+          'picD shortD infoD'
+          'longD longD infoD'
+        ;
+       grid-column-gap: 2.4rem;
+
+      .infodec {
+        display: flex;
+      }
+  
+      .picdec {
+        display: block;
+      }
+        
+      }
+
+    }
+  }
+}

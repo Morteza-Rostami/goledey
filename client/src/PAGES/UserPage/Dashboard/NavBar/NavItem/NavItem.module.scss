@@ -1,0 +1,54 @@
+@import '../../../../../CONSTANTS/Variables.scss';
+
+.item {
+  @include alignFrame();
+
+  // border-bottom: .1rem solid $line;
+  
+  .btn {
+    @include alignFrame($gap: 1rem);
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem .5rem;
+
+    span {
+      @include alignFrame();
+
+    }
+  }
+
+  .logout {
+    justify-content: flex-start !important;
+    gap: 0;
+  }
+
+}
+
+/* ********************** tablet ********************** */
+
+@media only screen and (min-width: $mobile-b) {
+  .item {
+    
+    svg {
+      @include svg-24;
+
+    }
+    
+    .btn {
+      @include typo-14-700;
+      font-size: 14px !important;
+      span {
+        @include typo-14-700;
+        font-size: 14px;
+        
+      }
+    }
+  
+    .logout {
+     
+    }
+  
+  }
+
+}

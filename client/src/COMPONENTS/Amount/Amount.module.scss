@@ -1,0 +1,15 @@
+@import '../../CONSTANTS/Variables.scss';
+
+.amount {
+
+  .btn__group {
+    border: .1rem solid $line;
+    border-radius: .4rem;
+    min-height: 44px;
+    .count {
+      @include centerFrame();
+      text-align: center;
+      padding: 0 .5rem;
+    }
+  }
+}

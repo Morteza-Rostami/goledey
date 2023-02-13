@@ -1,0 +1,76 @@
+@import '../../../../CONSTANTS/Variables.scss';
+
+.loc__form {
+
+  background-color: $bg;
+  // padding-top: .8rem;
+
+  .err {
+    margin-top: .5rem !important;
+    font-family: $font-pri;
+  }
+
+  form {
+    font-family: $font-pri !important;
+    font-size: 12px !important;
+  }
+
+  .head {
+    @include horizFrame();
+    background-color: $off-white;
+    .title {
+
+    }
+
+    .close {}
+  }
+
+  .form {
+    @include verticFrame();
+    @include typo-12-400;
+    font-family: $font-pri !important;
+    
+    .label {
+      text-align: right;
+      margin-bottom: .5rem;
+    }
+
+    input, label {
+      font-family: $font-pri !important;
+    }
+
+    input, textarea {
+      background-color: $off-white !important;
+
+    }
+
+    .full {
+      width: 100% !important;
+      //height: auto !important;
+      min-height: 160px;
+
+      border-radius: .4rem;
+      border: none;
+      outline: none;
+    }
+
+    .btn {
+      background-color: $primary-250;
+      color: $off-white;
+      @include typo-16-700;
+      border:none;
+    }
+  }
+}
+
+
+/* ********************** tablet ********************** */
+
+@media only screen and (min-width: $mobile-b) {
+ 
+  .loc__form {
+    .err {
+      font-size: 11px;
+    }
+  }
+}

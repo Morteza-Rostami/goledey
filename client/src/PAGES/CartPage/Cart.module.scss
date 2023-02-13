@@ -1,0 +1,98 @@
+@import '../../CONSTANTS/Variables.scss';
+
+.cart {
+  @include centerFrame();
+  .inner {
+    @include verticFrame();
+
+    padding: $pad-tb-110 $pad-lr-m;
+    // padding-left: $box-prl-mobile;
+    // padding-right: $box-prl-mobile;
+
+    padding-bottom: 80px;
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+
+      grid-template-areas: 
+        'main'
+      ;
+
+      .main {
+        grid-area: main;
+
+        .head {
+          display: none;
+
+          
+          .title {
+           
+          }
+
+          .badge {
+
+          }
+        }
+        .info {
+          @include verticFrame();
+        }
+
+      }
+
+      .sidebar {
+        grid-area: sidebar;
+        display: none;
+      }
+    }
+
+  }
+}
+
+/* ********************** tablet ********************** */
+
+@media only screen and (min-width: $mobile-b) {
+  .cart {
+    .inner {
+  
+      padding-bottom: 0px;
+  
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-column-gap: 2rem;
+  
+        grid-template-areas: 
+          'sidebar main'
+        ;
+  
+        .main {
+
+          .head {
+            @include horizFrame();
+            background-color: $off-white;
+            border-radius: .8rem;
+            padding: $pad-tb-110;
+            margin-bottom: $pad-tb-100;
+            .title {
+              @include typo-14-700;
+              color: $text-body;
+            }
+
+            .badge {
+
+            }
+          }
+          .info {
+            @include verticFrame();
+          }
+  
+        }
+  
+        .sidebar {
+          display: flex;
+        }
+      }
+    }
+  }
+}

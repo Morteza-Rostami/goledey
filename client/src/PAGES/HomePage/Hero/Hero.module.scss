@@ -1,0 +1,144 @@
+@import '../../../CONSTANTS/Variables.scss';
+
+
+/* ********************** mobile ********************** */
+
+
+.hero {
+  // @include centerFrame();
+  background-color: $bg;
+  // height: 130px;
+  .inner {
+    // max-width: $max-width-1;
+
+    .swipe_wrap {
+      position: relative;
+      background-color: $bg;
+
+      .arrow_l, .arrow_r {
+        background-color: $off-white;
+        z-index: 1000;
+        width: 20px;
+        height: 20px;
+        top: calc(50% - 8px);
+        padding: 0;
+
+        .ico {
+          color: $primary-250;
+        }
+      }
+      .arrow_l {
+        position: absolute;
+        left: 10px;
+        
+      }
+
+      .arrow_r {
+        position: absolute;
+        right: 10px;
+      }
+    }
+  }
+
+ 
+  img {
+    max-width: 100% !important;
+    width: 100% !important;
+    object-fit: cover;
+    min-height: 268px;
+    max-height: 268px;
+  }
+
+}
+
+
+/* ********************** mobile: 500px ********************** */
+
+@media only screen and (min-width: $mobile-b-80) {
+.hero {
+  
+  .inner {
+
+    .swipe_wrap {
+     
+
+      .arrow_l, .arrow_r {
+      
+
+        .ico {
+        }
+      }
+      .arrow_l {
+       
+        
+      }
+
+      .arrow_r {
+       
+      }
+    }
+  }
+
+ 
+  img {
+  
+   
+  }
+
+}
+  .hero {
+
+    // img {
+    //   min-height: 200px;
+    //   max-height: 200px;
+    // }
+  }
+
+}
+
+/* ********************** mobile: 800px to up ********************** */
+
+@media only screen and (min-width: $mobile-b) {
+  .hero {
+   
+    .inner {
+  
+      .swipe_wrap {
+      
+        .arrow_l, .arrow_r {
+       
+          width: auto;
+          height: auto;
+        
+  
+          .ico {
+            color: $primary-250;
+            font-size: $ico-40;
+          }
+        }
+        .arrow_l {
+          position: absolute;
+          left: 2rem;
+          
+        }
+  
+        .arrow_r {
+          position: absolute;
+          right: 2rem;
+        }
+      }
+    }
+  
+   
+    img {
+      max-width: 100% !important;
+      width: 100% !important;
+      object-fit: cover;
+      min-height: 400px;
+      max-height: 400px;
+    }
+  
+  }
+  
+
+}

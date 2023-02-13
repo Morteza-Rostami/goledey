@@ -1,0 +1,48 @@
+@import '../../../CONSTANTS/Variables.scss';
+
+.not__found {
+
+  .inner {
+    @include verticFrame();
+
+    .msg {
+      @include verticFrame();
+      background-color: $off-white;
+      border-radius: .8rem;
+      padding: 2.5rem 2.8rem;
+
+      .uptxt {
+        @include alignFrame();
+        
+
+        .ico {
+          color: $primary-250;
+          font-size: $ico-24;
+        }
+
+        .txt {
+          @include typo-12-400;
+          color: $text-body;
+          text-align: right;
+        }
+      }
+
+      .subtxt {
+        color: $text-placehoder;
+        @include typo-12-400;
+        text-align: right;
+
+      }
+    }
+        
+    .pic {
+      background-size: contain !important;
+      background-repeat: no-repeat !important;
+      background-position: center !important;
+      width: 100%;
+      height: 0;
+      position: relative;
+      padding-top: 100%;
+    }
+  }
+}

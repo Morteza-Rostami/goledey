@@ -1,0 +1,97 @@
+@import '../../../CONSTANTS/Variables.scss';
+
+
+.orders {
+  display: flex;
+  justify-content: center;
+  // min-height: 100vh;
+  align-items: flex-start;
+
+  margin-top: $pad-tb-100;
+
+  svg {
+    width: $ico-20;
+    height: $ico-20;
+    path {
+      width: $ico-20;
+      height: $ico-20;
+    }
+  }
+
+
+  .inner {
+    @include centerFrame();
+    width: 100%;
+    background-color: $bg;
+    padding: 0;
+    
+    .grid {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-areas: 
+        'main'
+      ;
+
+      .main {
+        width: 100%;
+        min-width: 0;
+        background-color: $bg;
+      }
+      
+      .main {
+        grid-area: main;
+      }
+  
+      .nav {
+        grid-area: nav;
+        display: none;
+      }
+
+    }
+
+
+  }
+}
+
+/* ********************** tablet ********************** */
+
+@media only screen and (min-width: $mobile-b) {
+  .orders {
+  
+    svg {
+      width: $ico-24;
+      height: $ico-24;
+      path {
+        width: $ico-24;
+        height: $ico-24;
+      }
+    }
+  
+  
+    .inner {
+      
+      padding: $pad-tb-110 $pad-lr;
+      
+      .grid {
+        grid-template-columns: .4fr 1fr;
+        grid-column-gap: 2rem;
+        grid-template-areas: 
+          'nav main'
+        ;
+        
+        .main {
+          grid-area: main;
+        }
+    
+        .nav {
+          grid-area: nav;
+          display: flex;
+        }
+  
+      }
+  
+  
+    }
+  }
+}

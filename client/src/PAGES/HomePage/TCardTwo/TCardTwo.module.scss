@@ -1,0 +1,93 @@
+@import '../../../CONSTANTS/Variables.scss';
+
+
+/* ********************** mobile ********************** */
+
+
+.tcard_two {
+  // @include verticFrame($gap: 0);
+  @include verticFrame();
+  position: relative;
+  min-width: 100px;
+  height: auto;
+  background: none;
+
+  // top-left, top-right, bottom-l, bottom-r
+  // border-radius: .5rem .5rem 1rem 1rem;
+  overflow: hidden;
+
+  .img__box {
+    height: 0;
+    overflow: hidden;
+    padding-top: 100%;
+    position: relative;
+
+    .skelet {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .overlay {
+    @include centerFrame();
+    position: absolute;
+    max-width: 65%;
+    left: 0;
+    margin-left: auto;
+    right: 0;
+    margin-right: auto;
+    bottom: 0;
+    background-color: $off-white;
+    
+    p {
+      @include typo-10;
+      line-height: 0;
+      color: $secondary-300;
+      
+    }
+
+    svg {
+      width: $ico-12;
+      height: $ico-12;
+      
+      path {
+        fill: $secondary-300;
+      }
+    }
+
+    padding: .6rem .8rem;
+    border-radius: .4rem;
+  }
+
+  img {
+    max-width: 100%;
+    object-fit: cover;
+    aspect-ratio: 2 / 2;
+
+    // width: 36vw;
+    // height: 36vw;
+    border-radius: 50%;
+  }
+}
+
+/* ********************** tablet ********************** */
+
+@media only screen and (min-width: $mobile-b) {
+  .tcard_two {
+    .overlay {
+      gap: .5rem;
+      p {
+        @include typo-16-700;
+      }
+      svg {
+        width: $ico-16;
+        height: $ico-16;
+      }
+    }
+    
+  }
+
+}

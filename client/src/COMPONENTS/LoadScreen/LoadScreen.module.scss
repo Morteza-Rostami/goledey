@@ -1,0 +1,135 @@
+@import '../../CONSTANTS/Variables.scss';
+
+.backdrop {
+  @include centerFrame();
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 10000;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: $title-active;
+  background-color: rgba(32, 34, 32, .4);
+
+  .loading {
+    @include verticFrame();
+    gap: 3rem;
+    width: 100%;
+    max-width: 500px;
+
+    background-color: $off-white !important;
+    border-radius: .8rem;
+
+    padding: 3rem 2rem;
+
+    .top {
+      .logo {
+        svg {
+          @include logo-size-m;
+        }
+      }
+    }
+
+    .mid {
+      @include centerFrame();
+      .spinner {
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+        // height: 100px;
+        border-radius: .4rem;
+
+        width:100%;
+        height:0;
+        padding-top: 12%;
+        max-width: 100px;
+
+      }
+    }
+
+    .bott {
+      text-align: center;
+      .msg {
+        @include centerFrame();
+
+        .spinner {
+          background-size: contain !important;
+          background-repeat: no-repeat !important;
+          background-position: center !important;
+          // height: 100px;
+          border-radius: .4rem;
+
+          width:100%;
+          height:0;
+          padding-top: 7%;
+          max-width: 43px;
+          flex: .2;
+        }
+
+        .txt {
+          //flex: 1;
+          @include typo-12-400;
+          color: $text-body;
+        }
+
+      }
+
+      .subtext {
+        @include centerFrame();
+        @include typo-11-400;
+        color: $text-placehoder;
+      }
+    }
+
+  }
+}
+
+/* ********************** tablet ********************** */
+
+@media only screen and (min-width: $mobile-b) {
+  .backdrop {
+    
+  
+    .loading {
+      
+  
+      .top {
+        .logo {
+          svg {
+            width: 130px;
+          }
+        }
+      }
+  
+      .mid {
+        .spinner {
+          
+  
+        }
+      }
+  
+      .bott {
+        .msg {
+  
+          .spinner {
+           
+  
+           
+          }
+  
+          .txt {
+            @include typo-14-400;
+          }
+  
+        }
+  
+        .subtext {
+         @include typo-12-400;
+        }
+      }
+  
+    }
+  }
+}

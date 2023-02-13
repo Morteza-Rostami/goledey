@@ -1,0 +1,150 @@
+@import '../../../../CONSTANTS/Variables.scss';
+
+.rev__makr {
+  // background-color: $bg;
+
+  .ico {
+    color: $primary-250;
+    font-size: $ico-24;
+  }
+
+  .header {
+    @include alignFrame($gap: 2rem);
+    background-color: $bg;
+    padding-bottom: 0;
+    width: 100%;
+    padding: 1.8rem !important;
+    padding-bottom: 0 !important;
+    .close {
+      align-self: baseline;
+    }
+
+    .title {
+      @include verticFrame();
+
+      .top {
+        @include alignFrame();
+
+        .ico {
+
+        }
+
+        .txt {
+          @include typo-12-700;
+          border-bottom: .1rem solid $primary-250;
+          color: $text-body
+        }
+      }
+
+      .subtxt {
+        @include typo-12-400;
+        color: $text-body
+
+      }
+    }
+  }
+
+  .content {
+    @include centerFrame();
+    background-color: $bg;
+    padding: 0 1rem;
+
+    .area {
+      width: 100%;
+      height: 90% !important;
+      border: none;
+      outline: none;
+      border-radius: 1rem;
+      padding: 1.3rem 1.2rem;
+      color: $text-body;
+      background-color: $off-white;
+      margin: 0;
+      &::placeholder {
+        color: $text-placehoder;
+        @include typo-11-400;
+      }
+    }
+  } // content
+
+  .actions {
+    @include horizFrame();
+    justify-content: space-around;
+    padding: 1rem;
+    background-color: $bg;
+    padding-top: 0;
+
+    .send {
+      background-color: $primary-250;
+      color: $off-white;
+      @include typo-12-700;
+      flex: 1;
+    }
+
+    .cancel {
+      background-color: $text-placehoder;
+      color: $off-white;
+      @include typo-12-700;
+      flex: 1;
+
+    }
+  }
+}
+
+/* ********************** tablet ********************** */
+
+@media only screen and (min-width: $mobile-b) {
+  .rev__makr {
+    .ico {
+    }
+  
+    .header {
+      padding: 2rem 3rem !important;
+      .close {
+      }
+  
+      .title {
+  
+        .top {
+  
+          .ico {
+  
+          }
+  
+          .txt {
+           
+          }
+        }
+  
+        .subtxt {
+          
+  
+        }
+      }
+    }
+  
+    .content {
+      padding: 1rem 3rem;
+  
+      .area {
+        width: 100vw;
+        &::placeholder {
+          
+        }
+      }
+    } // content
+  
+    .actions {
+      padding: 2rem 3rem;
+      
+  
+      .send {
+        
+      }
+  
+      .cancel {
+        
+  
+      }
+    }
+  }
+}

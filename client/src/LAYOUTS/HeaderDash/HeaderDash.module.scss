@@ -1,0 +1,25 @@
+@import '../../CONSTANTS/Variables.scss';
+
+.header__dash {
+  @include centerFrame();
+  background-color: $off-white;
+  margin-bottom: $pad-tb-100;
+
+  .inner {
+    @include horizFrame();
+    padding: $pad-tb-100 $pad-lr-m;
+    width: 100%;
+    .title {
+      @include typo-11-700;
+      color: $text-body;
+    } 
+
+    .link {
+      @include alignFrame($gap: 0);
+      @include typo-10-700;
+      font-size: 10px !important;
+      color: $primary-250;
+    }
+
+  }
+}

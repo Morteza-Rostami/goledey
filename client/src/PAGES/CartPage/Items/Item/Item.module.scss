@@ -1,0 +1,94 @@
+@import '../../../../CONSTANTS/Variables.scss';
+
+/* ************** mobile *************** */
+
+.item {
+  
+  display: grid;
+  grid-template-columns: .5fr 2fr;
+  grid-auto-rows: 1fr;
+  grid-column-gap: 1rem;
+  //grid-row-gap: .5rem;
+
+  background-color: $off-white;
+  padding: 1.2rem;
+  border-radius: .4rem;
+  
+  .sec_1 {
+    @include verticFrame();
+
+    img {
+      flex: .3;
+      min-width: 128px;
+    }
+
+    .amount {
+      flex: 1;
+    }
+  }
+
+  .sec_2 {
+    @include verticFrame();
+    justify-content: space-between;
+    text-align: right;
+
+    .infos {
+
+      .name {
+        @include typo-12-700;
+        color: $text-body;
+      }
+
+      .instock {
+        @include alignFrame();
+        span {
+          @include typo-11-400;
+          color: $primary-250;
+        }
+
+        svg {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+
+    .price {
+      display: flex;
+      align-items: flex-end;
+
+      .wrap {
+        @include alignFrame();
+        p {
+          @include typo-16-700;
+          color: $text-body;
+        }
+  
+        svg {
+          width: 16px;
+          height: 16px;
+          path{
+            fill: $text-body;
+  
+          }
+        }
+      }
+    }
+  }
+
+  img {
+    max-width: 100%;
+    object-fit: cover;
+    aspect-ratio: 2 / 2;
+    border-radius: .4rem;
+  }
+}
+
+
+
+/* ************** desktop *************** */
+
+@media only screen and (max-width: $mobile-b) {
+
+  
+}

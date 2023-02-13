@@ -1,0 +1,84 @@
+@import '../../CONSTANTS/Variables.scss';
+
+.head {
+  @include horizFrame();
+  align-items: flex-start;
+  padding: 1rem 1.2rem;
+  padding-bottom: .5rem;
+  border-bottom: .1rem solid $line;
+  .wrap__close {
+    flex: .4;
+
+    .btn {
+      //background-color: $bg;
+    }
+  }
+
+  .message {
+    @include verticFrame($gap: .5rem);
+    flex: 1;
+
+    .title {
+      @include alignFrame();
+      svg {
+        font-size: $ico-20;
+      }
+
+      p {
+        @include typo-12-700;
+        color: $text-body;
+        border-bottom: .1rem solid $line;
+      }
+    }
+
+    .subtext {
+      @include typo-10-400;
+      color: $text-label;
+    }
+  }
+} /* head */
+
+.action {
+  @include alignFrame();
+  justify-content: flex-end;
+  .btn {
+    span {
+      color: $primary-250;
+    }
+
+    .ico {
+      color: $primary-250;
+      font-size: 16px !important;
+    }
+  }
+}
+
+/* desktop */
+
+@media only screen and (min-width: 690px) {
+  .head {
+    flex-direction: column;
+    padding-top: 1.6rem;
+    padding-right: 2rem;
+    .wrap__close {
+      flex: .2;
+    }
+  
+    .message {
+      flex: 1;
+  
+      .title {
+        svg {
+        }
+  
+        p {
+         
+        }
+      }
+  
+      .subtext {
+       
+      }
+    }
+  }
+}

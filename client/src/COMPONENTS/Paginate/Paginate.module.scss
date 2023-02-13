@@ -1,0 +1,35 @@
+@import '../../CONSTANTS/Variables.scss';
+
+.paginate {
+  justify-content: center;
+  
+  .inner {
+    padding: $pad-tb-115 0;
+    padding-bottom: $pad-tb-110;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    @include typo-12-400;
+    .prev, .next {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $primary-250;
+    }
+  }
+}
+
+
+/* ********************** tablet ********************** */
+
+@media only screen and (min-width: $mobile-b) {
+  .paginate {
+    
+    .inner {
+      padding-bottom: 0;
+      
+      .prev, .next {
+        
+      }
+    }
+  }
+}

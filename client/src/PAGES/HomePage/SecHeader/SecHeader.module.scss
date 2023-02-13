@@ -1,0 +1,80 @@
+
+@import '../../../CONSTANTS/Variables.scss';
+
+
+/* ********************** mobile ********************** */
+
+
+.secheader {
+  @include horizFrame();
+  // top r bottom l
+  padding: 0 $pad-lr-m 1rem $pad-lr-m;
+
+  
+  .box_1 {
+    @include horizFrame();
+    a {
+      @include horizFrame();
+      @include typo-12-700;
+    }
+  }
+
+  .box_2 {
+    @include horizFrame();
+    @include typo-btn-200;
+
+    h2 {
+      @include typo-14-700;
+      color: $text-body;
+    }
+  }
+
+
+  a {
+    text-decoration: none;
+  }
+
+
+
+  
+}
+
+/* ********************** tablet ********************** */
+
+@media only screen and (min-width: $mobile-b) {
+
+  
+.secheader {
+
+  padding: 0;
+  padding-bottom: $pad-tb-110;
+  .box_1 {
+    
+    a {
+      @include typo-12-700;
+      color: $primary-250;
+    }
+  }
+
+  .box_2 {
+ 
+
+    h2 {
+      @include typo-19-700;
+      color: $text-body;
+
+      border-bottom: .2rem solid $primary-250;
+    }
+  }
+
+
+  a {
+
+  }
+
+
+
+  
+}
+
+}

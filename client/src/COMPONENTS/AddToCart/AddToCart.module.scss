@@ -1,0 +1,22 @@
+@import '../../CONSTANTS/Variables.scss';
+
+.add__btn {
+  background-color: $secondary-300 !important;
+  color: $off-white !important;
+  @include typo-12-400;
+  font-size: 12px !important;
+  border: none !important;
+  outline: none !important;
+  min-height: 44px;
+}
+
+.load__btn {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.spinner {
+  color: $secondary-300 !important;
+}
+

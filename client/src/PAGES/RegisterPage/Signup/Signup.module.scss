@@ -1,0 +1,64 @@
+
+@import '../../../CONSTANTS/Variables.scss';
+
+.form {
+  @include verticFrame($gap: 0);
+
+  .heading {
+    @include typo-19-700;
+    align-self: center;
+    margin-top: 1.6rem;
+    margin-bottom: 2rem;
+    color: $title-active;
+  }
+
+  .toptext {
+    @include typo-14-400;
+    align-self: flex-start;
+    margin: 0;
+    color: $text-body;
+  }
+
+  .subtext {
+    @include typo-11-400;
+    align-self: flex-start;
+    color: $text-placehoder;
+  }
+
+
+  input.phone {
+    margin-top: 1.2rem;
+    margin-bottom: .8rem;
+    min-height: 48px;
+    border-radius: 1rem;
+    background: $off-white;
+    border: .1rem solid $line;
+    outline-color: $primary-200;
+    padding: 0 1rem;
+    color: $text-body;
+    direction: ltr;
+    width: 100%;
+
+    &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: $text-placehoder;
+      opacity: 1; /* Firefox */
+    }
+  }
+
+  .errors {
+    color: $error-150;
+    @include typo-10-400;
+    align-self: flex-start;
+  }
+
+  button.btn {
+    @include typo-19-700;
+    font-size: 16px !important;
+    margin-top: 2.6rem;
+    background-color: $primary-250;
+    color: $off-white;
+    border-radius: 1rem;
+    border: none;
+    
+  }
+}

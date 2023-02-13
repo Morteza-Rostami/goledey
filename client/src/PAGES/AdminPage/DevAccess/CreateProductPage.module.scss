@@ -1,0 +1,32 @@
+@import '../../../CONSTANTS/Variables.scss';
+
+.create_product {
+  font-family: $font-pri;
+  .inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .form {
+      @include verticFrame();
+      padding: 1rem;
+      width: 70%;
+      font-family: NotoSansArabicMedium !important;
+      background-color: $off-white;
+      input, textarea, p {
+      font-family: NotoSansArabicMedium !important;
+
+      }
+    }
+
+    .group {
+      @include verticFrame();
+      text-align: right;
+    }
+
+    button {
+      color: $off-white;
+      background-color: $primary-200;
+    }
+  }
+}

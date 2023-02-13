@@ -1,0 +1,70 @@
+@import '../../../../CONSTANTS/Variables.scss';
+
+.brief {
+  background-color: $bg;
+  margin-bottom: $row-gap-100;
+  .line {
+    display: none;
+  }
+
+  .orders {
+    padding: $pad-tb-100 0;
+    background-color: $off-white;
+    border-radius: .8rem;
+    .head {
+      display: none;
+
+      h5 {
+        @include typo-14-700;
+        color: $text-body;
+      }
+
+      .btn {
+        color: $primary-250;
+      }
+    }
+  
+    .inwrap {
+      @include horizFrame($gap: 0);
+      align-items: stretch;
+      padding: 0;
+    }
+
+  }
+}
+
+/* ********************** tablet ********************** */
+
+@media only screen and (min-width: $mobile-b) {
+  .brief {
+
+    .line {
+      display: flex;
+    }
+
+    .orders {
+      padding: $pad-tb-110;
+      .head {
+        display: flex;
+        @include horizFrame();
+
+        h5 {
+          @include typo-16-700;
+
+        }
+
+        .btn {
+          @include typo-12-700;
+        }
+        margin-bottom: $pad-tb-110;
+      }
+    
+      .inwrap {
+        padding: $pad-tb-115;
+
+        
+      }
+  
+    }
+  }
+}

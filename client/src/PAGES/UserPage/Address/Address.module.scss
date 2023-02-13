@@ -1,0 +1,33 @@
+@import '../../../CONSTANTS/Variables.scss';
+
+.address {
+  margin-top: $pad-tb-110;
+  .head {
+    @include alignFrame();
+    background-color: $off-white;
+    border-radius: .4rem;
+    padding: 2rem;
+    margin-bottom: 1rem;
+    display: none;
+
+    h4 {
+      @include typo-16-700;
+    }
+  }
+}
+
+/* ********************** tablet ********************** */
+
+@media only screen and (min-width: $mobile-b) {
+  
+  .address {
+
+    
+    
+    .head {
+      display: flex;
+      h4 {
+      }
+    }
+  }
+}

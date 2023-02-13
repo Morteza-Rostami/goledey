@@ -1,0 +1,15 @@
+
+
+/* ********************** mobile ********************** */
+
+
+@media only screen and (max-width: 800) {
+
+  .swipe_wrap {
+    background-color: red !important;
+  }
+  .swiper-container {
+    max-height: 130px !important;
+  }
+
+}

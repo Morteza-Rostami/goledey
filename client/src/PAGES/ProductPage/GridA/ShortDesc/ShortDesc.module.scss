@@ -1,0 +1,125 @@
+@import '../../../../CONSTANTS/Variables.scss';
+
+.short_d {
+  font-family: $font-pri;
+  background-color: $off-white;
+  
+  //margin-bottom: .3rem;
+  margin-top: -$mob-row-gap;
+
+  .inner {
+    @include verticFrame($gap: 1rem);
+
+    padding: $mob-pad-tb 0;
+    margin: 0 $pad-lr-m;
+
+  }
+
+  .bread {
+    padding: 0;
+    margin: 0;
+    a {
+      font-size: 1.1rem;
+      font-weight: 400;
+      line-height: 1.6rem;
+      color: $primary-250;
+      padding: 0;
+    }
+  }
+
+  .name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.6rem;
+    color: $title-active;
+    text-align: right;
+  }
+
+  .rate {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    .ave {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      span {
+        font-size: 1rem;
+        font-weight: 700;
+        // line-height: 1.6rem;
+        color: $text-body;
+        line-height: 0;
+      }
+
+      .ico {
+        font-size: $icon-60;
+        color: $warning-200;
+      }
+    }
+
+    .reviews_len {
+      font-size: .8rem;
+      font-weight: 500;
+      line-height: 1.4rem;
+      color: $text-placehoder;
+    }
+  }
+
+  .short_desc {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: right;
+    color: $text-label;
+  }
+}
+
+
+/* ********************** tablet ********************** */
+
+@media only screen and (min-width: $mobile-b) {
+
+  .short_d {
+    padding: 0;
+    background-color: $bg;
+  
+    .bread {
+      a {
+        @include typo-14-700;
+       
+      }
+    }
+  
+    .name {
+      text-align: right;
+      @include typo-19-700;
+    }
+  
+    .rate {
+      
+      .ave {
+        gap: .2rem;  
+  
+        span {
+          @include typo-12-700;
+          line-height: unset;
+        }
+  
+        .ico {
+          font-size: $ico-16;
+        }
+      }
+  
+      .reviews_len {
+        @include typo-11-400;
+      }
+    }
+  
+    .short_desc {
+      @include typo-14-400;
+    }
+  }
+
+}
