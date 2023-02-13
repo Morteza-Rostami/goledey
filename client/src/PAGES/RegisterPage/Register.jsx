@@ -60,16 +60,12 @@ const Register = ({ closeModal }) => {
     />,
   ]);
 
-  useEffect(() => {
+  /* useEffect(() => {
     
-    console.log(formD);
-
     return () => {
       //cleanup
     };
-  }, [formD]);
-
-  console.log('step,.....', activeStep);
+  }, [formD]); */
 
   return (
     <div

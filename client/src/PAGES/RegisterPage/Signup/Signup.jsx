@@ -42,14 +42,12 @@ const SignupForm = ({
     // validate input:
     validate(formD);
 
-    console.log('submit')
     setIsSubmited(true);
     
   }
 
   useEffect(() => {
     // form is submited and there is no
-    console.log(errors)
     if (!errors[CONST.phone] && isSubmited) {
       dispatch(register(
         formD, 
@@ -114,7 +112,7 @@ const SignupForm = ({
         variant='outlined'
         loading={ isLoading ? true : false }
         // disabled={ isLoading ? true : false }
-        loadingPosition="start"
+        //loadingPosition="start"
         loadingIndicator={<CircularProgress size={16} sx={{color: '#71EE5A'}}/>}
       >
 
