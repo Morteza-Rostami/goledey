@@ -3,12 +3,23 @@ import HELPER from '../helpers/helpers.js';
 import Order from '../models/Order.js';
 import Product from '../models/Product.js';
 
+import Category from '../models/Category.js';
+
 const homeController = {
 
   get: async (req, res) => {
-    const dasteGol = '63999c6522b76365284e2bd2';
-    const sabadGol = '63999be122b76365284e2bd0';
-    const payeGol = '639c11c83f7642af7f4964a1';
+
+    // make ids dynamic:
+
+    const dasteGolM = await Category.findOne({ slug: 'daste-gol' });
+    const sabadGolM = await Category.findOne({ slug: 'sabad-gol' });
+    const payeGolM = await Category.findOne({ slug: 'paye-gol' });
+
+    const dasteGol = dasteGolM._id;
+    const sabadGol = sabadGolM._id;
+    const payeGol = payeGolM._id;
+
+    console.log(dasteGol)
    
     try {
       

@@ -4,7 +4,7 @@ p, h1, h2, h3, h5, h6 {
 }
 
 .ranks .swiper {
-  padding: 1rem 1rem !important; 
+  padding: 1rem 1.6rem !important; 
 }
 
 
@@ -165,7 +165,7 @@ p, h1, h2, h3, h5, h6 {
 }
 
 .contain-2 {
-  max-width: 1120px;
+  max-width: 1280px;
   width: 100%;
 }
 
@@ -367,4 +367,25 @@ p, h1, h2, h3, h5, h6 {
 /* rsuit model */
 .rs-modal-content {
   font-family: var(--font-main);
+}
+
+/* productPage sticky header */
+
+.header {
+  position: sticky;
+  top: 0px;
+  background-color: #BFDBFE;
+  transition-property: all; 
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+
+  z-index: 2000;
+}
+
+.header.down {
+  top: -5.8rem;
+}
+
+.header.up {
+  top: 0px;
 }

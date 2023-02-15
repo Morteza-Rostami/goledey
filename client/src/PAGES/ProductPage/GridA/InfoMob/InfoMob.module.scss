@@ -12,15 +12,11 @@
     @include alignFrame();
     padding: 0;
     svg {
-      width: $icon-60;
-      height: $icon-60;
+      @include svg-16;
     }
 
     span {
-      font-size: 10px;
-      font-weight: 700;
-      line-height: 16px;
-      letter-spacing: 0em;
+      @include typo-12-700;
       text-align: right;
 
       color: $text-body
@@ -34,15 +30,12 @@
     padding: 0;
 
     svg {
-      width: $icon-60;
-      height: $icon-60;
+      @include svg-16;
+
     }
 
     span {
-      font-size: 10px;
-      font-weight: 400;
-      line-height: 16px;
-      letter-spacing: 0em;
+      @include typo-12-400;
       text-align: right;
 
       color: $text-label;

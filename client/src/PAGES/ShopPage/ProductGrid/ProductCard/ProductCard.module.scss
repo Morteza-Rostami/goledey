@@ -45,7 +45,7 @@
     flex: 1;
 
     .name {
-      @include typo-11-400;
+      @include typo-12-400;
       color: $text-body;
       text-align: right;
     }
@@ -75,6 +75,7 @@
         padding: .3rem .8rem !important;
         border-radius: .4rem;
         @include typo-12-400;
+        font-size: 13px ;
         svg {
           @include svg-16;
         }

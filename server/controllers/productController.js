@@ -13,6 +13,9 @@ import fs from 'fs';
 import Cart from '../models/Cart.js';
 import Order from '../models/Order.js';
 
+import mongoose from 'mongoose';
+import { ObjectId } from 'mongodb';
+
 
 const productController = {
   
@@ -35,16 +38,12 @@ const productController = {
     let products = [];
     let categories = [];
 
-    /* 
-    {
-  page: '1',
-  limit: '10',
-  categories: [ 'jame-gole' ],
-  filters: [ '' ],
-  term: 'null'
-}
-    */
+    const makeObjectId = mongoose.Types.ObjectId;
 
+    console.log(req.query)
+    console.log(catFilters)
+    //console.log(req.params)
+    
     try {
 
       // if there is search term:
@@ -66,41 +65,83 @@ const productController = {
 
         // any products: (catA or catB) and (catC or catD)
 
+        console.log('^^^^^^^^^^^^^^^^^^^')
+        console.log(cats, occs);
+
         // query objects:
         const catsQueries = 
           cats?.length
-            ? cats.map(cat => ({"categories": {_id: cat._id }}))
+            ? cats.map(cat => ({
+              "categories": makeObjectId(cat._id)
+            }))
             : [];
 
+        // "categories": {_id: makeObjectId(occ._id) }
         const occsQueries = 
-        cats?.length
-          ? occs.map(occ => ({"categories": {_id: occ._id }}))
+        occs?.length
+          ? occs.map(occ => ({
+            "categories": makeObjectId(occ._id)
+          }))
           : [];
 
+        console.log('********************')
+        console.log(catsQueries)
+        console.log(occsQueries)
+
+        /* if (catsQueries.length) {
+          const procats = await Product.find({
+            $or: catsQueries,
+          })
+          products.push(...procats)
+        }
+
+        if (occsQueries.length) {
+          const prooccs = await Product.find({
+            $or: occsQueries,
+          });
+        } */
+
+        /* const fCatsQue = '';
+        if (catsQueries.length) {
+          fCatsQue = { '$or': catsQueries };
+        } */
+/* 
         products = 
           await Product
-                .find({
-                  $and: [
-                    catsQueries?.length 
-                      ?
-                      { 
-                        $or: catsQueries
-                      }
-                      : {},
-                    occsQueries?.length 
-                      ?
-                      { 
-                        $or: occsQueries
-                      }
-                      : {}
-                  ]
-                });
+            .find({
+              $and: [
+                catsQueries?.length 
+                  ?
+                  { 
+                    $or: catsQueries
+                  }
+                  : { name: 'sex78' },
+                occsQueries?.length 
+                  ?
+                  { 
+                    $or: occsQueries
+                  }
+                  : { name: 'sex78' }
+              ]
+            });
 
-                // .find({}, {
-                //   'categories.slug': 'arusi'
-                // })
+                 */
 
+        const productModels = await Product.find().populate('categories');
 
+        let productObjs = productModels.map(item => item.toObject());
+
+        categories.forEach((cat, i) => {
+          productObjs = 
+            productObjs
+            .filter(item => 
+              item.categories.some(catObj => catObj._id.toString() === cat._id.toString()));
+        });
+
+        products = [...productObjs];
+
+        console.log('--', products.map(item => item.name))
+              
       } else {
         // all products:
         products = await Product.find().populate('categories');
@@ -118,6 +159,8 @@ const productController = {
       // }, 5000);
 
     } catch(err) {
+      console.log(err.message);
+      console.log(err.stack);
       return res.json({ message: 'controller: products/get failed!', err: err.message });
     }
 

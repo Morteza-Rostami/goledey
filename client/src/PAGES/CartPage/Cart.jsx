@@ -111,7 +111,7 @@ const Cart = () => {
       footerDec={<Footer/>}
     >
       <div className={`${styles.cart} center-contain`}>
-        <div className={`${styles.inner} contain`}>
+        <div className={`${styles.inner} contain-2`}>
           
           <div
             className={`${styles.grid}`}

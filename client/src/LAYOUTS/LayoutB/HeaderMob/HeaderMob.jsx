@@ -16,13 +16,17 @@ import {MdClose} from 'react-icons/md';
 // redux
 import { useSelector } from "react-redux";
 
+import useScrollDirection from '../../../HOOKS/useScrollDirection';
+
 const HeaderMob = () => {
   const itemsCount = useSelector(state => state.cartStore.itemsCount);
   const authUser = false;
 
+  const scrollDirection = useScrollDirection();
+
   return (
     <header
-      className={`${styles.header} product-header`}
+      className={`${styles.header} product-header header ${ scrollDirection === "down" ? "down" : "up"}`}
     >
       <div
         className={`${styles.inner}`}

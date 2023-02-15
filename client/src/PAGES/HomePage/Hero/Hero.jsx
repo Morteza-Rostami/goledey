@@ -20,9 +20,9 @@ import CONST from '../../../CONSTANTS/CONST';
 
 // array of hero images:
 const images = [
-  './images/Ad-banner4.png', 
-  './images/banners/Ad-banner61.png', 
-  './images/banners/Ad-banner71.png']
+  './images/banners/Ad-banner52.jpg', 
+  './images/banners/Ad-banner61.jpg', 
+  './images/banners/Ad-banner71.jpg']
 
 const Hero = ({ }) => {
   // reference to swiper:

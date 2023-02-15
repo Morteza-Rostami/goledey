@@ -4,6 +4,7 @@
   @include horizFrame();
   background-color: $off-white;
   min-height: 40px;
+  height: 40;
   .inner {
     @include horizFrame();
     width: 100%;

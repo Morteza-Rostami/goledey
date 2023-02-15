@@ -17,7 +17,7 @@ const AdBanner2 = () => {
         <Link 
           className={`${styles.banner1}`}
           style={{
-            background: 'url("/images/banners/Banner-Medium21.png")' 
+            background: 'url("/images/banners/Banner-Medium21.jpg")' 
           }}
           to={`/shop?mCat=${'tarhim'}&page=1`}
         >
@@ -26,7 +26,7 @@ const AdBanner2 = () => {
         <Link
           className={`${styles.banner2}`}
           style={{
-            background: 'url("/images/banners/Banner-Medium11.png")' 
+            background: 'url("/images/banners/Banner-Medium11.jpg")' 
           }}
           to={`/shop?mCat=${'jame-gole'}&page=1`}
 

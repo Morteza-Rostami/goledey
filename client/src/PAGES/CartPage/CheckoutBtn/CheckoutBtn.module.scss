@@ -3,13 +3,15 @@
 .btn {
   background-color: $secondary-300 !important;
   @include typo-12-700; 
+  font-size: 12px !important;
   color: $off-white !important;
+  padding: 1.2rem 2rem !important;
 }
 
 /* ********************** tablet ********************** */
 
 @media only screen and (min-width: $mobile-b) {
   .btn {
-    font-size: 14px !important;
+    font-size: 16px !important;
   }
 }

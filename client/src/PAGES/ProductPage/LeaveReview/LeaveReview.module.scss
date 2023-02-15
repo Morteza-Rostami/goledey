@@ -9,12 +9,12 @@
     // border-bottom: .1rem solid $line;
     width: 100%;
     .head {
-      @include typo-220;
+      @include typo-14-700;
       color: $text-body;
     }
 
     .subtext {
-      @include typo-190-50;
+      @include typo-11-400;
       color: $text-placehoder;
     }
 

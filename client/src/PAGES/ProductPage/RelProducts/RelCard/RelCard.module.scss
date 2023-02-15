@@ -17,13 +17,13 @@
   .info {
 
     .name {
-      @include typo-200;
+      @include typo-12-400;
       color: $text-body;
     }
 
     .price {
       @include centerFrame();
-      @include typo-200-50;
+      @include typo-12-400;
       gap: .5rem;
       padding: .4rem 2rem;
       background-color: $primary-250;  
@@ -31,7 +31,7 @@
       color: $off-white;
 
       svg {
-        width: $icon-60;
+        @include svg-16;
       }
     }
   }

@@ -99,7 +99,7 @@ const SubCats = ({ setSubMenuOpen }) => {
               className={`${styles.tab}`}
               label={
               <span 
-              className="animate__animated animate__bounceInDown"
+              className="animate__animated animate__fadeIn"
               style={{
                 display: rePaint,
               }}

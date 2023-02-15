@@ -22,12 +22,12 @@
       .price {
         @include alignFrame();
         span {
-          @include typo-240-70;
+          @include typo-16-700;
           color: $title-active;
         }
         svg {
 
-          width: $icon-60;
+          @include svg-18;
           path {
             fill: $title-active;
           }
@@ -39,13 +39,13 @@
       .subtext {
         @include alignFrame();
         span {
-          @include typo-190-50;
+          @include typo-10-400;
           color: $text-label;
         }
 
         .ico {
           color: $primary-250;
-          font-size: $icon-60;
+          font-size: $ico-16;
         }
       }
     }

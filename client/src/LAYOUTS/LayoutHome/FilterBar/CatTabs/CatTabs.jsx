@@ -105,7 +105,7 @@ const CatTabs = ({
       setTimeout(() => {
         dispatch(ForceRepaint('flex'));
         
-      }, 200);
+      }, .5);
       dispatch(setActiveTab(cat));
     }
 

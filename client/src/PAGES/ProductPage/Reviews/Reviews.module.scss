@@ -19,10 +19,7 @@
 
       .head {
         color: $text-body;
-        font-size: 1.3rem;
-        font-weight: 700;
-        line-height: 1.6rem;
-        letter-spacing: 0em;
+        @include typo-14-700;
         text-align: right;
         border-bottom: .1rem solid $primary-250;
         padding-bottom: .2rem;

@@ -224,7 +224,14 @@ const HELPER = {
       const subCatIds = categories[i].subCatIds;
       let subCats = [];
       if (subCatIds.length) {
-        subCats.push(...await Category.find().where('_id').in(subCatIds));
+
+        for (let j=0; j < subCatIds.length; j++) {
+          const id = subCatIds[j];
+          const cat = await Category.findOne({ _id: id });
+          subCats.push(cat);
+        }
+
+        //subCats.push(...await Category.find().where('_id').in(subCatIds));
       }
 
       catObj = {

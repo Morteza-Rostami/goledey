@@ -19,18 +19,14 @@
     padding: 0;
     margin: 0;
     a {
-      font-size: 1.1rem;
-      font-weight: 400;
-      line-height: 1.6rem;
+      @include typo-12-400;
       color: $primary-250;
       padding: 0;
     }
   }
 
   .name {
-    font-size: 1.2rem;
-    font-weight: 600;
-    line-height: 1.6rem;
+    @include typo-14-700;
     color: $title-active;
     text-align: right;
   }
@@ -45,32 +41,25 @@
       justify-content: center;
 
       span {
-        font-size: 1rem;
-        font-weight: 700;
-        // line-height: 1.6rem;
+        @include typo-12-400;
         color: $text-body;
         line-height: 0;
       }
 
       .ico {
-        font-size: $icon-60;
+        font-size: $ico-18;
         color: $warning-200;
       }
     }
 
     .reviews_len {
-      font-size: .8rem;
-      font-weight: 500;
-      line-height: 1.4rem;
+      @include typo-11-400;
       color: $text-placehoder;
     }
   }
 
   .short_desc {
-    font-size: 10px;
-    font-weight: 400;
-    line-height: 16px;
-    letter-spacing: 0em;
+    @include typo-12-400;
     text-align: right;
     color: $text-label;
   }

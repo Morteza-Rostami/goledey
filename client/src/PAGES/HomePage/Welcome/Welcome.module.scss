@@ -22,15 +22,17 @@
 
     .heading {
       @include typo-24-400;
+      font-size: 2.8rem;
+      line-height: 4.6rem;
       font-family: $font-sec;
       max-width: 250px;
 
-      
+      margin-bottom: 1rem !important;
     }
 
     .slogan {
       @include verticFrame($gap: 0);
-      @include typo-12-400;
+      @include typo-14-400;
       max-width: 300px;
       text-align: center;
       margin-top: $pad-tb-90;
@@ -51,6 +53,7 @@
 
     .btn {
       @include typo-12-700;
+      font-size: 13px;
       align-self: center;
       margin-top: $pad-105;
 

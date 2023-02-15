@@ -37,14 +37,13 @@
     color: $off-white;
 
     p {
-      @include typo-10;
+      @include typo-12-400;
       line-height: 0;
       color: $off-white;
     }
 
     svg {
-      width: $ico-12;
-      height: $ico-12;
+      @include svg-16;
       path {
         fill: $off-white;
       }
@@ -69,8 +68,7 @@
         @include typo-16-700;
       }
       svg {
-        width: $ico-16;
-        height: $ico-16;
+        @include svg-18;
       }
     }
   }

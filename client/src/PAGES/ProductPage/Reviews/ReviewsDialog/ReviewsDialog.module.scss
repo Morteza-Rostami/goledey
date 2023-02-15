@@ -6,7 +6,7 @@
   .btn {
     @include horizFrame();
     color: $primary-250;
-    @include typo-200;
+    @include typo-12-400;
 
     .ico {
       color: $primary-250;

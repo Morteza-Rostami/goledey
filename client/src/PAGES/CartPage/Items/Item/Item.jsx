@@ -9,6 +9,8 @@ import FrontHelp from "../../../../HELPERS/frontHelp";
 
 import { v4 as uuidv4 } from 'uuid';
 
+import {Link} from 'react-router-dom'
+
 
 const Item = ({ item }) => {
   const product = item ? item.product : '';
@@ -23,7 +25,11 @@ const Item = ({ item }) => {
       <div
       className={`${styles.sec_1}`}
       >
-        <img src={product.pictures[0]} alt="" />
+        <Link
+          to={`/product/${product.slug}`}
+        >
+          <img src={product.pictures[0]} alt={product.name} />
+        </Link>
         <div
           className={`${styles.amount}`}
         >
@@ -41,11 +47,12 @@ const Item = ({ item }) => {
         <div
           className={`${styles.infos}`}
         >
-          <p
+          <Link
             className={`${styles.name}`}
+            to={`/product/${product.slug}`}
           >
             { FrontHelp.truncate(product.name, 19) }
-          </p>
+          </Link>
           <p
             className={`${styles.instock}`}
           >

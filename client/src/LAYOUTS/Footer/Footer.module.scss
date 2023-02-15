@@ -19,7 +19,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     // grid-template-rows: auto;
-    grid-gap: $row-gap-150;
+    grid-gap: 3.2rem;
 
     direction: rtl;
     grid-template-areas: 
@@ -27,7 +27,7 @@
       'icon logo';
     ;
 
-    padding: 1rem $pad-lr-m;
+    padding: 2rem $pad-lr-m;
 
     .box_1 {
       @include centerFrame();
