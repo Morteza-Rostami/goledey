@@ -30,6 +30,7 @@ import COLOR from '../../COLORS/COLORS';
 import SideCheck from './SideCheck/SideCheck';
 import { getCartDb } from '../../ACTIONS/cartActions';
 import { useMemo } from 'react';
+import { getCities } from '../../ACTIONS/cityActions';
 
 
 /* date of tomorrow */
@@ -63,8 +64,25 @@ const Checkout = () => {
       const data = { userId: user._id }
       dispatch(getCartDb(data));
 
+      // update shipping cost:
+      dispatch(getCities());
+
     }
   }, []);
+
+  /* shippingCost */
+  const cities = useSelector(state => state.cityStore.cities);
+  const [shippingCost, setShippingCost] = useState(0);
+
+  useEffect(() => {
+    if (cities.length) {
+      const city = cities.filter((vl, i) => vl.name === user.address?.city?.name );
+
+      setShippingCost(city[0].shippingCost);
+
+      
+    }
+  }, [cities]);
 
 
   return (
@@ -74,10 +92,10 @@ const Checkout = () => {
       footerMob={<FooterCheck setDateOpen={setDateOpen} datePicked={datePicked}/>}
       footerDec={<Footer/>}
     >
-      <div className={`${styles.checkout}`}>
+      <div className={`${styles.checkout} center-contain`}>
 
         <div
-          className={`${styles.inner}`}
+          className={`${styles.inner} contain-2`}
         >
           <div
             className={`${styles.grid}`}
@@ -175,16 +193,12 @@ const Checkout = () => {
                 <PriceInfo
                   icon={<CarIco/>}
                   text={`هزینه ارسال`}
-                  price={ 
-                    user.address?.city?.shippingCost 
-                    ? FrontHelp.formatMoney(user.address?.city?.shippingCost) 
-                    : 0
-                  }
+                  price={ FrontHelp.formatMoney(shippingCost)}
                 />
                 <PriceInfo
                   icon={<DangerIco/>}
                   text={`قیمت نهایی خرید`}
-                  price={ FrontHelp.formatMoney(cart.total + user.address?.city?.shippingCost) }
+                  price={ FrontHelp.formatMoney(cart.total + shippingCost) }
                   active={styles.active}
                 />
               </div>
@@ -195,7 +209,12 @@ const Checkout = () => {
             <section
               className={`${styles.checkbar}`}
             >
-              <SideCheck setDateOpen={setDateOpen} datePicked={datePicked} date={date}/> 
+              <SideCheck 
+              setDateOpen={setDateOpen} 
+              datePicked={datePicked} 
+              date={date}
+              shippingCost={shippingCost}
+              /> 
             </section>
           </div> {/* grid */}
 

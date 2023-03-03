@@ -156,7 +156,7 @@
       padding-top: $pad-tb-110;
 
       .grid {
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: .4fr 1fr;
         grid-template-areas: 
           'checkbar main'
         ;
@@ -205,6 +205,7 @@
             .btn {
               span {
                 color: $primary-250;
+                font-size: 12px;
               }
   
               .ico {

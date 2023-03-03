@@ -1,4 +1,4 @@
-import { CREATE_ORDER, FETCH_ORDERS_BY_USER, RESET_ORDERS, SET_ORDERS_LOADING } from "../CONSTANTS/CONST";
+import { CREATE_ORDER, FETCH_ORDERS_BY_USER, GET_ORDERS_COUNT, RESET_ORDERS, SET_ORDERS_LOADING } from "../CONSTANTS/CONST";
 
 // initial state:
 const init = {
@@ -10,6 +10,7 @@ const init = {
     // total
   },
   doneLoading: false,
+  orderCounts: {},
 }
 
 // reducer(currentStateOfStore, action_object)
@@ -42,6 +43,10 @@ const orderReducer = (state=init, action) => {
     case SET_ORDERS_LOADING:
       return {...state, doneLoading: action.payload}
 
+    // orders status counts
+    case GET_ORDERS_COUNT:
+      return {...state, orderCounts: action.payload}
+
     default:
       return state; 
   }
@@ -49,8 +54,7 @@ const orderReducer = (state=init, action) => {
 
 function noRepeatedOrder(oldOrders, newOrders) {
 
-  console.log(oldOrders)
-  console.log(newOrders)
+
 
   let orders = [];
 

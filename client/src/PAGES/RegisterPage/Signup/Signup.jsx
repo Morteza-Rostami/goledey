@@ -65,28 +65,32 @@ const SignupForm = ({
     onSubmit={(e) => handSubmit(e)}
     >
       {/* <Steps/> */}
-
+      
       <h2
         className={`${styles.heading}`}
       >
         ثبت نام | ورود
       </h2>
 
-      <p 
-        className={`${styles.toptext}`}
+      <section
+        className={`${styles.content_wrap}`}
       >
-        سلام!
-      </p>
-      <p
-        className={`${styles.toptext}`}
-      >
-        لطفا شماره موبایل خود را وارد کنید.
-      </p>
-      <p
-        className={`${styles.subtext}`}
-      >
-        (کیبورد خود را انگیلسی کنید)
-      </p>
+        <p 
+          className={`${styles.toptext}`}
+        >
+          سلام!
+        </p>
+        <p
+          className={`${styles.toptext}`}
+        >
+          لطفا شماره موبایل خود را وارد کنید.
+        </p>
+        <p
+          className={`${styles.subtext}`}
+        >
+          (کیبورد خود را انگیلسی کنید)
+        </p>
+      </section>
       
       <input
         className={`${styles.phone}`}

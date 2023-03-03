@@ -60,6 +60,9 @@ export const CLEAR_CART = 'CLEAR_CART';
 export const IS_IN_CART = 'IS_IN_CART';
 export const IS_CART_LOADING = 'IS_CART_LOADING';
 
+// remove cart
+export const DELETE_CART = "DELETE_CART";
+
 //user **********************************************
 export const REGISTER = 'REGISTER';
 export const VERIFYOTP = 'VERIFYOTP';
@@ -81,6 +84,7 @@ export const CREATE_ORDER = 'CREATE_ORDER';
 export const FETCH_ORDERS_BY_USER = 'FETCH_ORDERS_BY_USER';
 export const RESET_ORDERS = 'RESET_ORDERS';
 export const SET_ORDERS_LOADING = "SET_ORDERS_LOADING";
+export const GET_ORDERS_COUNT = 'GET_ORDERs_COUNT';
 
 // msg
 export const CREATE_CARD_MSG = 'CREATE_CARD_MSG';
@@ -108,6 +112,9 @@ export const UPDATE_ITEM_IMGS = "UPDATE_ITEM_IMGS";
 export const DELETE_PRODUCT = 'DELETE_PRODUCT';
 export const ADMIN_FETCH_ORDERS = 'ADMIN_FETCH_ORDERS';
 export const ADMIN_MAKE_ORDER_MSG = 'ADMIN_MAKE_ORDER_MSG';
+
+// payment:
+export const MAKE_PAYMENT = 'MAKE_PAYMENT';
 
 // toast
 export const ADD_TOAST = 'ADD_TOAST';

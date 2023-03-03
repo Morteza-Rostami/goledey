@@ -47,7 +47,15 @@ import AdminOrders from './PAGES/AdminPage/AdminOrders/AdminOrders';
 
 /* seo: set document head */
 import {Helmet} from "react-helmet";
+import PayLoadPage from './PAGES/PayLoadPage/PayLoadPage';
 
+import PaySuccess from './PAGES/Errors/PaySuccess/PaySuccess'
+import PayFailed from './PAGES/Errors/PayFailed/PayFailed'
+import GateGuest from './HELPERS/Permissions/GateGuest';
+import LoginModel from './PAGES/RegisterPage/LoginModal/LoginModal';
+
+import {Navigate} from 'react-router-dom';
+import CONST from './CONSTANTS/CONST';
 
 function App({
   //showLoader,
@@ -55,7 +63,23 @@ function App({
 }) {
   /* snackbars */
   // const snacks = useSelector(state => state.toastStore.toasts);
+  const token = JSON.parse(localStorage.getItem('auth'))?.token;
   const user = JSON.parse(localStorage.getItem('auth'))?.user;
+  const [isAuth, setIsAuth] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  // check for admin and auth
+  useEffect(() => {
+    if (token) {
+      setIsAuth(true);
+
+      // if: user.admin
+      const decodedToken = decode(token);
+      if (decodedToken.role === CONST.ADMIN) {
+        setIsAdmin(true);
+      }
+    }
+  }, [token]);
 
   // is font loaded
   const [appReady, setAppReady] = useState(false);
@@ -132,6 +156,7 @@ function App({
     return <></>
   }
 
+
   return (
     <div className="App">
 
@@ -158,30 +183,77 @@ function App({
         <Route path='/register' element={<Register/>}/>
 
         {/* user profile */}
-        <Route path={'/users/dashboard/:userId'} element={<Dashboard/>}/>
-        <Route path={'/users/orders/:userId/:status'} element={<Orders key={randomId()}/>}/>
-        <Route path={'/users/settings/:userId'} element={<Settings/>}/>
-        <Route path={'/users/address/:userId'} element={<Address/>}/>
+        <Route 
+        path={'/users/dashboard/:userId'} 
+        element={isAuth ? <Dashboard/> : <Navigate replace to={'/'}/>}
+        />
+        <Route 
+        path={'/users/orders/:userId/:status'} 
+        element={isAuth ? <Orders key={randomId()} /> : <Navigate replace to={'/'}/>}
+        />
+        <Route 
+        path={'/users/settings/:userId'} 
+        element={isAuth ? <Settings/> : <Navigate replace to={'/'}/>}
+        />
+        <Route 
+        path={'/users/address/:userId'} 
+        element={isAuth ? <Address/> : <Navigate replace to={'/'}/>}
+        />
 
         {/* checkout */}
         <Route 
           path={`/checkout/:userId`}
-          element={<Checkout/>}
+          element={isAuth ? <Checkout/> : <Navigate replace to={'/'}/>}
         />
 
         {/* Dev admin Routes */}
-        <Route path='/dev/dashboard' element={<DevDashboard/>}/>
-        <Route path='/dev/create/product' element={<CreateProduct/>} />
-        <Route path='/admin/products' element={<ProductsList/>}/>
-        <Route path='/admin/edit/product/:slug' element={<UpdateItemPage/>}/>
+        <Route 
+          path='/admin/dashboard' 
+          element={isAdmin ? <DevDashboard/> : <Navigate replace to={'/'}/>}
+        />
+        <Route 
+        path='/admin/create/product' 
+        element={isAdmin ? <CreateProduct/> : <Navigate replace to={'/'}/>} 
+        />
+        <Route 
+        path='/admin/products' 
+        element={isAdmin ? <ProductsList/> : <Navigate replace to={'/'}/>}
+        />
+        <Route 
+        path='/admin/edit/product/:slug' 
+        element={isAdmin ? <UpdateItemPage/> : <Navigate replace to={'/'}/>}
+        />
 
-        <Route path='/admin/orders' element={<AdminOrders/>}/>
+        <Route 
+        path='/admin/orders' 
+        element={isAdmin ? <AdminOrders/> : <Navigate replace to={'/'}/>}
+        />
         
         {/* <Route path='/admin/delete/product/:id' element={<UpdateItemPage/>}/> */}
 
+        {/* after zpal checkout come to loading screen untill payment success is checked. */}
+        <Route 
+        path='/payment/loadscreen' 
+        element={isAuth ? <PayLoadPage/> : <Navigate replace to={'/'}/>}
+        />
+
+        {/* payment failed */}
+        <Route 
+        path='/payment/success' 
+        element={isAuth ? <PaySuccess/> : <Navigate replace to={'/'}/>}
+        />
+        {/* payment success */}
+        <Route 
+        path='/payment/failed' 
+        element={isAuth ? <PayFailed/> : <Navigate replace to={'/'}/>}
+        />
       </Routes>
       
       <LoadScreen/>
+      <GateGuest>
+
+        <LoginModel/>
+      </GateGuest>
     </div> /* app */
   );
 }

@@ -1,9 +1,27 @@
 import axios from 'axios';
-import { PRODUCTS_LIMIT } from '../CONSTANTS/CONST';
+import CONST, { PRODUCTS_LIMIT } from '../CONSTANTS/CONST';
+
+
+// set auth token for all axios requests:
+const token = JSON.parse(localStorage.getItem(CONST.AUTH))?.token;
+
+if (token) {
+  axios.defaults.headers.common["x-auth-token"] = token;
+} else {
+  delete axios.defaults.headers.common["x-auth-token"];
+}
 
 const AXIOS = axios.create({ 
   baseURL: `${process.env.REACT_APP_API_URL}`
 });
+
+
+
+/* const header = {
+  headers: {
+    "content-type": "application/json"
+  }
+}; */
 
 // config for uploading images
 const axiosConfig = {
@@ -86,12 +104,15 @@ const API = {
 
   // cities:
   getCities: () => AXIOS.get('/cities/get'),
+  //updateShippingCost: () => AXIOS.post('/cities/shippingCost'),
 
   // orders: **
 
   createOrder: (order) => AXIOS.post('/orders/create', order),
   fetchOrdersByUser: (id, status, page=1, limit=1) => 
     AXIOS.get(`/orders/get/${id}/${status}?page=${page}&limit=${limit}`),
+
+  getOrderCounts: (data) => AXIOS.post('/orders/order-counts', data),
   
   // homepage: **
   getHomeData: () => AXIOS.get('/home/get'),
@@ -104,6 +125,9 @@ const API = {
   adminFetchOrders: () => AXIOS.get(`/admin/get-orders`),
   adminMakeOrderMsg: (data) => AXIOS.post(`/admin/order-msg`, data),
 
+  // payment **:
+  makePayment: (data) => AXIOS.post(`/transactions/pay`, data),
+  verifyPayment: (data) => AXIOS.post('/transactions/verify-pay', data),
 }
 
 

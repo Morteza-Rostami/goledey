@@ -11,7 +11,8 @@ import CONST, {
   STORE_CART_DB,
   IS_IN_CART,
   IS_CART_LOADING,
-  UPDATE_CART_STORE_DB
+  UPDATE_CART_STORE_DB,
+  DELETE_CART
 } from "../CONSTANTS/CONST";
 import { doneScreenLoad, removeCardMsg, setScreenLoad, setScreenLoading } from "./msgActions";
 import { addToast } from "./toastActions";
@@ -287,7 +288,15 @@ export const appendCartToDB = ({ userId }) => async (dispatch) => {
   }
 } 
 
+// remove cart from localStorage:
+export const deleteCart = () => (dispatch) => {
+  localStorage.removeItem(CONST.CART);
+  dispatch({ type: DELETE_CART});
+}
+
 //==========================================
+//==========================================
+
 
 export const addToCartLS = ({ itemSlug, cardMsg='' }) => async (dispatch) => {
   let cart = {};
@@ -329,6 +338,9 @@ export const addToCartLS = ({ itemSlug, cardMsg='' }) => async (dispatch) => {
     dispatch({ type: UPDATE_CART_STORE_DB, payload: cart });
 
     dispatch(isItemInLS({itemSlug}))
+
+    // remove cardmsg
+    localStorage.removeItem(CONST.CARD_MSG);
     
   } catch(err) {
     console.log({

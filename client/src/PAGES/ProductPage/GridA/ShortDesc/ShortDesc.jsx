@@ -77,13 +77,13 @@ const ShortDesc = ({
       <HorizLine/>
 
       {/* short discription */}
-      <p 
+      <div 
         className={`${styles.short_desc}`}
       >
         {
           <Markup markup={product.shortDesc} />
         }
-      </p>
+      </div>
       </Inner>
     </div>
   )

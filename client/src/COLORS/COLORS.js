@@ -17,9 +17,9 @@ const COLOR = {
 
   inputBg: '#CCCFCA',
 
-  bg: '#E7EaE4',
+  bg: '#EEF0EC',
 
-  offWhite: '#F4F6F2',
+  offWhite: '#F6F6F6',
 
   // success
   success_100: '#71EE5A',

@@ -20,9 +20,9 @@ import CONST from '../../../CONSTANTS/CONST';
 
 // array of hero images:
 const images = [
-  './images/banners/Ad-banner52.jpg', 
-  './images/banners/Ad-banner61.jpg', 
-  './images/banners/Ad-banner71.jpg']
+  './images/banners/hero_slide_1.webp', 
+  './images/banners/hero_slide_2.webp', 
+  './images/banners/hero_slide_3.webp']
 
 const Hero = ({ }) => {
   // reference to swiper:
@@ -57,7 +57,7 @@ const Hero = ({ }) => {
           onSwiper={(swiper) => swiperRef.current = swiper}
 
           autoplay={{
-            delay: 2500,
+            delay: 8000,
             disableOnInteraction: false,
           }}
           autoHeight={true}

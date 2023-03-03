@@ -65,20 +65,24 @@ const Product = ({  }) => {
       footerMob={<FooterMobB itemSlug={slug} product={product}/>}
       footerDec={<Footer/>}
     >
-      <div className={`${styles.product__page}`}>
+      <div className={`${styles.product__page} center-contain`}>
+        <div
+          className={`${styles.inner} contain-2`}
+        >
 
-        <GridA product={product} itemSlug={slug}/>
-        
-        <Reviews 
-          product={product}
-          slug={slug}
-        />
-        
-        <LeaveReview 
-          product={product}
-        />
-        
-        <RelProducts products={product?.relateds}/>
+          <GridA product={product} itemSlug={slug}/>
+          
+          <Reviews 
+            product={product}
+            slug={slug}
+          />
+          
+          <LeaveReview 
+            product={product}
+          />
+          
+          <RelProducts products={product?.relateds}/>
+        </div>
       </div> {/* product__page */}
 
     </AutoLayout>

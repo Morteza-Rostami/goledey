@@ -6,11 +6,13 @@ import styles from './BankBtn.module.scss';
 import CONST from '../../../CONSTANTS/CONST';
 import { useDispatch, useSelector } from 'react-redux';
 import { createOrder } from '../../../ACTIONS/orderActions';
+import { makePayment } from '../../../ACTIONS/payActions';
 
 const BankBtn = ({
   setDateOpen,
   datePicked,
   date,
+  shippingCost,
 }) => {
   const user = JSON.parse(localStorage.getItem(CONST.AUTH))?.user;
   const cart = useSelector(state => state.cartStore);
@@ -36,7 +38,13 @@ const BankBtn = ({
       total: cart?.total,
     }
 
-    dispatch(createOrder(order));
+    const object = {
+      userId: user?._id,
+      amount: cart?.total,
+      orderObj: order,
+    }
+
+    dispatch(makePayment(object));
   }
   
   return (

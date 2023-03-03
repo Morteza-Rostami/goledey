@@ -41,7 +41,6 @@ const LazyLoad = ({
     dispatch(action(dispatchData))
   }
 
-  console.log('isLoading:: -----------------', nextPage)
   return (
     <div
       className={`${css && css.lazy__load} lazy`}

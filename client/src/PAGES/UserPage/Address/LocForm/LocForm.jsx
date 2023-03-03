@@ -8,7 +8,7 @@ import { useState, useEffect } from 'react';
 import { Button, FormGroup, IconButton, InputLabel, MenuItem, Select, TextField, TextareaAutosize } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import {getCities} from '../../../../ACTIONS/cityActions';
-import { updateAddress } from '../../../../ACTIONS/userActions';
+import { setUserComplete, updateAddress } from '../../../../ACTIONS/userActions';
 import NavBar from '../../Dashboard/NavBar/NavBar';
 import useAddressValidator from '../../../../HOOKS/useAddressValidator';
 
@@ -64,6 +64,8 @@ const LocForm = () => {
     // dispatch
     dispatch(updateAddress(formD, user._id));
 
+    
+    //window.location.reload(true)
 
   }
 
@@ -165,7 +167,9 @@ const LocForm = () => {
         </FormGroup>
 
 
-        <FormGroup>
+        <FormGroup
+          className={`${styles.input_g_phone}`}
+        >
           <InputLabel 
           className={`${styles.label}`}
           id="phone"
@@ -182,7 +186,7 @@ const LocForm = () => {
             onChange={(e) => handChange(e)}
             // onBlur={(e) => onBlurField(e)}
           autoComplete='off'
-         
+          style={{ fontSize: '14px !important' }}
           />
           {/* {
             errors.name.dirty && errors.name.error 

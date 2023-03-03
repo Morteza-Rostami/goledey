@@ -11,7 +11,8 @@ import {
   CLEAR_CART,
   IS_IN_CART,
   IS_CART_LOADING,
-  UPDATE_CART_STORE_DB
+  UPDATE_CART_STORE_DB,
+  DELETE_CART
 } from "../CONSTANTS/CONST";
 
 // initial state:
@@ -54,7 +55,15 @@ const cartReducer = (state=init, action) => {
       return { ...state, isCartLoading: action.payload };
 
 
-    
+    case DELETE_CART:
+      return {...state, 
+        products: [],
+        itemsCount: 0,
+        total: 0,
+      
+        isInCart: null,      
+        //isCartLoading: false,
+      }
 
 
 

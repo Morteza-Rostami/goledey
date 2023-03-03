@@ -3,6 +3,7 @@
 .adbanner1 {
   @include centerFrame();
   width: 100%;
+  margin-top: 2rem;
   .inner {
     display: flex;
     padding: 0 $pad-lr-m;
@@ -56,7 +57,7 @@
 @media only screen and (min-width: $mobile-b) {
 
 .adbanner1 {
-  margin-top: $pad-100;
+  margin-top: 4rem;
   .inner {
     padding: 0 $pad-lr;
     .banner_mob {

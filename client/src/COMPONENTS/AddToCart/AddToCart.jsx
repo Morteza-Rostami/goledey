@@ -25,6 +25,7 @@ import CONST from "../../CONSTANTS/CONST";
 const AddToCart = ({
   itemSlug,
   product,
+  css,
 }) => {
   const user = JSON.parse(localStorage.getItem(CONST.AUTH))?.user;
   const isCartLoading = useSelector(state => state.cartStore.isCartLoading);
@@ -80,6 +81,7 @@ const AddToCart = ({
 
       // open cardMsg dialog
       //console.log(openCardMsgDialog.current);
+      console.log('open cartmsg')
       openCardMsgDialog.current();
     }
   }
@@ -121,13 +123,14 @@ const AddToCart = ({
         ? (
           <Amount 
             itemSlug={itemSlug}
+            css={css}
             //switchIsInCart={switchIsInCart}
             // handleDelete={() => deleteItem(itemSlug)}
           />
         )
         : (
           <Button
-            className={`${styles.add__btn}`}
+            className={`${styles.add__btn} ${css}`}
             variant="outlined"
             color='primary'
             onClick={() => ifCardMsgThenAddItem()}
@@ -137,7 +140,13 @@ const AddToCart = ({
         )
 
       ) : (
-        <Skeleton variant="rectangular" width={100} height={44} />
+        <Skeleton 
+        className={`${css}`}
+        variant="rectangular" 
+        width={100} 
+        height={44} 
+        
+        />
         
       )
 

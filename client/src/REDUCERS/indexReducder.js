@@ -12,6 +12,7 @@ import msg from './msgReducer.js';
 import home from './homeReducer.js';
 import admin from './adminReducer.js';
 import toast from './toastReducer.js';
+import payment from './payReducer.js';
 
 // combine all reducers:
 const rootReducer = combineReducers({
@@ -27,6 +28,7 @@ const rootReducer = combineReducers({
   homeStore: home,
   adminStore: admin,
   toastStore: toast,
+  paymentStore: payment,
 });
 
 export default rootReducer;

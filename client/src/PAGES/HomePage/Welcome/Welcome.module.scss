@@ -74,7 +74,7 @@
     .inner {
       gap: $row-gap-150;
       padding: $pad-tb-115 $pad-lr;
-
+      padding-top: 0;
       .heading {
         @include typo-56-400;
         max-width: 500px;
@@ -87,23 +87,23 @@
       .slogan {
         @include verticFrame($gap: $row-gap-100);
         @include typo-20-400;
-        max-width: 700px;
-
-        .top {
+        max-width: 1000px;
+        line-height: 3.6rem !important;
+        /* .top {
           max-width: 400px;
          
         }
-  
+        
         p {
-          max-width: 400px;
          
-        }
+        } */
       }
 
       .btn {
         @include typo-19-400;
         font-size: 19px !important;
         margin: 0;
+        margin-top: 1rem;
       }
     }
   }

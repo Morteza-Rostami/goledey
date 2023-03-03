@@ -379,7 +379,7 @@ p, h1, h2, h3, h5, h6 {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 500ms;
 
-  z-index: 2000;
+  z-index: 1000;
 }
 
 .header.down {
@@ -389,3 +389,13 @@ p, h1, h2, h3, h5, h6 {
 .header.up {
   top: 0px;
 }
+
+/* cattabs scroll arrows */
+.cattabs .MuiTabs-scrollButtons {
+  display: none !important;
+}
+
+/* login form stepper */
+/* .MuiMobileStepper-dots {
+  margin-right: 165px;
+} */

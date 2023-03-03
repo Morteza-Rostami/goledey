@@ -25,11 +25,13 @@ router.post('/verifyOtp', userController.verifyOtp);
 
 // update
 router.patch('/update/:id', 
-  // accessAuth,
+  accessAuth,
   userController.update);
 
 // update user address
-router.patch('/address/:id', userController.updateAddress);
+router.patch('/address/:id', 
+accessAuth,
+userController.updateAddress);
 
 // delete
 //router.delete('/delete/:id', userController.delete);

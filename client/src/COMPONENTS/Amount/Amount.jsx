@@ -30,7 +30,7 @@ import { CircularProgress, Skeleton } from '@mui/material';
 import { useState } from 'react';
 
 
-const Amount = ({ itemSlug, switchIsInCart }) =>  {
+const Amount = ({ itemSlug, switchIsInCart, css }) =>  {
   const user = JSON.parse(localStorage.getItem(CONST.AUTH))?.user;
 
   //const cartDoneLoading = useSelector(state => state.cartStore.doneLoading); 
@@ -101,16 +101,22 @@ const Amount = ({ itemSlug, switchIsInCart }) =>  {
 
   return (
     <div
-      className={`${styles.amount}`}
+      className={`${styles.amount} ${css}`}
+      style={{ justifyContent: 'center' }}
     >
       {
         amountLoading
         ? (
-          <Skeleton variant="rectangular" width={100} height={44} />
+          <Skeleton 
+          className={`${css}`}
+          variant="rectangular" 
+          width={100} 
+          height={44} />
         ) : (
 
           <ButtonGroup
-            className={`${styles.btn__group}`}
+            className={`${styles.btn__group} ${css}`}
+            style={{ justifyContent: 'center' }}
           >
             
             <Button

@@ -46,7 +46,7 @@ export default function OrderedPics() {
           cart?.products.length
           ? (
             cart.products.map((item, i) => (
-              <SwiperSlide>
+              <SwiperSlide key={i}>
                 <img 
                   src={item.product.pictures[0]} 
                   alt="" 

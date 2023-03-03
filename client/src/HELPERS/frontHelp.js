@@ -2,6 +2,7 @@
 const FrontHelp = {
   
   formatMoney: (currency) => {
+    if (currency === 0) return 0;
     const formated = 
     currency
     .toString()

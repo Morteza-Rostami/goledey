@@ -22,7 +22,7 @@ import CONST from '../../../../CONSTANTS/CONST';
 const Statuses = ({
   cssName,
 }) => {
-  const counts = useSelector(state => state.cartStore.ordersCount);
+  const counts = useSelector(state => state.orderStore.orderCounts);
   const { userId: authUser } = useParams();
 
   

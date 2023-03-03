@@ -25,14 +25,22 @@ const LayoutHome = ({ children }) => {
       className={`${styles.layout_home}`}
     >
       <TopHeaderAd/>
-      <Header bgColor={COLOR.light}/>
+      {/* <div
+        className={`${styles.header_wrap}`}
+      > */}
+        <Header bgColor={COLOR.light}/>
+      {/* </div> */}
 
+      <section
+        className={`${styles.filters}`}
+      >
+        <FilterBar setSubMenuOpen={toggleSubMenu} />
+        <SubMenuDrop 
+          subMenuOpen={subMenuOpen} 
+          setSubMenuOpen={setSubMenuOpen}
+        />
 
-      <FilterBar setSubMenuOpen={toggleSubMenu} />
-      <SubMenuDrop 
-        subMenuOpen={subMenuOpen} 
-        setSubMenuOpen={setSubMenuOpen}
-      />
+      </section>
 
       
 

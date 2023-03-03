@@ -154,7 +154,23 @@ const orderController = {
   },
 
 
+  getOrderCounts: async (req, res) => {
+    const {userId} = req.body;
+    
+    console.log(userId)
+    //await HELPER.countOrders(userId);
 
+    try {
+
+      const counts = await HELPER.countOrders(userId);
+      
+
+      return res.status(200).json(counts);
+
+    } catch(err) {
+      return res.status(400).json({ message: 'controller: orders/counts' });
+    }
+  },
 
 
 

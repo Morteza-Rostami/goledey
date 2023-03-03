@@ -14,9 +14,14 @@ import OrderImgs from './OrderImgs/OrderImgs';
 import FrontHelp from '../../../../HELPERS/frontHelp'
 import { Button } from '@mui/material';
 
+import {useDispatch} from 'react-redux'
+import { makePayment } from '../../../../ACTIONS/payActions';
+
 const OrderCard = ({
   order,
 }) => {
+
+  const dispatch = useDispatch();
 
   // persian status
   const card = useMemo(() => {
@@ -47,6 +52,15 @@ const OrderCard = ({
     return {status, icon, pictures};
   }, []);
 
+  const payBank = () => {
+    const data = {
+      userId: order.user,
+      amount: order.total,
+      orderId: order._id,
+    }
+    dispatch(makePayment(data));
+  }
+
   return (
     <div
       className={`${styles.card}`}
@@ -73,6 +87,7 @@ const OrderCard = ({
               className={`${styles.pay__btn}`}
               size='small'
               variant='outlined'
+              onClick={() => payBank()}
             >
               
               پرداخت (بانک)
@@ -124,16 +139,22 @@ const OrderCard = ({
         />
       </div>
 
-      <p
-        className={`${styles.admin__msg}`}
-      >
-        <span className={`${styles.title}`}>
-          پیام ادمین:
-        </span>
-        <span className={`${styles.msg}`}>
-          { order?.adminMsg }
-        </span>
-      </p>
+      {
+        order.status === CONST.ONGOING
+        ? (
+          <p
+            className={`${styles.admin__msg}`}
+          >
+            <span className={`${styles.title}`}>
+              پیام ادمین:
+            </span>
+            <span className={`${styles.msg}`}>
+              { order?.adminMsg }
+            </span>
+          </p>
+
+        ) : ''
+      }
 
     </div>
   )

@@ -8,7 +8,7 @@ import CONST from '../../../CONSTANTS/CONST';
 import { Link } from 'react-router-dom';
 
 const AdBanner1 = () => {
-  const valentine = 'valentine';
+  const monasebat = 'eyd';
   const {width, height} = useWindowDimensions();
 
   return (
@@ -28,13 +28,13 @@ const AdBanner1 = () => {
       /> */}
 
       <Link
-        to={`/shop?sCat=${valentine}&page=1`}
+        to={`/shop?sCat=${monasebat}&page=1`}
         style={{ width: '100%' }}
       >
         <div 
           className={`${styles.banner_mob}`}
           style={{
-            background: 'url("/images/banners/Small-ad-banner-21.png")' 
+            background: 'url("/images/banners/eyd_banner.webp")' 
           }}
         > 
         </div>

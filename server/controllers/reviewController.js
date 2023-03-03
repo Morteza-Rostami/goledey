@@ -7,6 +7,8 @@ import mongoose from 'mongoose';
 
 import moment from 'jalali-moment';
 
+import User from '../models/User.js';
+
 // set locale globaly
 moment.locale('fa');
 
@@ -29,6 +31,14 @@ const reviewController = {
       // let average = 
       //   ratingsArr.reduce((init , currentVal) => init = init + currentVal) / reviews.length;
 
+      reviews = reviews.map((rev, i) => rev.toObject());
+
+      for (let i=0; i < reviews.length; i++) {
+        const rev = reviews[i];
+        const user = await User.findOne({ _id: rev.userId });
+        reviews[i].userName = user.name;
+      }
+
       reviews = reviews.map(rev => {
         return {
           _id: rev._id,
@@ -37,6 +47,7 @@ const reviewController = {
           //Date: moment(rev.createdAt).fromNow()
           // .format('YYYY/MM/DD')
           date: moment(rev.createdAt).fromNow(),
+          userName: rev.userName,
         }
       });
       
@@ -62,7 +73,8 @@ const reviewController = {
     const content = req.body?.content;
     const rating = req.body?.rating;
     const productId = req.body?.productId;
-    // const userId = req.body?.userId
+    const userId = req.body?.user
+
 
     try {
 
@@ -75,15 +87,19 @@ const reviewController = {
         content: content,
         rating: rating,
         productId: productId,
+        userId: userId,
       });
 
       let newReview = await review.save();
+
+      const user = await User.findOne({ _id: newReview.userId });
 
       newReview = {
         _id: newReview._id,
         content: newReview.content,
         rating: newReview.rating,
         date: moment(newReview.createdAt).fromNow(),
+        userName: user.name,
       };
 
       return res.status(200).json(newReview);

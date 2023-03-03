@@ -3,13 +3,28 @@
 
 /* ********************** MOBILE ********************** */
 
-@media only screen and (max-width: $mobile-b) {
-  .mobnav {
-    
-    
-  }
+.mobnav {
+  
+  
+  .btn {
 
+    svg {
+      @include svg-24;
+
+      path {
+        fill: $primary-250;
+      }
+    }
+
+    span {
+      @include typo-12-400;
+      color: $text-label;
+      font-family: $font-pri;
+    }
+  }
+  
 }
+
 
 
 /* ********************** tablet/desktop ********************** */

@@ -17,7 +17,7 @@ const store =
   createStore(rootReducer, storeEnhancers(applyMiddleware(thunk)));
 
 // subscribe a callBack to run when store gets an action.
-store.subscribe(() => console.log('store updated: ', store.getState()));
+//store.subscribe(() => console.log('store updated: ', store.getState()));
 
 // connect component with redux.store.state
 // first argument cat be null: connect(null, mapDispatchToProps)

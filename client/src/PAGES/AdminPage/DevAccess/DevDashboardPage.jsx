@@ -16,7 +16,7 @@ const DevDashboard = () => {
       footerDec={<Footer/>}
     >
       <h2>Dev DashBoard</h2>
-      <Link to='/dev/create/product'>
+      <Link to='/admin/create/product'>
         ایجاد محصول
       </Link>
       <Link to='/admin/products'>

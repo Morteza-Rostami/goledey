@@ -17,6 +17,7 @@ import Rating from '@mui/material/Rating';
 const LEN = 120;
 
 const ReviewCard = ({ review }) => {
+
   
   const [moreOpen, setMoreOpen] = useState(false);
   const [content, setContent] = useState(FrontHelp.truncate(review.content, LEN));
@@ -56,7 +57,7 @@ const ReviewCard = ({ review }) => {
               <p
                 className={`${styles.name}`}
               >
-                سارا بهاری
+                {review.userName}
               </p>
               <p
                 className={`${styles.date}`}

@@ -11,6 +11,7 @@ import paginatedResults from '../middlewares/paginatedApi.js';
 // new: upload one photo middleware
 import { multerMD } from '../middlewares/uploadImgMD.js';
 import { uploadOneImg } from '../middlewares/uploadImgMD.js';
+import { accessAdmin, accessAuth } from '../middlewares/accessMiddle.js';
 
 // using: controller
 router.get('/get', productController.get, paginatedResults());
@@ -20,7 +21,9 @@ router.get('/get', productController.get, paginatedResults());
 router.get('/get/:slug', productController.getOne);
 
 // create: one post
-router.post('/create', 
+router.post('/create',
+  accessAuth,
+  accessAdmin, 
   multerConfig.fields([
     {name: 'photos[0]'},
     {name: 'photos[1]'},
@@ -38,10 +41,14 @@ router.post('/create',
 
 // update
 router.patch('/update/:id', 
+  accessAuth,
+  accessAdmin,
   productController.update);
 
   /* update or add one img of product at a time */
 router.patch('/updateImg/:id',
+  accessAuth,
+  accessAdmin,
   multerMD.single('file'),
   uploadOneImg,
   productController.updateImg
@@ -54,7 +61,11 @@ router.patch('/updateImg/:id',
 
 // delete
 // any delete request -> auto comes here.
-router.delete('/delete/:id', productController.delete);
+router.delete('/delete/:id', 
+
+accessAuth,
+accessAdmin,
+productController.delete);
 
 // search:
 // router.get('/search', productController.search, paginatedResults());

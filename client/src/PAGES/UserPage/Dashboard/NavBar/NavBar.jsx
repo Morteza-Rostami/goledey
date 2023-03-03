@@ -86,7 +86,7 @@ const NavBar = ({
         link: `/users/address/${authUser}`,
         page: CONST.dashboard, 
         cssName: styles.option,
-        error: !isUserComplete,
+        error: isUserComplete,
 
       },
       {
@@ -95,7 +95,7 @@ const NavBar = ({
         link: `/users/settings/${authUser}`,
         page: CONST.dashboard, 
         cssName: styles.option,
-        error: !isUserComplete,
+        error: isUserComplete,
       },
       {
         icon: <LogoutIco/>,

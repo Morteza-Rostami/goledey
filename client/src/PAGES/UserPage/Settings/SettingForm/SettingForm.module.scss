@@ -4,6 +4,11 @@
 
 
   .form {
+
+    input {
+      font-size: 14px !important;
+    }
+
     @include verticFrame($gap: 1rem);
     
     border-radius: .5rem;

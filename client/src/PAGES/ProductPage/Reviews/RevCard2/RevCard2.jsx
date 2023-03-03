@@ -55,7 +55,7 @@ const RevCard2 = ({ review }) => {
               <p
                 className={`${styles.name}`}
               >
-                سارا بهاری
+                {review.userName}
               </p>
               <p
                 className={`${styles.date}`}

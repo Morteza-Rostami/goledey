@@ -53,15 +53,14 @@ export default function AlertDialogSlide() {
 
   return (
     <div>
-      <IconButton
+      {/* <IconButton
         className={`${styles.user_open}`}
         onClick={handleClickOpen}
       >
-        {/* <MdOutlineMenu/> */}
         <FaUserCircle
         className={`${styles.ico}`}
         />
-      </IconButton>
+      </IconButton> */}
 
       <Dialog
         className='register-modal'

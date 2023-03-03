@@ -12,6 +12,8 @@ import otpGenerator from 'otp-generator';
 import HELPER from "../helpers/helpers.js";
 
 import { OTP_TIME } from "../CONST/CONSTBACK.js";
+import UserHelp from "../helpers/userHelp.js";
+
 
 // function: generate otp and send sms
 function generateOtpAndSendSMS(phone) {
@@ -29,6 +31,7 @@ function generateOtpAndSendSMS(phone) {
   // send otp to phone
   console.log(`phone: ${phone} otp: ${otp}`);
 
+  
   
   
   return otp;
@@ -54,6 +57,8 @@ const userController = {
 
   // signup a new user
   register: async (req, res) => {
+    let otp = '';
+
     try {
       const phone = req.body.cellPhone;
       // check if phone number exist
@@ -69,30 +74,44 @@ const userController = {
       }
 
       const user = await User.findOne({ cellPhone: phone });
+      let newUser = {};
       
       // if: user exist in DB
       if (user) {
         // generate otp and send a SMS
-        const otp = generateOtpAndSendSMS(phone);
+        otp = generateOtpAndSendSMS(phone);
         await hashAndStoreOtp(otp, phone);
       } else {
         // create new user
-        const newUser = await User.create({
+        newUser = await User.create({
           cellPhone: phone,
-          name: ''
+          name: 'کاربر'
         });
         // generate otp and send a SMS
-        const otp = generateOtpAndSendSMS(newUser.cellPhone);
+        otp = generateOtpAndSendSMS(newUser.cellPhone);
         await hashAndStoreOtp(otp, newUser.cellPhone);
       }
 
-      setTimeout(() => {
-        // success
-        console.log('register')
+      // success
+      console.log('register')
+
+      // set otp to user: (SMS)
+      // const smsRes = 
+      // await UserHelp.sendSms(otp, phone, `${user?.name || newUser?.name} ; ${otp}`, 126570);
+      const smsRes = {RetStatus: 1}
+      if (smsRes.RetStatus === 1) {
         return res.status(200).json({ message: `کد تایید به شماره ${phone} ارسال شد.`, success: true });
-      }, 4000);
+
+      } else {
+        return res.status(200).json({ 
+          message: `‌ارسال پیام به مشکل خود. لطفا کمی صبر کنید و دوباره تلاش کنید!`, 
+          success: true 
+        });
+      }
+
 
     } catch(err) {
+      console.log(err)
       return res.status(400).json({ 
         message: 'userController: /users/register', 
         err: JSON.stringify(err.message) 

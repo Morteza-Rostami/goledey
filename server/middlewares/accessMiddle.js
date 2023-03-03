@@ -16,7 +16,7 @@ export const accessAuth = (req, res, next) => {
     req.user = payload;
     next();
   } catch(err) {
-    return res.status(400).json({ message: 'invalid token, expired!' });
+    return res.status(200).json({ message: 'invalid token, expired!' });
   }
 }
 

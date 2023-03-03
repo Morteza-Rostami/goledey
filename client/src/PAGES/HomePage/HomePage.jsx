@@ -14,6 +14,8 @@ import CONST from '../../CONSTANTS/CONST';
 import COLOR from '../../COLORS/COLORS';
 import AdBanner1 from './AdBanner1/AdBanner1';
 import AdBanner2 from './AdBanner2/AdBanner2';
+import Promote from './Promote/Promote';
+import Legal from './Legal/Legal';
 
 const links = [
   '/shop?sCat=sabad-gol&page=1',
@@ -40,8 +42,9 @@ const HomePage = () => {
       <div className={`${styles.home}`}>
         
         <Hero/>
+        <Promote/>
         <Welcome/>
-        <AdBanner1/>
+        
         <Ranks 
           products={data?.topSabadGol} 
           name={SABADGOL}
@@ -50,6 +53,7 @@ const HomePage = () => {
           color={COLOR.primary_250}
           link={links[0]}
         />
+        <AdBanner1/>
         <Ranks 
           products={data?.topDasteGol} 
           name={DASTEGOL}
@@ -70,7 +74,7 @@ const HomePage = () => {
 
         />
 
-        
+        <Legal/>
         
       </div>
 

@@ -15,7 +15,6 @@ const UserGrid = ({
   const [navOff, setNavOff] = useState('flex');
 
   useEffect(() => {
-    console.log(width);
     if (width <= CONST.MOBILE) 
       setNavOff(navDisable ? 'none' : 'flex');
 
@@ -23,15 +22,14 @@ const UserGrid = ({
       setNavOff('flex');
   }, [width]);
 
-  console.log(children)
 
 
   return (
     <div
-      className={`${styles.user__grid}`}
+      className={`${styles.user__grid} center-contain`}
     >
       <div
-        className={`${styles.inner}`}
+        className={`${styles.inner} contain-2`}
       >
         <div
           className={`${styles.grid}`}

@@ -76,7 +76,11 @@ const InfoDec = ({
       <div
         className={`${styles.sec_2}`}
       >
-        <AddToCart itemSlug={itemSlug} product={product}/>
+        <AddToCart 
+          itemSlug={itemSlug} 
+          product={product}
+          css={`${styles.btn_w}`}
+        />
       </div> {/* sec_2 */}
 
       </div>{/* card */}

@@ -45,8 +45,8 @@
     max-width: 100% !important;
     width: 100% !important;
     object-fit: cover;
-    min-height: 268px;
-    max-height: 268px;
+    min-height: 200px;
+    max-height: 200px;
   }
 
 }
@@ -107,13 +107,13 @@
       
         .arrow_l, .arrow_r {
        
-          width: auto;
-          height: auto;
+          width: 40px;
+          height: 40px;
         
   
           .ico {
             color: $primary-250;
-            font-size: $ico-40;
+            font-size: $ico-24;
           }
         }
         .arrow_l {

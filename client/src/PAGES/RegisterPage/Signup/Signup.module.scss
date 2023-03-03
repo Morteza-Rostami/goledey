@@ -2,12 +2,12 @@
 @import '../../../CONSTANTS/Variables.scss';
 
 .form {
-  @include verticFrame($gap: 0);
+  @include verticFrame($gap: 2rem);
 
   .heading {
     @include typo-19-700;
     align-self: center;
-    margin-top: 1.6rem;
+    margin-top: 3rem !important;
     margin-bottom: 2rem;
     color: $title-active;
   }
@@ -54,7 +54,7 @@
   button.btn {
     @include typo-19-700;
     font-size: 16px !important;
-    margin-top: 2.6rem;
+    // /margin-top: 2.6rem;
     background-color: $primary-250;
     color: $off-white;
     border-radius: 1rem;

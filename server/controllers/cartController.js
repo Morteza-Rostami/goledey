@@ -56,6 +56,7 @@ const cartController = {
         cart.total += edProducts[0].price;
         const model = await cart.save();
 
+
         return res.status(200).json({
           success: true,
           message: ADD_ITEM_SUCCESS,
@@ -78,6 +79,7 @@ const cartController = {
         });
 
         const model = await newcart.save();
+
 
         return res.status(200).json({
           success: true,

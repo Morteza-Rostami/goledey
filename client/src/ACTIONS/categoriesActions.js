@@ -49,7 +49,6 @@ export const selectCatChip = (slug) => async (dispatch, getState) => {
       } else {
         // check if category already exist in state
         if (!selectedCats.some(cat => cat._id === catObj._id.toString())) {
-          console.log('dick');
           dispatch({ type: SELECT_CATEGORY_CHIP, payload: {...catObj} });
         }
       }
@@ -145,7 +144,6 @@ export const fetchOneCat = (slug) => async (dispatch) => {
 
 // set mainCat active tab
 export const setActiveTab = (mCatObj) => (dispatch) => {
-  console.log(mCatObj)
 
   //dispatch({ type: SET_ACTIVE_CAT, payload: {} });
   dispatch({ type: SET_ACTIVE_CAT, payload: mCatObj});

@@ -31,6 +31,7 @@ import GateAuth from "../../HELPERS/Permissions/GateAuth";
 
 
 export default function MobNav() {
+  const user = JSON.parse(localStorage.getItem(CONST.AUTH))?.user;
   const [value, setValue] = React.useState(0);
   const ref = React.useRef(null);
 
@@ -49,7 +50,14 @@ export default function MobNav() {
     }} 
     ref={ref}>
    
-      <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
+      <Paper 
+        sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} 
+        elevation={3}
+        style={{
+          paddingTop: '8px',
+          paddingBottom: '5px',
+        }}
+        >
         <BottomNavigation
           //showLabels
           value={value}
@@ -59,36 +67,52 @@ export default function MobNav() {
         >
           <GateGuest>
             <BottomNavigationAction 
+              className={`${styles.btn}`}
               icon={<UserIco />} 
               onClick={() => dispatch(openRegister())}
+              label={<span>ثبت نام</span>}
+              showLabel={true}
             />
           </GateGuest>
 
           <GateAuth>
             <BottomNavigationAction 
+              className={`${styles.btn}`}
               icon={<UserIco />} 
+              label={<span>پروفایل</span>}
+              showLabel={true}
+              component={Link}
+              to={`/users/dashboard/${user?._id}`}
             />
           </GateAuth>
 
           
           <BottomNavigationAction 
+          className={`${styles.btn}`}
             icon={<ExplorIco />} 
             component={Link}
             to={`/shop?page=${CONST.PAGE}`}  
+            label={<span>گلها</span>}
+            showLabel={true}
           />
           
           <BottomNavigationAction 
+          className={`${styles.btn}`}
             icon={<HomeIco />} 
             to={'/'}
             component={Link}
-            
+            label={<span>خانه</span>}
+            showLabel={true}
           />
 
           <BottomNavigationAction 
+          className={`${styles.btn}`}
             //label="" 
             icon={<CartIco/>} 
             component={Link}
             to={'/cart/guest'}
+            label={<span>سبد</span>}
+            showLabel={true}
           />
         </BottomNavigation>
       </Paper>

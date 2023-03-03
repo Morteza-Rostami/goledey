@@ -1,8 +1,12 @@
 @import '../../CONSTANTS/Variables.scss';
 
 .product__page {
-  @include verticFrame($gap: $row-gap-m);
-  margin-bottom: 73px;
+  
+
+  .inner {
+    @include verticFrame($gap: $row-gap-m);
+    margin-bottom: 73px;
+  }
 }
 
 

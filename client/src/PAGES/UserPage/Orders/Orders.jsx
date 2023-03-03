@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import LayoutA from '../../../LAYOUTS/LayoutA/LayoutA'
 
 import styles from './Orders.module.scss';
@@ -17,7 +17,7 @@ import Statuses from './Statuses/Statuses';
 import { useLocation, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import LazyLoad from '../../../COMPONENTS/LazyLoad/LazyLoad';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchOrdersByUser, resetOrders } from '../../../ACTIONS/orderActions';
+import { fetchOrdersByUser, getOrderCounts, resetOrders } from '../../../ACTIONS/orderActions';
 import OrderCard from './OrderCard/OrderCard';
 import EmptOrder from './EmptOrder/EmptOrder';
 
@@ -54,6 +54,11 @@ const Orders = () => {
     )
   }
 
+   // update order counts
+   useLayoutEffect(() => {
+    dispatch(getOrderCounts({userId: user._id}));
+  }, []);
+
   // data to dispatch with load more button
   const disData = useMemo(() => {
     // {id, status, page, limit}
@@ -68,7 +73,6 @@ const Orders = () => {
   useEffect(() => {
 
     if (fetchOrdersOnce.current) {
-      console.log('loc loc', loc)
       dispatch(resetOrders());
   
       const data = {
@@ -98,7 +102,7 @@ const Orders = () => {
         className={`${styles.orders} center-contain`}
       > 
         <div
-          className={`${styles.inner} contain`}
+          className={`${styles.inner} contain-2`}
         >
 
           <div 

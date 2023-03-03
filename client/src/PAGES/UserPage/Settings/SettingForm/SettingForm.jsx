@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 // hooks
 import useUserSettingsValidator from '../../../../HOOKS/useUserSettingsValidator'; 
 import { red } from '@mui/material/colors';
-import { updateUser } from '../../../../ACTIONS/userActions';
+import { setUserComplete, updateUser } from '../../../../ACTIONS/userActions';
 import DatePick from '../DatePick/DatePick';
 
 
@@ -99,6 +99,9 @@ const SettingForm = () => {
 
     // dispatch
     dispatch(updateUser(formD, user?._id));
+    
+    //dispatch(setUserComplete());
+    //window.location.reload(true)
 
   }
 
@@ -116,7 +119,6 @@ const SettingForm = () => {
 
   }, [formD]);
 
-  console.log(formD);
   return (
     <div className={`${styles.settings} settings-form`}>
 

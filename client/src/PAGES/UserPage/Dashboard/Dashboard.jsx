@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useLayoutEffect, useRef } from 'react'
 
 import styles from './Dashboard.module.scss';
 // import OrderTab from './OrderTab/OrderTab';
@@ -15,27 +15,46 @@ import Header from '../../../LAYOUTS/Header/Header'
 import Footer from '../../../LAYOUTS/Footer/Footer'
 import MobNav from '../../../LAYOUTS/MobNav/MobNav'
 import { setUserComplete } from '../../../ACTIONS/userActions';
+import RouteAuth from '../../../HELPERS/Permissions/RouteAuth';
+import { useNavigate } from 'react-router-dom';
+import { getOrderCounts } from '../../../ACTIONS/orderActions';
 
 
 
 const Dashboard = () => {
+
+  const authUser = useSelector(state => state.userStore.user);
+  const user = JSON.parse(localStorage.getItem(CONST.AUTH))?.user;
+
   const isUserComplete = useSelector(state => state.userStore.isUserComplete);
   const snackObj = useSelector(state => state.msgStore.snackObject);
   const dispatch = useDispatch();
   // run only first render
   const runFirst = useRef(true);
 
+  // update order counts
+  useLayoutEffect(() => {
+    dispatch(getOrderCounts({userId: authUser._id}));
+  }, []);
+
   useEffect(() => {
   
     dispatch(setUserComplete());
-    if (snackObj && !isUserComplete) {
+
+
+    if (snackObj && isUserComplete) {
       if (runFirst.current) {
 
         dispatch(addToast(snackObj, CONST.ERROR_SNACK, `لطفا اطلاعات خود را تکمیل کنید!`));
-        runFirst.runFirst = false;
+        runFirst.current = false;
       }
     }
-  }, [snackObj]);
+  }, [snackObj, authUser, isUserComplete]);
+
+  /* useEffect(() => {
+    console.log('user changed!!');
+  }, [authUser]); */
+
 
   return (
     <AutoLayout
@@ -48,7 +67,7 @@ const Dashboard = () => {
         className={`${styles.dashboard} center-contain`}
       > 
         <div
-          className={`${styles.inner} contain`}
+          className={`${styles.inner} contain-2`}
         >
 
           <div 

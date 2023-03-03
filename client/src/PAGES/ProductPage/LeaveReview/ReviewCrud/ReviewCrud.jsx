@@ -42,6 +42,7 @@ import { useTheme } from '@mui/material/styles';
 import COLOR from "../../../../COLORS/COLORS";
 import { useSnackbar } from "notistack";
 import CONST from "../../../../CONSTANTS/CONST";
+import { openRegister } from "../../../../ACTIONS/msgActions";
 
 // form animation:
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -53,6 +54,7 @@ const ReviewCrud = ({
   product,
   classn 
 }) => {
+  const user = JSON.parse(localStorage.getItem(CONST.AUTH))?.user;
   const [open, setOpen] = useState(false);
   // start rating => (lifted state)
   const [rate, setRate] = useState(2);
@@ -78,7 +80,8 @@ const ReviewCrud = ({
       setOpen(true);
     } else {
       // else: redirect to signup
-      
+      console.log('lllllllllllll')
+      dispatch(openRegister())
     }
 
 
@@ -94,7 +97,7 @@ const ReviewCrud = ({
     const userReview = {
       content: review,
       rating: rate,
-      //user: authUser
+      user: user?._id,
       productId: product._id
     };
     // dispatch action -> data to server

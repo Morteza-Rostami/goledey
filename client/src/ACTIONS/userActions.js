@@ -72,6 +72,7 @@ export const verifyOtp = (user, navigate, snackObj) => async (dispatch, getState
       localStorage.setItem('auth', JSON.stringify(user));
       // redirect to home
       navigate('/');
+      
 
       setTimeout(() => {
         dispatch(addToast(snackObj, CONST.INFO_SNACK, `به (گل دی) خوش آمدید!!`));
@@ -124,7 +125,8 @@ export const updateUser = (user, id) => async (dispatch, getState) => {
     const { data } = await API.updateUser(user, id);
 
     // update locaStorage user
-    const auth = JSON.parse(localStorage.getItem('auth'));
+    let auth = JSON.parse(localStorage.getItem('auth'));
+    auth = JSON.parse(JSON.stringify(auth));
     auth.user = data;
     localStorage.setItem('auth', JSON.stringify(auth));
     // update redux
@@ -132,6 +134,8 @@ export const updateUser = (user, id) => async (dispatch, getState) => {
 
     if (!data?.err) {
       dispatch(addToast(snackObj, CONST.SUCCESS_SNACK, `اطلاعات شما آپدیت شد!`));
+
+      dispatch(setUserComplete());
     }
 
   }catch (err) {
@@ -147,15 +151,20 @@ export const updateAddress = (address, id) => async (dispatch, getState) => {
     const { data } = await API.updateAddress(address, id);
 
     // update locaStorage user
-    const auth = JSON.parse(localStorage.getItem('auth'));
+    let auth = JSON.parse(localStorage.getItem('auth'));
+    //auth = JSON.parse(JSON.stringify(auth));
+
     auth.user = data;
     localStorage.setItem('auth', JSON.stringify(auth));
+
+
     // update redux
-    dispatch({ type: UPDATE_ADDRESS, payload: auth });
+    dispatch({ type: UPDATE_ADDRESS, payload: data });
 
     if (!data?.err) {
       dispatch(addToast(snackObj, CONST.SUCCESS_SNACK, `آدرس شما آپدیت شد!`));
 
+      dispatch(setUserComplete());
     }
 
   }catch (err) {
@@ -174,10 +183,15 @@ export const setUserComplete = () => (dispatch) => {
   let isComplete = false;
 
   try {
+
+
     if (user) {
       // name, credit-cart, user.address.city, full address
       if (user?.name && user?.address?.city?.name && user?.address?.fullAddress) {
+        isComplete = false;
         
+      } else {
+        // user not complete
         isComplete = true;
       }
   

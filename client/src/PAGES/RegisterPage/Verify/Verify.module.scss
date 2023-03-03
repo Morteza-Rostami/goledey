@@ -3,11 +3,11 @@
 
 .verify {
 
-  @include verticFrame($gap: 0);
+  @include verticFrame($gap: 2rem);
 
   .heading {
     @include typo-19-700;
-    margin-top: 1.6rem;
+    margin-top: 3rem !important;
     margin-bottom: 2rem;
     color: $title-active;
     align-self: center;

@@ -167,7 +167,9 @@ const MyDatePicker = ({
         )}
         InputProps={{
           endAdornment: (
-            <InputAdornment onClick={() => setDateOpen(true)}>
+            <InputAdornment 
+            position='start'
+            onClick={() => setDateOpen(true)}>
               <IconButton>
                 <MdEvent />
               </IconButton>

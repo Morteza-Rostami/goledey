@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 // css
 import styles from './SideCheck.module.scss';
@@ -17,10 +17,13 @@ const SideCheck = ({
   setDateOpen,
   datePicked,
   date,
+  shippingCost,
 }) => {
   const user = JSON.parse(localStorage.getItem('auth'))?.user;
   // const cart = JSON.parse(localStorage.getItem('cart'));
   const cart = useSelector(state => state.cartStore);
+
+  
   
   const items = useMemo(() => {
     return [
@@ -33,9 +36,7 @@ const SideCheck = ({
       {
         icon1: <CarIco/>,
         text: 'هزینه ارسال',
-        price: user.address?.city?.shippingCost 
-          ? FrontHelp.formatMoney(user.address?.city?.shippingCost)
-          : 0
+        price: FrontHelp.formatMoney(shippingCost)
           ,
         icon2: <TomanIco/>
       },
@@ -43,16 +44,12 @@ const SideCheck = ({
         icon1: <DangerIco/>,
         text: 'قیمت نهایی خرید',
         price: 
-          FrontHelp.formatMoney(
-            cart.total + 
-            (user.address?.city?.shippingCost 
-            ? user.address?.city?.shippingCost 
-            : 0)),
+          FrontHelp.formatMoney(cart.total + shippingCost ),
         icon2: <TomanIco/>,
         active: true
       },
     ]
-  }, [cart]); 
+  }, [cart, shippingCost]); 
 
   return (
     <div
@@ -95,7 +92,12 @@ const SideCheck = ({
           }
         </div> {/* wrap */}
 
-        <BankBtn setDateOpen={setDateOpen} datePicked={datePicked} date={date}/>
+        <BankBtn 
+        setDateOpen={setDateOpen} 
+        datePicked={datePicked} 
+        date={date}
+        shippingCost={shippingCost}
+        />
       </div> {/* bank__card */}
     </div>
   )

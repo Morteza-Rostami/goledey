@@ -32,6 +32,11 @@
       @include typo-14-400;
      
       color: $text-placehoder;
+
+      svg {
+        width: $ico-20 ;
+        height: $ico-20 ;
+      }
     }
   }
 

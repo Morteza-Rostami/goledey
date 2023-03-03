@@ -1,12 +1,28 @@
 @import '../../CONSTANTS/Variables.scss';
 
 .layout_home {
+  position: relative;
   min-height: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   gap: 0;
   justify-content: flex-start;
+
+
+  /* .header_wrap {
+    position: sticky;
+    top: 0;
+    z-index: 1100;
+  } */
+
+  .filters {
+    position: sticky;
+    top: 64px;
+    z-index: 1100;
+  } 
+
+
   .main {
     display: flex;
     flex-direction: column;
@@ -14,4 +30,31 @@
 
     margin-bottom: 3rem;
   }
+}
+
+
+/* ********************** tablet ********************** */
+
+@media only screen and (min-width: $mobile-b) {
+  .layout_home {
+
+  
+  
+    /* .header_wrap {
+      top: 0;
+      z-index: 1100;
+    } */
+  
+    .filters {
+      top: 72px;
+      z-index: 1100;
+    } 
+  
+  
+    .main {
+      
+    }
+  }
+
+
 }

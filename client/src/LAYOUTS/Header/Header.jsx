@@ -22,20 +22,23 @@ import { FaUserCircle } from 'react-icons/fa';
 import { MdOutlineMenu } from 'react-icons/md';
 import { IoMdCart } from 'react-icons/io';
 import CONST, { ICON_SIZE_MOB } from "../../CONSTANTS/CONST";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
  
 // access gates
 import GateAuth from "../../HELPERS/Permissions/GateAuth";
 import GateGuest from "../../HELPERS/Permissions/GateGuest";
 import UserMenu from "../../COMPONENTS/UserMenu/UserMenu";
 
-import LoginModel from '../../PAGES/RegisterPage/LoginModal/LoginModal';
 import { UserIco } from "../../SVG/UserIco";
+import { openRegister } from "../../ACTIONS/msgActions";
+import GateAdmin from "../../HELPERS/Permissions/GateAdmin";
 
 const Header = ({  }) => {
   const itemsCount = useSelector(state => state.cartStore.itemsCount);
   //const authUser = useSelector(state => state.userStore?.user?._id);
   const user = JSON.parse(localStorage.getItem(CONST.AUTH))?.user;
+
+  const dispatch = useDispatch();
 
   return (
     <header 
@@ -69,22 +72,27 @@ const Header = ({  }) => {
           className={`${styles.box_2}`}
         >
 
+          <GateAdmin>
+            <Button
+              component={Link}
+              to={'/admin/dashboard'}
+              style={{ fontSize: '14px', color: COLOR.offWhite }}
+              variant="contained"
+              color={'secondary'}
+            >
+              admin
+            </Button>
+          </GateAdmin>
+
 
           {/* profile */}
           <GateGuest>
-            {/* <Link
-              to={`/register`}
-            >
             <IconButton
-              className={`${styles.user_open}`}
+              onClick={() => dispatch(openRegister())}
             >
-              <FaUserCircle
-              className={`${styles.ico}`}
-              />
+              <UserIco/>
             </IconButton>
-            </Link> */}
-
-            <LoginModel/>
+          
           </GateGuest>
 
           <GateAuth>

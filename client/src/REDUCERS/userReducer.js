@@ -34,12 +34,12 @@ const userReducer = (state=init, action) => {
     case UPDATE_USER:
       return {
         ...state,
-        ...action.payload
+        ...JSON.parse(JSON.stringify(action.payload)),
       };
     case UPDATE_ADDRESS:
       return { 
         ...state,
-        ...action.payload 
+        user: JSON.parse(JSON.stringify(action.payload)),
       };
 
     /* signup loading */

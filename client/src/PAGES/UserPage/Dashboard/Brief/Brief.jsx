@@ -21,7 +21,7 @@ import CONST from '../../../../CONSTANTS/CONST';
 const Brief = ({
   cssName,
 }) => {
-  const counts = useSelector(state => state.cartStore.ordersCount);
+  const counts = useSelector(state => state.orderStore.orderCounts);
   const { userId: authUser } = useParams();
 
   const tabs = useMemo(() => {
@@ -55,7 +55,7 @@ const Brief = ({
         activeTab: false  
       },
     ] 
-  }, []);
+  }, [counts]);
 
   return (
     <section

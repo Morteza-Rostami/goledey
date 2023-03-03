@@ -6,6 +6,7 @@ import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setUserComplete } from '../../../ACTIONS/userActions';
+import { openRegister } from '../../../ACTIONS/msgActions';
 
 
 
@@ -43,7 +44,7 @@ const CheckoutBtn = ({
             //color={"success"}
             component={Link}
             to={
-              token && isUserComplete
+              token && !isUserComplete
               ? (
                 `/checkout/${user?._id}`
               ) 
@@ -61,6 +62,7 @@ const CheckoutBtn = ({
             className={`${styles.btn} ${css}`}
             variant='contained'
             size='large'
+            onClick={() => dispatch(openRegister())}
           >
             ادامه خرید
           </Button>

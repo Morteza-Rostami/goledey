@@ -202,9 +202,18 @@ const productController = {
           $or: [...relatedQueries]
         })
         
+        // model to object:
+        let relProducts = relateds.map((rel, i) => rel.toObject());
+
+        // filter out the current product:
+        relProducts = relProducts.filter((item, i) => {
+          return item._id.toString() !== product[0]._id.toString();
+        });
         
+        //console.log(relProducts)
+
         // edit relateds
-        const editedRelated = await HELPER.editProducts(relateds, imgUrl);
+        const editedRelated = await HELPER.editProducts(relProducts, imgUrl);
 
         productObj.relateds = editedRelated; 
 
@@ -215,6 +224,7 @@ const productController = {
       else throw 'product not found!';
 
     } catch(err) {
+      console.log(err)
       return res.json({message: 'controller: /product/get/:slug', err: err.message});
     }
 

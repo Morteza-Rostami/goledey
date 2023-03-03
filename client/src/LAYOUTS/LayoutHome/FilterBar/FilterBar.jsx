@@ -22,9 +22,9 @@ const FilterBar = ({
   return (
     <div 
       className={`${styles.filter_bar} filterbar center-contain`}
-      style={{
+      /* style={{
         display: `${width < CONST.MOBILE && loc.pathname === CONST.HOME ? 'none' : ''}`
-      }}
+      }} */
     >
       <div className={`${styles.inner} contain`}>
         <CatTabs setSubMenuOpen={setSubMenuOpen}/>

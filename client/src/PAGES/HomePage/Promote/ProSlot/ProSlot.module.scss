@@ -1,0 +1,36 @@
+@import '../../../../CONSTANTS/Variables.scss';
+
+.pro_slot {
+  @include verticFrame();
+  align-items: center;
+  text-align: center;
+
+  svg {
+    width: 52px;
+    height: auto;
+  }
+
+  span {
+    max-width: 70px;
+    @include typo-12-400;
+    color: $text-body;
+  }
+}
+
+/* ********************** tablet ********************** */
+
+@media only screen and (min-width: $mobile-b) {
+  .pro_slot {
+    
+  
+    svg {
+      width: auto;
+      height: auto;
+    }
+  
+    span {
+      max-width: auto;
+     
+    }
+  }
+}

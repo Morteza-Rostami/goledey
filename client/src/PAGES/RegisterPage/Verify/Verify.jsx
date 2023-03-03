@@ -76,16 +76,20 @@ const SignupVerify = ({
         کد تایید را وارد کنید
       </h2>
 
-      <p
-        className={`${styles.toptext}`}
+      <section
+        className={`${styles.content_wrap}`}
       >
-        کد تایید برای شماره <span>({formD.cellPhone})</span> پیامک شد.
-      </p>
-      <p
-        className={`${styles.subtext}`}
-      >
-        (کیبورد خود را انگیلسی کنید)
-      </p>
+        <p
+          className={`${styles.toptext}`}
+        >
+          کد تایید برای شماره <span>({formD.cellPhone})</span> پیامک شد.
+        </p>
+        <p
+          className={`${styles.subtext}`}
+        >
+          (کیبورد خود را انگیلسی کنید)
+        </p>
+      </section>
 
       <input
         name={'otp'}

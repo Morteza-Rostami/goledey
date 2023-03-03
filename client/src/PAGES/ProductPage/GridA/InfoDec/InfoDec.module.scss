@@ -6,9 +6,19 @@
   align-items: flex-start;
   justify-content: flex-end;
 
+  /* button {
+    width: 100%;
+  } */
+
+  .btn_w {
+    width: 100% !important;
+  }
+
+  
+
   .card {
-    position: sticky;
-    top: 0;
+    // position: sticky;
+    // top: 0;
     @include verticFrame($gap: 2.4rem);
     background: $off-white;
     padding: 2.4rem;

@@ -41,6 +41,8 @@ import GoldanIco from "../../../../SVG/categoriesSVG/GoldanIco";
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 
+import {MdKeyboardArrowDown} from 'react-icons/md';
+
 // import history from 'history';
 
 // categories icons
@@ -167,7 +169,14 @@ const CatTabs = ({
               <Tab 
                 className={`${styles.tab}`}
                 id={cat.slug}
-                label={<span>{cat.name}</span>} 
+                label={
+                <span 
+                  style={{ 
+                    display: 'flex', alignItems: 'center', justifyContent: 'center' 
+                  }}
+                >
+                  {cat.name} {cat.subCats.length ? <MdKeyboardArrowDown /> : '' } </span>
+                } 
                 // icon={<MyIcon svg={cat.svg}/>}
                 icon={catIcons[cat.slug]}
                 key={cat._id}

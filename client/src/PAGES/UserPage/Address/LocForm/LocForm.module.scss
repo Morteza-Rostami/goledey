@@ -52,6 +52,7 @@
       border-radius: .4rem;
       border: none;
       outline: none;
+      padding: 1rem;
     }
 
     .btn {
@@ -59,6 +60,12 @@
       color: $off-white;
       @include typo-16-700;
       border:none;
+    }
+  }
+
+  .input_g_phone {
+    input {
+      font-size: 14px !important;
     }
   }
 }

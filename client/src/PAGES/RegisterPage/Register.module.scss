@@ -10,6 +10,7 @@
     padding: 1rem 1rem;
 
     background-color: $bg;
+    
 
     .head {
       @include alignFrame();
@@ -43,6 +44,8 @@
     
     .inner {
       padding: 2rem 3rem;
+      min-width: 500px;
+      min-height: 400px;
 
     }
   }

@@ -34,6 +34,7 @@ import cityRoutes from './routes/cityR.js';
 import orderRoutes from './routes/orderR.js';
 import homeRoutes from './routes/homeR.js';
 import adminRoutes from './routes/adminR.js';
+import transactionRoutes from './routes/paymentR.js';
 
 // using routes:
 app.use('/api/products', productRoutes);
@@ -46,6 +47,7 @@ app.use('/api/cities', cityRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api/home', homeRoutes);
 app.use('/api/admin', adminRoutes);
+app.use('/api/transactions', transactionRoutes);
 
 // static path to server images.
 app.use('/public', express.static('public'));
